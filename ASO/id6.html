@@ -10,8 +10,12 @@
   <body>
     <header>
       <ul class="topnav">
-        <li><h1>KOALA.PL</h1></li>
-        <li><a class="active" href="so.html">SYSTEMY OPERACYJNE</a></li>
+        <li>
+          <a class="sizeTitle" href="../index.html"
+            ><h1>KoalaPL.GitHub.io</h1></a
+          >
+        </li>
+        <li><a class="active" href="../soaso.html">SYSTEMY OPERACYJNE</a></li>
         <li><a href="">SIECI KOMPUTEROWE</a></li>
         <li><a href="">BAZY DANYCH</a></li>
       </ul>
@@ -62,10 +66,10 @@
         <a href="">Serwer Web www /part 4 - DNS</a>
       </details>
       <h3>Zasoby do pobrania</h3>
-      <a href="">Windows10.ova</a>
-      <a href="">WindowsServer2016.ova</a>
-      <a href="">Ubuntu20.04.ova</a>
-      <a href="">UbuntuServer20.04.ova</a>
+      <a
+        href="https://drive.google.com/drive/folders/1gwURbvrsuE63PBXhowf3f2ZfJdNNk86_?usp=sharing"
+        >Pliki strony świat koali</a
+      >
     </nav>
     <main>
       <p>
@@ -75,7 +79,7 @@
       <h2>DHCP - Dynamic Host Configuration Protocol</h2>
 
       Instalacja i konfiguracja DHCP ma niewielkie różnice w zależności czy
-      serwer jest kontrolerem domenu (AD) czy nie, dlatego wykonamy konfigurację
+      serwer jest kontrolerem domeny (AD) czy nie, dlatego wykonamy konfigurację
       w dwóch wersjach. <br />
       Dodaj rolę <em>"Serwer DHCP"</em>.
       <img src="../ASO/img/id6/1.png" />
@@ -93,8 +97,8 @@
       Tam klikamy potwierdź zatwierdź. <br />
       W Menedżerze serwera prawy górny róg klikamy narzędzia>DHCP <br />
       <br />
-      Wrazie gdyby wystąpił poniszy błąd, że server DHCP się nie uruchomił
-      należy tozrobic ręczxnie tak jak na poniszym obrazku:
+      W razie gdyby wystąpił poniższy błąd, że server DHCP się nie uruchomił
+      należy to zrobić ręcznie tak jak na poniższym obrazku:
       <img src="../ASO/img/id6/4.png" />
 
       Jak będzie czerwona ikona to klikamy tak jak wyżej w uruchom teraz mamy
@@ -105,29 +109,26 @@
       <img src="../img/windowsServer/11.png" alt="" />
       Jest zielony znaczek to prawym przyciskiem myszy na IPv4 >nowy zakres…
       <br />
-      Przeklikujemy do okna “Zakres adresów IP” Ja podałem takie dane wiec mój
+      Prze kalikujemy do okna “Zakres adresów IP” Ja podałem takie dane wiec mój
       win10 dostanie adres <b>192.168.0.50</b>
       <br />
       Jak na egzaminie będą chcieli DHCP w zakresach <br />
       <b>192.168.0.50 - 192.168.0.56</b> <br />
       <b>192.168.0.67 - 192.168.0.95</b> <br />
-      to nasz zakres bedzie początkowy <b>192.168.0.50</b> konicowy
+      to nasz zakres będzie początkowy <b>192.168.0.50</b> końcowy
       <b>192.168.0.95</b> <br />
-      a na kolejnej karcie wykluczamy początkowy <b>192.168.0.56 </b> konicowy
+      a na kolejnej karcie wykluczamy początkowy <b>192.168.0.56 </b> końcowy
       <b> 192.168.0.67</b>
       <br />
       Kolejna karta określa czas dzierżawy mogą chcieć na egzaminie inny niż
-      domyślny <b>8 Dni</b> <br />Przy konfiguracji stanowiska że miedzy kompem
-      win server 2012 R2 a windows 10 jest router na kolejnej karcie podajemy
-      jego adres ip
-      <br />
+      domyślny <b>8 Dni</b> <br />
       Na karcie Nazwa domeny i serwery DNS dodajemy adres ip naszego serwera
       dodaj i dalej (Przy komunikacie ostrzegawczym kontynuujemy mimo to)
       Serwery WINS też dodajemy adres IP serwera
       <img src="../ASO/img/id6/DHCPZakres.gif" />
 
       <img src="../ASO/img/id6/5.png" />
-      Pamietaj że klienci muszą mieć ustawione uzyskiwanie adresów IP i DNS na
+      Pamiętaj że klienci muszą mieć ustawione uzyskiwanie adresów IP i DNS na
       automatyczne.
       <img src="../ASO/img/id6/6.png" />
       Teraz na kliencie odpalamy wiersz poleceń CMD (koniecznie jako
@@ -156,6 +157,7 @@
 
       <img src="../ASO/img/id6/17.png" />
     </main>
+
     <footer>Copyright &copy; Zbrzeźniak Kamil</footer>
   </body>
 </html>

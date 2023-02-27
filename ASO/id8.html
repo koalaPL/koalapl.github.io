@@ -10,8 +10,12 @@
   <body>
     <header>
       <ul class="topnav">
-        <li><h1>KOALA.PL</h1></li>
-        <li><a class="active" href="">SYSTEMY OPERACYJNE</a></li>
+        <li>
+          <a class="sizeTitle" href="../index.html"
+            ><h1>KoalaPL.GitHub.io</h1></a
+          >
+        </li>
+        <li><a class="active" href="../soaso.html">SYSTEMY OPERACYJNE</a></li>
         <li><a href="">SIECI KOMPUTEROWE</a></li>
         <li><a href="">BAZY DANYCH</a></li>
       </ul>
@@ -61,10 +65,6 @@
         <a href="">Serwer Web www /part 4 - DNS</a>
       </details>
       <h3>Zasoby do pobrania</h3>
-      <a href="">Windows10.ova</a>
-      <a href="">WindowsServer2016.ova</a>
-      <a href="">Ubuntu20.04.ova</a>
-      <a href="">UbuntuServer20.04.ova</a>
       <a
         href="https://drive.google.com/drive/folders/1gwURbvrsuE63PBXhowf3f2ZfJdNNk86_?usp=sharing"
         >Pliki strony świat koali</a
@@ -80,7 +80,7 @@
       <em>"Serwer sieci Web (IIS)"</em>. Jeżeli tego nie uczyniłeś, zrób to
       teraz. <br />
       Zanim zaczniemy konfigurację ISS musimy pobrać zasoby niezbędne do
-      uzyskania konicowego wyniku. <br />
+      uzyskania końcowego wyniku. <br />
       <i>Pliki strony WwW Świat koali</i> : dostępne w zakładce
       <em>Zasoby do pobrania</em>. <br />
       <i>Interpreter PHP</i>:
@@ -109,7 +109,7 @@
       <br /><br />
       Zainstaluj Dodatek gościa i udostępnij folder Gospodarza dla
       WindowsServer2012R2. Umieść w nim pliki które pobrałeś w katalogu
-      udostepnionym dla maszyny wirtualnej.
+      udostępnionym dla maszyny wirtualnej.
       <img src="../ASO/img/id8/1.png" />
       Z archiwum <i>"Pliki strony świat koali.zip"</i> przenieś katalog
       <em>"Strony"</em> wraz z zawartością na dysk lokalny <b>C:\</b>.
@@ -122,8 +122,8 @@
       Możesz dodać niestandardową nazwę pliku strony WwW, klikając
       <i>"Dodaj..."</i> i wpisując jej nazwę.
       <img src="../ASO/img/id8/3.png" />
-      Witryna WwW już działa, ale nie do konica. Nie ma interpretera PHP bzy
-      danych MySQL oraz zdjecia się niewczytują <br />
+      Witryna WwW już działa, ale nie do końca. Nie ma interpretera PHP bzy
+      danych MySQL oraz zdjęcia się nie wczytują <br />
       (chyba że dodasz drugą kartę sieciową NAT na kliencie Windows 10).
       <img src="../ASO/img/id8/4.png" />
       Poprzez dodawanie ról doinstaluj <i>Interfejs CGI</i>:
@@ -131,7 +131,7 @@
       Zainstaluj na serwerze:
       <i>Microsoft Visual C++ 2015-2019 Redistributable (x64)</i>.
       <img src="../ASO/img/id8/6.png" />
-      1. Rozpakuj arhiwum <em>"php-8.2.3-nts-Win32-vs16-x64.zip"</em>. <br />
+      1. Rozpakuj archiwum <em>"php-8.2.3-nts-Win32-vs16-x64.zip"</em>. <br />
       2. Zmień nazwę katalogu na <b>"PHP"</b>. <br />
       3. Przenieś na Dysk lokalny <b>C:\</b> <br />
       <img src="../ASO/img/id8/7.png" />
@@ -141,8 +141,8 @@
       <b>Ścieżka żądania</b>: *.php <br />
       <b>Moduł</b>: FastCgiModule <br />
       <b>Plik wykonywalny</b>: C:\PHP\php-cgi.exe <br />
-      <b>Nazwa</b>: Tu możesz wpisać co kolwiek, ale warto aby nazwa była
-      smoopisująca się. Ja to mapoiwanie nazwałem PHP_FastCGI poniważ
+      <b>Nazwa</b>: Tu możesz wpisać cokolwiek, ale warto aby nazwa była
+      samoopisująca się. Ja to mapowanie nazwałem PHP_FastCGI poniważ
       wykorzystuje moduł FastCgi do opsługi interpretera PHP.
       <img src="../ASO/img/id8/8.png" />
       Po kliknięciu <i>"Ograniczenia żądań..."</i> ukaże się okno z trzema
@@ -168,11 +168,11 @@
       Po kliknięciu <i>"Add User"</i> tworzymy następującego użytkownika (
       Wszelkie dane podane na obrazku poniżej):
       <img src="../ASO/img/id8/15.png" />
-      Po kolejnej serji przeklikiwania napodkasz taką strone. Musisz podać hasło
-      do root'a, po czym kliknąć <em>"Check"</em>. <br />
-      Gdy połączenie zakoniczy sie sukcesem klikaj dalej.
+      Po kolejnej serii prze klikiwania napotkasz taką stronę. Musisz podać
+      hasło do root'a, po czym kliknąć <em>"Check"</em>. <br />
+      Gdy połączenie zakończy się sukcesem klikaj dalej.
       <img src="../ASO/img/id8/16.png" />
-      Po instalacji wyskoczą takie dawa okna zamknij je. Do niczego nam się nie
+      Po instalacji wyskoczą takie dwa okna zamknij je. Do niczego nam się nie
       przydadzą :p
       <img src="../ASO/img/id8/17.png" />
       Uruchom wiersz poleceń MySQL:
@@ -181,7 +181,7 @@
       obrazku poniżej:
       <img src="../ASO/img/id8/19.png" />
       W katalogu <b>C:\PHP</b> znajduje się plik
-      <i>"php.ini-production"</i> będocym templatką konfiguracji <b>PHP</b>.
+      <i>"php.ini-production"</i> będącym templatką konfiguracji <b>PHP</b>.
       <br />
       Skopiuj go i zmień nazwę na <i>"php.ini"</i>
       <img src="../ASO/img/id8/20.png" />
@@ -193,7 +193,7 @@
       <b>192.168.0.10</b>, dlatego muszę zmodyfikować plik
       <i>"C:\Strony\indexMySQL.php"</i>.
       <img src="../ASO/img/id8/22.png" />
-      Teraz serwer Web jest wpełni skonfigurowany bo, oprócz wyświetlania stron
+      Teraz serwer Web jest w pełni skonfigurowany bo, oprócz wyświetlania stron
       <b>html</b>, interpretuje język <b>PHP</b> oraz posiada działającą bazę
       danych <b>MySQL</b>.
       <img src="../ASO/img/id8/23.png" />

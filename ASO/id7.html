@@ -10,8 +10,12 @@
   <body>
     <header>
       <ul class="topnav">
-        <li><h1>KOALA.PL</h1></li>
-        <li><a class="active" href="">SYSTEMY OPERACYJNE</a></li>
+        <li>
+          <a class="sizeTitle" href="../index.html"
+            ><h1>KoalaPL.GitHub.io</h1></a
+          >
+        </li>
+        <li><a class="active" href="../soaso.html">SYSTEMY OPERACYJNE</a></li>
         <li><a href="">SIECI KOMPUTEROWE</a></li>
         <li><a href="">BAZY DANYCH</a></li>
       </ul>
@@ -61,10 +65,10 @@
         <a href="">Serwer Web www /part 4 - DNS</a>
       </details>
       <h3>Zasoby do pobrania</h3>
-      <a href="">Windows10.ova</a>
-      <a href="">WindowsServer2016.ova</a>
-      <a href="">Ubuntu20.04.ova</a>
-      <a href="">UbuntuServer20.04.ova</a>
+      <a
+        href="https://drive.google.com/drive/folders/1gwURbvrsuE63PBXhowf3f2ZfJdNNk86_?usp=sharing"
+        >Pliki strony świat koali</a
+      >
     </nav>
     <main>
       <p>
@@ -87,32 +91,33 @@
       Dodaj i zainstaluj rolę <em>Serwer DNS</em> <br />
       Konfiguracja Stref wyszukiwania do przodu i wstecznego trochę się różni
       gdy serwer jest kontrolerem domeny (AD) od sytuacji gdy owym kontrolerem
-      nie jest. Dlatego poniszy obrazek przedstawia konfigurację w obu
+      nie jest. Dlatego poniższy obrazek przedstawia konfigurację w obu
       przypadkach:
       <img src="../ASO/img/id7/StrefyDNS.gif" />
-      Jak są dodane obie strefy wyszukiwania, to dadaj nowy <em>host A</em> lub
+      Jak są dodane obie strefy wyszukiwania, to dodaj nowy <em>host A</em> lub
       <em>AAAA</em> po czym przypisz go do
-      <i>"Adres startowy uwierzytelniania (SOA)"</i>. Pamietaj by zaznaczyc
+      <i>"Adres startowy uwierzytelniania (SOA)"</i>. Pamiętaj by zaznaczyć
       check box <i>"Utwórz skojarzony rekord wskaźnika (PTR)"</i>.
       <img src="../ASO/img/id7/HostA.gif" />
       Do weryfikacji poprawności działania DNS zainstaluj rolę serwera WwW
-      <em>"Serwer sieci Web (IIS)"</em>. Konfiguracja <i>IIS</i> bedzie w
+      <em>"Serwer sieci Web (IIS)"</em>. Konfiguracja <i>IIS</i> będzie w
       kolejnym rozdziale. <br />
       Czas na weryfikację poprawności działania DNS. (Pamiętaj o ustawieniu
-      statycznego adresu DNS serwera na klientach nie będozych w Domenie (AD)).
+      statycznego adresu DNS serwera na klientach nie będących w Domenie (AD)).
       <br />
-      Na obrazie poniżej przedstawiono poprawne połączenie z domyślną stronoą
+      Na obrazie poniżej przedstawiono poprawne połączenie z domyślną stronią
       <i>IIS</i> z wykorzystaniem DNS na adres <em>"www.koala.pl"</em> w dwóch
-      wersjach na kliencie będocym w domenie oraz na kliencie nie będącym w
+      wersjach na kliencie będącym w domenie oraz na kliencie nie będącym w
       domenie:
       <img src="../ASO/img/id7/1.png" />
-      Możemy sprawdzić informacje o znanych serverach i domenach oraz
-      subdomenach DNS: <i>ipconfig /displaydns</i>
+      Możemy sprawdzić informacje o znanych serwerach i domenach oraz
+      sub-domenech DNS: <i>ipconfig /displaydns</i>
       <img src="../ASO/img/id7/3.png" />
       Możemy wyczyścić pamięć cashe przechowywującą informacje o znanych
-      serverach i domenach oraz subdomenach DNS: <i>ipconfig /flushdns</i>
+      serwerach i domenach oraz subdomenach DNS: <i>ipconfig /flushdns</i>
       <img src="../ASO/img/id7/4.png" />
     </main>
+
     <footer>Copyright &copy; Zbrzeźniak Kamil</footer>
   </body>
 </html>
