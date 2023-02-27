@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koala.pl</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header>
+      <ul class="topnav">
+        <li><h1>KOALA.PL</h1></li>
+        <li><a class="active" href="">SYSTEMY OPERACYJNE</a></li>
+        <li><a href="">SIECI KOMPUTEROWE</a></li>
+        <li><a href="">BAZY DANYCH</a></li>
+      </ul>
+    </header>
+    <nav>
+      <h4>SYSTEMY OPERACYJNE</h4>
+      <details>
+        <summary>WINDOWS</summary>
+        <a href="">Wiersz poleceń CMD</a>
+        <a href="">Pliki i katalogi</a>
+        <a href="">Konta użytkowników</a>
+        <a href="">Zarządzanie dyskami i partycjami</a>
+        <a href="">Przystawki systemowe</a>
+      </details>
+      <details>
+        <summary>LINUX</summary>
+        <a href="">Terminal</a>
+        <a href="">Pliki i katalogi</a>
+        <a href="">Konta użytkowników</a>
+        <a href="">Uprawnienia</a>
+        <a href="">Zarządzanie dyskami i partycjami</a>
+        <a href="">Informacje o urządzeniu i procesy systemowe / aplikacji</a>
+      </details>
+      <h4>ADMINISTRACJA SYSTEMAMI OPERACYJNYMI</h4>
+      <details open>
+        <summary class="active">WINDOWS SERWER</summary>
+        <a href="../ASO/id0.html">Konfiguracja w VirtualBox</a>
+        <a href="../ASO/id1.html">Interfejs sieciowy</a>
+        <a href="../ASO/id2.html">Active Directory (AD)</a>
+        <a href="../ASO/id3.html">(AD) użytkownicy</a>
+        <a href="../ASO/id4.html">(AD) profile mobilne i udziały sieciowe</a>
+        <a href="../ASO/id5.html">(AD) zasady grupy</a>
+        <a href="../ASO/id6.html">Dynamiczna konfiguracja hostów (DHCP)</a>
+        <a class="active" href="../ASO/id7.html"
+          >Serwer Web www /part 1 - DNS</a
+        >
+        <a href="../ASO/id8.html">Serwer Web www /part 2 - IIS</a>
+      </details>
+      <details>
+        <summary>LINUX SERWER</summary>
+        <a href="">Konfiguracja w VirtualBox</a>
+        <a href="">Serwer plików (FTP) / udziały sieciowe - samba</a>
+        <a href="">Dynamiczna konfiguracja hostów (DHCP) - isc-dhcp-server</a>
+        <a href="">Serwer Web www /part 1 - apache2</a>
+        <a href="">Serwer Web www /part 2 - php</a>
+        <a href="">Serwer Web www /part 3 - mysql</a>
+        <a href="">Serwer Web www /part 4 - DNS</a>
+      </details>
+      <h3>Zasoby do pobrania</h3>
+      <a href="">Windows10.ova</a>
+      <a href="">WindowsServer2016.ova</a>
+      <a href="">Ubuntu20.04.ova</a>
+      <a href="">UbuntuServer20.04.ova</a>
+    </nav>
+    <main>
+      <p>
+        <a href="#">ADMINISTRACJA SYSTEMAMI OPERACYJNYMI</a> /
+        <a href="#">Serwer Web www /part 1 - DNS</a>
+      </p>
+      <h2>DNS pod stronę WwW</h2>
+      Cały proces, można w dużym uproszczeniu zobrazować następująco:
+      <br /><br />
+
+      1. Użytkownik wpisuje w przeglądarce adres: www.koala.pl. <br />
+      2. System wysyła zapytanie do znanego mu serwera DNS, z prośbą o wysłanie
+      adresu IP, dla domeny www.koala.pl. <br />
+      3. Serwer DNS, odsyła do komputera użytkownika adres IP przyporządkowany
+      dla podanej domeny. <br />
+      4. Komputer użytkownika łączy się ze wskazanym adresem IP wyświetlając
+      stronę.
+      <img src="../ASO/img/id7/2.png" />
+
+      Dodaj i zainstaluj rolę <em>Serwer DNS</em> <br />
+      Konfiguracja Stref wyszukiwania do przodu i wstecznego trochę się różni
+      gdy serwer jest kontrolerem domeny (AD) od sytuacji gdy owym kontrolerem
+      nie jest. Dlatego poniszy obrazek przedstawia konfigurację w obu
+      przypadkach:
+      <img src="../ASO/img/id7/StrefyDNS.gif" />
+      Jak są dodane obie strefy wyszukiwania, to dadaj nowy <em>host A</em> lub
+      <em>AAAA</em> po czym przypisz go do
+      <i>"Adres startowy uwierzytelniania (SOA)"</i>. Pamietaj by zaznaczyc
+      check box <i>"Utwórz skojarzony rekord wskaźnika (PTR)"</i>.
+      <img src="../ASO/img/id7/HostA.gif" />
+      Do weryfikacji poprawności działania DNS zainstaluj rolę serwera WwW
+      <em>"Serwer sieci Web (IIS)"</em>. Konfiguracja <i>IIS</i> bedzie w
+      kolejnym rozdziale. <br />
+      Czas na weryfikację poprawności działania DNS. (Pamiętaj o ustawieniu
+      statycznego adresu DNS serwera na klientach nie będozych w Domenie (AD)).
+      <br />
+      Na obrazie poniżej przedstawiono poprawne połączenie z domyślną stronoą
+      <i>IIS</i> z wykorzystaniem DNS na adres <em>"www.koala.pl"</em> w dwóch
+      wersjach na kliencie będocym w domenie oraz na kliencie nie będącym w
+      domenie:
+      <img src="../ASO/img/id7/1.png" />
+      Możemy sprawdzić informacje o znanych serverach i domenach oraz
+      subdomenach DNS: <i>ipconfig /displaydns</i>
+      <img src="../ASO/img/id7/3.png" />
+      Możemy wyczyścić pamięć cashe przechowywującą informacje o znanych
+      serverach i domenach oraz subdomenach DNS: <i>ipconfig /flushdns</i>
+      <img src="../ASO/img/id7/4.png" />
+    </main>
+    <footer>Copyright &copy; Zbrzeźniak Kamil</footer>
+  </body>
+</html>

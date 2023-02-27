@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koala.pl</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header>
+      <ul class="topnav">
+        <li><h1>KOALA.PL</h1></li>
+        <li><a class="active" href="">SYSTEMY OPERACYJNE</a></li>
+        <li><a href="">SIECI KOMPUTEROWE</a></li>
+        <li><a href="">BAZY DANYCH</a></li>
+      </ul>
+    </header>
+    <nav>
+      <h4>SYSTEMY OPERACYJNE</h4>
+      <details>
+        <summary>WINDOWS</summary>
+        <a href="">Wiersz poleceń CMD</a>
+        <a href="">Pliki i katalogi</a>
+        <a href="">Konta użytkowników</a>
+        <a href="">Zarządzanie dyskami i partycjami</a>
+        <a href="">Przystawki systemowe</a>
+      </details>
+      <details>
+        <summary>LINUX</summary>
+        <a href="">Terminal</a>
+        <a href="">Pliki i katalogi</a>
+        <a href="">Konta użytkowników</a>
+        <a href="">Uprawnienia</a>
+        <a href="">Zarządzanie dyskami i partycjami</a>
+        <a href="">Informacje o urządzeniu i procesy systemowe / aplikacji</a>
+      </details>
+      <h4>ADMINISTRACJA SYSTEMAMI OPERACYJNYMI</h4>
+      <details open>
+        <summary class="active">WINDOWS SERWER</summary>
+        <a href="../ASO/id0.html">Konfiguracja w VirtualBox</a>
+        <a class="active" href="../ASO/id1.html">Interfejs sieciowy</a>
+        <a href="../ASO/id2.html">Active Directory (AD)</a>
+        <a href="../ASO/id3.html">(AD) użytkownicy</a>
+        <a href="../ASO/id4.html">(AD) profile mobilne i udziały sieciowe</a>
+        <a href="../ASO/id5.html">(AD) zasady grupy</a>
+        <a href="../ASO/id6.html">Dynamiczna konfiguracja hostów (DHCP)</a>
+        <a href="../ASO/id7.html">Serwer Web www /part 1 - DNS</a>
+        <a href="../ASO/id8.html">Serwer Web www /part 2 - IIS</a>
+      </details>
+      <details>
+        <summary>LINUX SERWER</summary>
+        <a href="">Konfiguracja w VirtualBox</a>
+        <a href="">Serwer plików (FTP) / udziały sieciowe - samba</a>
+        <a href="">Dynamiczna konfiguracja hostów (DHCP) - isc-dhcp-server</a>
+        <a href="">Serwer Web www /part 1 - apache2</a>
+        <a href="">Serwer Web www /part 2 - php</a>
+        <a href="">Serwer Web www /part 3 - mysql</a>
+        <a href="">Serwer Web www /part 4 - DNS</a>
+      </details>
+      <h3>Zasoby do pobrania</h3>
+      <a href="">Windows10.ova</a>
+      <a href="">WindowsServer2016.ova</a>
+      <a href="">Ubuntu20.04.ova</a>
+      <a href="">UbuntuServer20.04.ova</a>
+    </nav>
+    <main>
+      <p>
+        <a href="#">ADMINISTRACJA SYSTEMAMI OPERACYJNYMI</a> /
+        <a href="#">Interfejs sieciowy</a>
+      </p>
+      <h2>Strona Główna</h2>
+      Podstawa to poprawna konfiguracja kart sieciowych na VB (VirtualBox).
+      <br />
+      Polecam dać “sieć wewnętrzna” w zakładce sieci na obu maszynach. Pamiętaj
+      aby na obu maszynach wyłączyć zaporę sieciową. <br />
+      <br />
+      <b>
+        Panel sterowania > Sieći internet > Centrum sieci i udostępniania >
+        Zmień konfigurację karty sieciowej
+      </b>
+      <br />(Domyślna nazwa interfejsu sieciowego to ethernet. Aby ją zmienić
+      kliknij prawym przyciskiem myszy na kartę sieciową "ethernet" i wybierz
+      opcję zmień nazwę) <br />
+      <b>
+        2 razy na ethernet > właściwości > 2 razy na Protokół internetowy w
+        wersji 4 (TCP/IP)
+      </b>
+      <br />zaznacz check box Użyj następującego adresu IP:
+      <img src="../img/windowsServer/1.png" alt="" />
+      Ta konfiguracja sprawi że serwer będzie robił za tymczasowego DNS`a.
+      <br />
+      Czasem pojawi się o tym taka informacja.
+      <img src="../img/windowsServer/2.png" alt="" />
+      Więc na kliencie podasz adres serwera jako bramę domyślną oraz jako DNS.
+      <img src="../img/windowsServer/3.png" alt="" />
+
+      Teraz weryfikujemy czy komunikacja jest poprawna.<br />
+      Uruchom wiersz poleceń <b>CMD</b>. Komenda <i>ipconfig</i> pokaże ci
+      podstawową konfigurację interfejsu sieciowego. <br />Natomiast
+      <i>ipconfig /all</i> da ci wszystkie informacje o karcie sieciowej gdzie
+      naprzykład:<br />
+      <em>"Host Name"</em> to nazwa hosta.<br />
+      <em>"Physical Address"</em> jest to address MAC przydatny do konfiguracji
+      konkretnego urządzenia.
+
+      <img src="../img/windowsServer/4.png" alt="" />
+      Aby sprawdzić czy serwer wraz z klientem się "widzą" wykonaj ping<br />
+      Taki wynik informuje cię o poprawnym przesyłaniu pakietów między
+      komputerami.
+      <img src="../img/windowsServer/5.png" alt="" />
+    </main>
+    <footer>Copyright &copy; Zbrzeźniak Kamil</footer>
+  </body>
+</html>

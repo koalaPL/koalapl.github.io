@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koala.pl</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header>
+      <ul class="topnav">
+        <li><h1>KOALA.PL</h1></li>
+        <li><a class="active" href="">SYSTEMY OPERACYJNE</a></li>
+        <li><a href="">SIECI KOMPUTEROWE</a></li>
+        <li><a href="">BAZY DANYCH</a></li>
+      </ul>
+    </header>
+    <nav>
+      <h4>SYSTEMY OPERACYJNE</h4>
+      <details>
+        <summary>WINDOWS</summary>
+        <a href="">Wiersz poleceń CMD</a>
+        <a href="">Pliki i katalogi</a>
+        <a href="">Konta użytkowników</a>
+        <a href="">Zarządzanie dyskami i partycjami</a>
+        <a href="">Przystawki systemowe</a>
+      </details>
+      <details>
+        <summary>LINUX</summary>
+        <a href="">Terminal</a>
+        <a href="">Pliki i katalogi</a>
+        <a href="">Konta użytkowników</a>
+        <a href="">Uprawnienia</a>
+        <a href="">Zarządzanie dyskami i partycjami</a>
+        <a href="">Informacje o urządzeniu i procesy systemowe / aplikacji</a>
+      </details>
+      <h4>ADMINISTRACJA SYSTEMAMI OPERACYJNYMI</h4>
+      <details open>
+        <summary class="active">WINDOWS SERWER</summary>
+        <a href="../ASO/id0.html">Konfiguracja w VirtualBox</a>
+        <a class="active" href="../ASO/id1.html">Interfejs sieciowy</a>
+        <a href="../ASO/id2.html">Active Directory (AD)</a>
+        <a href="../ASO/id3.html">(AD) użytkownicy</a>
+        <a href="../ASO/id4.html">(AD) profile mobilne i udziały sieciowe</a>
+        <a href="../ASO/id5.html">(AD) zasady grupy</a>
+        <a href="../ASO/id6.html">Dynamiczna konfiguracja hostów (DHCP)</a>
+        <a href="../ASO/id7.html">Serwer Web www /part 1 - DNS</a>
+        <a href="../ASO/id8.html">Serwer Web www /part 2 - IIS</a>
+      </details>
+      <details>
+        <summary>LINUX SERWER</summary>
+        <a href="">Konfiguracja w VirtualBox</a>
+        <a href="">Serwer plików (FTP) / udziały sieciowe - samba</a>
+        <a href="">Dynamiczna konfiguracja hostów (DHCP) - isc-dhcp-server</a>
+        <a href="">Serwer Web www /part 1 - apache2</a>
+        <a href="">Serwer Web www /part 2 - php</a>
+        <a href="">Serwer Web www /part 3 - mysql</a>
+        <a href="">Serwer Web www /part 4 - DNS</a>
+      </details>
+      <h3>Zasoby do pobrania</h3>
+      <a href="">Windows10.ova</a>
+      <a href="">WindowsServer2016.ova</a>
+      <a href="">Ubuntu20.04.ova</a>
+      <a href="">UbuntuServer20.04.ova</a>
+    </nav>
+    <main>
+      <p>
+        <a href="#">ADMINISTRACJA SYSTEMAMI OPERACYJNYMI</a> /
+        <a href="#">Interfejs sieciowy</a>
+      </p>
+      <h2>
+        Konfiguracja interfejsów sieciowych windows w wersji klient i serwer
+      </h2>
+      Aby móc świadczyć usługi sieciowe, musi zachodzić komunikacja pomiędzy
+      usługo dawcą a usługo odbiorcą. <br />
+      Skonfigurujmy zatem
+      <b>statyczne połączenie</b>
+      pomiędzy wirtualnymi maszynami. <br />
+      Poniżej przedstawiono jak przejść do konfiguracji interfejsu sieciowego na
+      Windows 10:
+
+      <img src="../ASO/img/id1/ipWin10.gif" />
+      Poniżej przedstawiono jak przejść do konfiguracji interfejsu sieciowego na
+      Windows Server 2012 R2:
+      <img src="../ASO/img/id1/ipWinServer2012.gif" />
+      <img src="../ASO/img/id1/1.png" />
+      Ta konfiguracja sprawi że serwer będzie robił za tymczasowego DNS`a.
+      <br />
+      Czasem pojawi się o tym taka informacja.
+      <img src="../ASO/img/id1/3.png" />
+      Więc na kliencie podasz adres serwera jako bramę domyślną oraz jako DNS.
+      <img src="../ASO/img/id1/2.png" />
+
+      Teraz weryfikujemy czy komunikacja jest poprawna.<br />
+      Uruchom wiersz poleceń <b>CMD</b>. Komenda <i>ipconfig</i> pokaże ci
+      podstawową konfigurację interfejsu sieciowego. <br />Natomiast
+      <i>ipconfig /all</i> da ci wszystkie informacje o karcie sieciowej gdzie
+      naprzykład:<br />
+      <em>"Host Name"</em> to nazwa hosta.<br />
+      <em>"Physical Address"</em> jest to address MAC przydatny do konfiguracji
+      konkretnego urządzenia.
+
+      <img src="../ASO/img/id1/4.png" />
+      Aby sprawdzić czy serwer wraz z klientem się "widzą" wykonaj ping<br />
+      Taki wynik informuje cię o <b>poprawnym</b> przesyłaniu pakietów między
+      komputerami.
+      <img src="../ASO/img/id1/5.png" />
+      Taki wynik informuje cię o <b>niepoprawnym</b> przesyłaniu pakietów między
+      komputerami.
+      <img src="../ASO/img/id1/6.png" />
+    </main>
+    <footer>Copyright &copy; Zbrzeźniak Kamil</footer>
+  </body>
+</html>

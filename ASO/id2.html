@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koala.pl</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header>
+      <ul class="topnav">
+        <li><h1>KOALA.PL</h1></li>
+        <li><a class="active" href="">SYSTEMY OPERACYJNE</a></li>
+        <li><a href="">SIECI KOMPUTEROWE</a></li>
+        <li><a href="">BAZY DANYCH</a></li>
+      </ul>
+    </header>
+    <nav>
+      <h4>SYSTEMY OPERACYJNE</h4>
+      <details>
+        <summary>WINDOWS</summary>
+        <a href="">Wiersz poleceń CMD</a>
+        <a href="">Pliki i katalogi</a>
+        <a href="">Konta użytkowników</a>
+        <a href="">Zarządzanie dyskami i partycjami</a>
+        <a href="">Przystawki systemowe</a>
+      </details>
+      <details>
+        <summary>LINUX</summary>
+        <a href="">Terminal</a>
+        <a href="">Pliki i katalogi</a>
+        <a href="">Konta użytkowników</a>
+        <a href="">Uprawnienia</a>
+        <a href="">Zarządzanie dyskami i partycjami</a>
+        <a href="">Informacje o urządzeniu i procesy systemowe / aplikacji</a>
+      </details>
+      <h4>ADMINISTRACJA SYSTEMAMI OPERACYJNYMI</h4>
+      <details open>
+        <summary class="active">WINDOWS SERWER</summary>
+        <a href="../ASO/id0.html">Konfiguracja w VirtualBox</a>
+        <a href="../ASO/id1.html">Interfejs sieciowy</a>
+        <a class="active" href="../ASO/id2.html">Active Directory (AD)</a>
+        <a href="../ASO/id3.html">(AD) użytkownicy</a>
+        <a href="../ASO/id4.html">(AD) profile mobilne i udziały sieciowe</a>
+        <a href="../ASO/id5.html">(AD) zasady grupy</a>
+        <a href="../ASO/id6.html">Dynamiczna konfiguracja hostów (DHCP)</a>
+        <a href="../ASO/id7.html">Serwer Web www /part 1 - DNS</a>
+        <a href="../ASO/id8.html">Serwer Web www /part 2 - IIS</a>
+      </details>
+      <details>
+        <summary>LINUX SERWER</summary>
+        <a href="">Konfiguracja w VirtualBox</a>
+        <a href="">Serwer plików (FTP) / udziały sieciowe - samba</a>
+        <a href="">Dynamiczna konfiguracja hostów (DHCP) - isc-dhcp-server</a>
+        <a href="">Serwer Web www /part 1 - apache2</a>
+        <a href="">Serwer Web www /part 2 - php</a>
+        <a href="">Serwer Web www /part 3 - mysql</a>
+        <a href="">Serwer Web www /part 4 - DNS</a>
+      </details>
+      <h3>Zasoby do pobrania</h3>
+      <a href="">Windows10.ova</a>
+      <a href="">WindowsServer2016.ova</a>
+      <a href="">Ubuntu20.04.ova</a>
+      <a href="">UbuntuServer20.04.ova</a>
+    </nav>
+    <main>
+      <p>
+        <a href="#">ADMINISTRACJA SYSTEMAMI OPERACYJNYMI</a> /
+        <a href="#">Active Directory (AD)</a>
+      </p>
+      <h2>Konfiguracja usługi domenowej AD (Active Directory)</h2>
+
+      W menadżerze serwera dodaj oraz zainstaluj usługę domenową active
+      directory wraz z funkcjami które zaproponuje system. Schemat postepowania
+      jest przedstawiony poniżej:
+      <img src="../ASO/img/id2/ADInstall.gif" />
+      Po instalacji kliknij ikonę powiadomień menadżera serwera, po czym podnieś
+      poziom tego serwera do poziomu kontrolera domeny:
+      <img src="../ASO/img/id2/1.png" />
+      Zanim zaczniemy, trochę teori:
+      <img src="../ASO/img/id2/ADForestTree.png" />
+      W usłudze domenowej active directory stosowana jest nomenklatura lasu i
+      drzewa. Powyżej przedstawiam zobrazowanie tej idei.<br />
+      Tworząc las sadzimy pierwsze drzewo, czyli główną najwyższą w hierarchii
+      domenę rodzica. Nazwa tej domeny to <b>szkola.local</b>.<br />
+      Z czasem będziemy potrzebować subdomen czyli pod domen lub inaczej dzieci
+      rodzica <b>szkola.local</b>. Ich nazwy będą miały dopisaną końcówkę
+      <b>.szkola.local</b> po rodzicu. Wiec drzewo "Rodzic" wraz z swoimi
+      dziećmi tworzy las.<br />
+      <br />
+      <br />
+      Przystępujemy do konfiguracji usługi domenowej AD <br />
+      Dodaj nowy las, sadzimy teraz nasze pierwsze główne drzewo:
+      <b>szkola.local</b>
+      <img src="../ASO/img/id2/2.png" />
+      Wprowadzamy hasło do trybu przywracania usług katalogowych (DSRM) np.:
+      ZAQ!2wsx
+      <img src="../ASO/img/id2/3.png" />
+      Nie przejmujemy się komunikatem o DNS`sie.
+      <img src="../ASO/img/id2/4.png" />
+      Kolejne okna pomijamy klikając dalej. Na koniec gdy weryfikacja jest
+      poprawna klikamy zainstaluj.
+      <img src="../ASO/img/id2/5.png" />
+      Po instalacji nastąpi ponowne uruchomienie systemu który od tej pory
+      będzie kontrolerem domeny <b>szkola.local</b>. Gdy spróbujesz się
+      zalogować pojawi się komunikat o wygaśnięciu hasła, po kliknięciu OK
+      wprowadź nowe hasło np.: ZAQ!2wsx<br />
+      <img src="../ASO/img/id2/6.png" />
+      Skoro nasz Windows server jest już kontrolerem domeny, to możemy do niego
+      dołączyć z poziomu Windowsa 10. <br />
+      Poniżej przedstawiono jak uruchomić okno zmiany nazwy komputera/domeny
+      <img src="../ASO/img/id2/joinAD.gif" />
+      Zmień nazwę komputera (max 15 znaków) a następnie wpisz w text box`sie
+      nazwę domeny
+      <img src="../ASO/img/id2/7.png" />
+      Po chwili pojawi się okno logowania. Zaloguj się na konto administratora
+      serwera. <br />
+      (Logując się tu logujesz się na serwer za pomocą konta Windows server 2012
+      R2)
+      <img src="../ASO/img/id2/8.png" />
+      Gratulacje udało się dołączyć do domeny.
+      <img src="../ASO/img/id2/9.png" />
+      <img src="https://media.tenor.com/eOdP4LlXwk8AAAAC/gothic-kolonia.gif" />
+
+      <img src="../ASO/img/id2/10.png" />
+
+      Na razie nie mamy użytkowników w domenie, wiec nie będziemy się puki co
+      logować za pośrednictwem domeny. <br />
+      (Będąc teraz w domenie pasowało by wyłączyć konto Max) <br />
+    </main>
+    <footer>Copyright &copy; Zbrzeźniak Kamil</footer>
+  </body>
+</html>
