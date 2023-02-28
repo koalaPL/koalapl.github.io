@@ -40,9 +40,9 @@
         <a href="">Informacje o urządzeniu i procesy systemowe / aplikacji</a>
       </details>
       <h4>ADMINISTRACJA SYSTEMAMI OPERACYJNYMI</h4>
-      <details open>
-        <summary class="active">WINDOWS SERWER</summary>
-        <a class="active" href="../ASO/id0.html">Konfiguracja w VirtualBox</a>
+      <details>
+        <summary>WINDOWS SERWER</summary>
+        <a href="../ASO/id0.html">Konfiguracja w VirtualBox</a>
         <a href="../ASO/id1.html">Interfejs sieciowy</a>
         <a href="../ASO/id2.html">Active Directory (AD)</a>
         <a href="../ASO/id3.html">(AD) użytkownicy</a>
@@ -52,8 +52,8 @@
         <a href="../ASO/id7.html">Serwer Web www /part 1 - DNS</a>
         <a href="../ASO/id8.html">Serwer Web www /part 2 - IIS</a>
       </details>
-      <details>
-        <summary>LINUX SERWER</summary>
+      <details open>
+        <summary class="active">LINUX SERWER</summary>
         <a href="../ASO/idu0.html"
           >Połączenie SSH i konfiguracja interfesów sieciowych netplan</a
         >
@@ -65,7 +65,9 @@
         >
         <a href="../ASO/idu3.html">Serwer Web www /part 1 - apache2</a>
         <a href="../ASO/idu4.html">Serwer Web www /part 2 - php</a>
-        <a href="../ASO/idu5.html">Serwer Web www /part 3 - mysql</a>
+        <a class="active" href="../ASO/idu5.html"
+          >Serwer Web www /part 3 - mysql</a
+        >
         <a href="../ASO/idu6.html">Serwer Web www /part 4 - DNS</a>
       </details>
       <h3>Zasoby do pobrania</h3>
@@ -77,57 +79,41 @@
     <main>
       <p>
         <a href="#">ADMINISTRACJA SYSTEMAMI OPERACYJNYMI</a> /
-        <a href="#">Konfiguracja w VirtualBox</a>
+        <a href="#">Serwer plików (FTP) / udziały sieciowe - samba</a>
       </p>
-      <h2>Konfiguracja Oracle VM VirtualBox</h2>
-      Aby pominąć etap instalacji systemów Windowsów w wersji serwerowej oraz
-      klienckiej pobierz z zakładki zasoby gotowe archiwa maszyn z
-      zainstalowanymi systemami. Pliki zdatne do importu w VirtualBox'sie
-      posiadają rozszerzenie <b>.ova</b>:
-      <img src="img/id0/1.png" />
-      Aby dokonać importu wystarczy dwukrotnie kliknąć na plik archiwum systemu.
-      Po chwili uruchomi się VirtualBox z oknem importu, zanim zaimportujesz
-      maszynę zmień ścieżkę docelową, inaczej <b>bazowy folder maszyny</b>, na
-      podobną do mojej.
-      <br />
-      Kolejnymi opcjami które warto zmodyfikować przed importem to zmiana
-      <b>pamięci RAM</b> oraz wyłączenie <b>kontrolera USB</b>.
-      <br />
-      Ostatnią rzeczą którą powinno się wykonać przed kliknięciem Import to
-      zmiana opcji <b>MAC Address Policy</b> z inkludowania na wygenerowanie
-      miedzy innymi nowego adresu <b>MAC</b>.
-
-      <img src="img/id0/2.png" />
-      <br />
-      Wybierz instancję <em> „Windows Server 2012”</em>
-
-      pomarańczowe koło zębate z podpisem <i> „Ustawienia”</i>:
-      <span class="fiFtiIMG"><img src="img/id0/settingIcon.png" alt="" /></span>
-
-      <img src="img/id0/3.png" />
-      Przejdź do zakładki <b> Sieci</b> pierwszą kara sieciowa powinna być
-      ustawiona na <b>NAT</b>.
-
-      <img src="img/id0/4.png" />
-      Po kliknięciu w zakładkę <i> „Karta 2”</i> włącz kartę sieciową i zmień
-      jej tryb działania na <i>„Sieć wewnętrzna”</i>. Jest to tak jakby
-      <b>VLAN</b> dla maszyn wirtualnych pozwalający komunikować się z tylko
-      innymi maszynami wirtualnymi będących w <b>sieci wewnętrznej</b> o danej
-      nazwie. Mój <b>„VLAN”</b> nazywa się koala.
-      <img src="img/id0/5.png" />
-
-      Przejdź do zakładki <i>„Ekran”</i> Zwiększając pamięć wideo oraz włączając
-      <b>akcelerację 3D</b> możesz zapobiec przycinaniu się wirtualnych
-      systemów. Najprawdopodobniej należało by też ustawić
-      <b>graficzny kontroler</b> na <em> VBoxSVGA </em>.
-
-      <img src="img/id0/6.png" />
-      Identyczne ustawienia ekranu będą na maszynie <em> „Windows10”</em>.
-      Natomiast w zakładce sieci ustaw tylko jedną kartę sieciową w trybie
-      <i>„Sieć wewnętrzna”</i>.
-
-      <img src="img/id0/7.png" />
-      Aktualne konfiguracje pozwalają na wykonanie dalszych zadań.
+      <h2>Serwer Web www /part 3 - MySQL</h2>
+      Zainstaluj mysql-server:
+      <img src="img/idu5/1.png" />
+      Zmodyfikuj <i>mysqld.cnf</i> dodając <em>#</em> do podanych niżej lini.
+      Jeżeli tego niezrobisz mysql bedzie blokować wszystkie połączenia inne niż
+      na maszynie wirtualnej lub fizycznym urządzeniu świadczącym usługi
+      serwerowe. <br />
+      Ps.: Przez SSH też się nie da bo jest to zdalne połączenie z konsolą
+      serwera.
+      <img src="img/idu5/2.png" />
+      Wykożystując poniższą linię komend połączysz się z serwerem mysql jako
+      <b>root</b>.
+      <img src="img/idu5/3.png" />
+      Będąc na <b>mysql></b> wprowadź następujące zapytania <i>SQL</i>: <br />
+      Utworzenie bazy danych "koala": <br />
+      <b>CREATE DATABASE koala;</b> <br />
+      Utworzenie użytkownika koala dla dowolnego połączenia ip z hasłem
+      bambus:<br />
+      <b>CREATE USER 'koala'@'%' IDENTIFIED BY 'bambus';</b><br />
+      Nadanie wszystkich praw do wszystkich tabel w bazie koala dla użytkownika
+      koala @'%' --łączącego się z dowolnego adresu ip: <br />
+      <b>GRANT ALL PRIVILEGES ON koala.* TO 'koala'@'%';</b>
+      <img src="img/idu5/4.png" />
+      Sprawdź czy posiadasz pakiet <b>php8.2-mysql</b>:
+      <img src="img/idu5/5.png" />
+      Jak nie posiadasz to zainstaluj:
+      <img src="img/idu5/6.png" />
+      Zrestartuj usługi lub uruchom ponownie serwer.
+      <img src="img/idu5/7.png" />
+      No tym razem się udało, bez wiekszych błedów na maszynie wirtualnej. Za to
+      dzieki przekierowaniu <i>HTTP</i> przez <em>NAT</em> w Google Chrome za
+      pierwszym razem zadziałało :p
+      <img src="img/idu5/8.png" />
     </main>
     <footer>Copyright &copy; Zbrzeźniak Kamil</footer>
   </body>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koala.pl</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header>
+      <ul class="topnav">
+        <li>
+          <a class="sizeTitle" href="../index.html"
+            ><h1>KoalaPL.GitHub.io</h1></a
+          >
+        </li>
+        <li><a class="active" href="../soaso.html">SYSTEMY OPERACYJNE</a></li>
+        <li><a href="">SIECI KOMPUTEROWE</a></li>
+        <li><a href="">BAZY DANYCH</a></li>
+      </ul>
+    </header>
+    <nav>
+      <h4>SYSTEMY OPERACYJNE</h4>
+      <details>
+        <summary>WINDOWS</summary>
+        <a href="">Wiersz poleceń CMD</a>
+        <a href="">Pliki i katalogi</a>
+        <a href="">Konta użytkowników</a>
+        <a href="">Zarządzanie dyskami i partycjami</a>
+        <a href="">Przystawki systemowe</a>
+      </details>
+      <details>
+        <summary>LINUX</summary>
+        <a href="">Terminal</a>
+        <a href="">Pliki i katalogi</a>
+        <a href="">Konta użytkowników</a>
+        <a href="">Uprawnienia</a>
+        <a href="">Zarządzanie dyskami i partycjami</a>
+        <a href="">Informacje o urządzeniu i procesy systemowe / aplikacji</a>
+      </details>
+      <h4>ADMINISTRACJA SYSTEMAMI OPERACYJNYMI</h4>
+      <details>
+        <summary>WINDOWS SERWER</summary>
+        <a href="../ASO/id0.html">Konfiguracja w VirtualBox</a>
+        <a href="../ASO/id1.html">Interfejs sieciowy</a>
+        <a href="../ASO/id2.html">Active Directory (AD)</a>
+        <a href="../ASO/id3.html">(AD) użytkownicy</a>
+        <a href="../ASO/id4.html">(AD) profile mobilne i udziały sieciowe</a>
+        <a href="../ASO/id5.html">(AD) zasady grupy</a>
+        <a href="../ASO/id6.html">Dynamiczna konfiguracja hostów (DHCP)</a>
+        <a href="../ASO/id7.html">Serwer Web www /part 1 - DNS</a>
+        <a href="../ASO/id8.html">Serwer Web www /part 2 - IIS</a>
+      </details>
+      <details open>
+        <summary class="active">LINUX SERWER</summary>
+        <a class="active" href="../ASO/idu0.html"
+          >Połączenie SSH i konfiguracja interfesów sieciowych netplan</a
+        >
+        <a href="../ASO/idu1.html"
+          >Serwer plików (FTP) / udziały sieciowe - samba</a
+        >
+        <a href="../ASO/idu2.html"
+          >Dynamiczna konfiguracja hostów (DHCP) - isc-dhcp-server</a
+        >
+        <a href="../ASO/idu3.html">Serwer Web www /part 1 - apache2</a>
+        <a href="../ASO/idu4.html">Serwer Web www /part 2 - php</a>
+        <a href="../ASO/idu5.html">Serwer Web www /part 3 - mysql</a>
+        <a href="../ASO/idu6.html">Serwer Web www /part 4 - DNS</a>
+      </details>
+      <h3>Zasoby do pobrania</h3>
+      <a
+        href="https://drive.google.com/file/d/16ArFt2LQNnaVQcad_TFycaAGlBRWib50/view?usp=sharing"
+        >Pliki strony świat koali</a
+      >
+    </nav>
+    <main>
+      <p>
+        <a href="#">ADMINISTRACJA SYSTEMAMI OPERACYJNYMI</a> /
+        <a href="#"
+          >Konfiguracja w VirtualBox - Połączenie SSH i konfiguracja interfesów
+          sieciowych netplan</a
+        >
+      </p>
+      <h2>
+        Przekierowanie portów VirtualBox Połączenie SSH i konfiguracja
+        interfesów sieciowych netplan
+      </h2>
+      Zaimportuj maszyny wirtualne <em>"Ubuntu20.04_Server.ova"</em> i
+      <em>"Windows10.ova"</em>:
+      <img src="img/idu0/1.png" />
+      W maszynie wirtualnej Ubuntu serwer ustaw dwie karty sieciowe. <br />
+      <b>Karta 1</b>: <i>NAT</i> <b>Karta 2</b>: <i>Sieć wewnętrzna</i>
+      <img src="img/idu0/2.png" />
+      Na karcie <i>NAT</i> skonfiguruj <em>"Przekierowanie portów"</em> dla
+      <b>SSH</b> z połączeniem <b>localhost</b> na port 22.
+      <img src="img/idu0/3.png" />
+      Uruchom jedną z poniszych konsol poleceń: <br />
+      - <i>CMD</i> <br />
+      - <i>PowerShell</i> <br />
+      - <i>Terminal</i> dostępny w windows 11 <br />
+      Uruchom maszynę z serwerem Ubuntu, a nastepnie dokonaj zdalnego połączenia
+      poprzez SSH. <br />Wpisz jedną z poniszych lini komend w wybranej konsoli
+      poleceń:
+
+      <img src="img/idu0/4.png" />
+      Przy połączeniu zostaniesz zapytany czy napewno chcesz sie połączyć. Wpisz
+      <b>yes</b> (tak), a nastepnie zaloguj się do konta egza (hasło w opisie
+      mszyny). <br />
+      PS. podczas wpisywania hasła nie pojawi się żaden znak, ale hasło jest
+      wpisywane.
+      <img src="img/idu0/5.png" />
+
+      Zaktualizuj linki pakietów i zainstaluj aktualizacje do zainstalowanych
+      pakietów.
+      <img src="img/idu0/6.png" />
+      Możesz także doinstalować <em>"Midnight Commander"</em> z pakietu
+      <b>mc</b>. Ja to zrobię dla lepszego zobrazowania konfiguracji interfesów
+      sieciowych. Potem bedę kożystac z natywnego <b>nano</b>.
+
+      <img src="img/idu0/7.png" />
+      Polecenie <em>ip a</em> wyświetla wszystkie interfejsy sieciowe. <br />
+      <i>1: lo</i> - jest to adres wewnętrzny localhost (127.0.0.1). <br />
+      <i>2: enp0s3</i> - jest to <b>Karta 1</b>: <i>NAT</i> z włączonym DHCP
+      VirtualBox'a <br />
+      <i>3: enp0s8</i> - jest to <b>Karta 2</b>: <i>Sieć wewnętrzna</i> jeszcze
+      nie skonfigurowana / aktualnie uśpiona <em>"state DOWN"</em>. <br />
+      <img src="img/idu0/8.png" />
+      Przed przystąpieniem do edycji <b>00-installer-config</b>, zrób kopię tego
+      pliku z dopiskiem <i>"_Kopia"</i>.
+      <img src="img/idu0/9.png" />
+      Pliki .yaml są bardzo upierdliwe. Uruchomiłem
+      <b>00-installer-config.yaml</b> w mcedit aby zobrazować błąd dabulacji (w
+      tym pliku nie może być tabulacji). Ważne jest to aby zachować odpowiednie
+      wcięcia i odstępy. <br />
+      W prawej części poniżego obrazka przedstawiam przykładową konfigurację
+      interfejsów.
+      <img src="img/idu0/10.png" />
+      Aby zmiany w pliku <b>00-installer-config.yaml</b> zostały zastosowane
+      skożystaj z poniższej komendy. Gdy nic ci nie zwróci, to jest dobrze.
+      <img src="img/idu0/11.png" />
+      Weryfikacja konfiguracji: <br />
+      <img src="img/idu0/12.png" />
+      W razie gdyby karta sieciowa nie została włączona ( zamiast state UP było
+      by state DOWN):
+      <img src="img/idu0/13.png" />
+      Dodatkowo zweryfikuj poprawność konfiguracji interfejsów wykonując
+      <b>ping</b> do <em>wp.pl</em>.
+      <img src="img/idu0/ping.png" />
+      Aktualne konfiguracje pozwalają na wykonanie dalszych zadań.
+    </main>
+    <footer>Copyright &copy; Zbrzeźniak Kamil</footer>
+  </body>
+</html>

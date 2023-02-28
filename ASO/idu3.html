@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koala.pl</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header>
+      <ul class="topnav">
+        <li>
+          <a class="sizeTitle" href="../index.html"
+            ><h1>KoalaPL.GitHub.io</h1></a
+          >
+        </li>
+        <li><a class="active" href="../soaso.html">SYSTEMY OPERACYJNE</a></li>
+        <li><a href="">SIECI KOMPUTEROWE</a></li>
+        <li><a href="">BAZY DANYCH</a></li>
+      </ul>
+    </header>
+    <nav>
+      <h4>SYSTEMY OPERACYJNE</h4>
+      <details>
+        <summary>WINDOWS</summary>
+        <a href="">Wiersz poleceń CMD</a>
+        <a href="">Pliki i katalogi</a>
+        <a href="">Konta użytkowników</a>
+        <a href="">Zarządzanie dyskami i partycjami</a>
+        <a href="">Przystawki systemowe</a>
+      </details>
+      <details>
+        <summary>LINUX</summary>
+        <a href="">Terminal</a>
+        <a href="">Pliki i katalogi</a>
+        <a href="">Konta użytkowników</a>
+        <a href="">Uprawnienia</a>
+        <a href="">Zarządzanie dyskami i partycjami</a>
+        <a href="">Informacje o urządzeniu i procesy systemowe / aplikacji</a>
+      </details>
+      <h4>ADMINISTRACJA SYSTEMAMI OPERACYJNYMI</h4>
+      <details>
+        <summary>WINDOWS SERWER</summary>
+        <a href="../ASO/id0.html">Konfiguracja w VirtualBox</a>
+        <a href="../ASO/id1.html">Interfejs sieciowy</a>
+        <a href="../ASO/id2.html">Active Directory (AD)</a>
+        <a href="../ASO/id3.html">(AD) użytkownicy</a>
+        <a href="../ASO/id4.html">(AD) profile mobilne i udziały sieciowe</a>
+        <a href="../ASO/id5.html">(AD) zasady grupy</a>
+        <a href="../ASO/id6.html">Dynamiczna konfiguracja hostów (DHCP)</a>
+        <a href="../ASO/id7.html">Serwer Web www /part 1 - DNS</a>
+        <a href="../ASO/id8.html">Serwer Web www /part 2 - IIS</a>
+      </details>
+      <details open>
+        <summary class="active">LINUX SERWER</summary>
+        <a href="../ASO/idu0.html"
+          >Połączenie SSH i konfiguracja interfesów sieciowych netplan</a
+        >
+        <a href="../ASO/idu1.html"
+          >Serwer plików (FTP) / udziały sieciowe - samba</a
+        >
+        <a href="../ASO/idu2.html"
+          >Dynamiczna konfiguracja hostów (DHCP) - isc-dhcp-server</a
+        >
+        <a class="active" href="../ASO/idu3.html"
+          >Serwer Web www /part 1 - apache2</a
+        >
+        <a href="../ASO/idu4.html">Serwer Web www /part 2 - php</a>
+        <a href="../ASO/idu5.html">Serwer Web www /part 3 - mysql</a>
+        <a href="../ASO/idu6.html">Serwer Web www /part 4 - DNS</a>
+      </details>
+      <h3>Zasoby do pobrania</h3>
+      <a
+        href="https://drive.google.com/file/d/16ArFt2LQNnaVQcad_TFycaAGlBRWib50/view?usp=sharing"
+        >Pliki strony świat koali</a
+      >
+    </nav>
+    <main>
+      <p>
+        <a href="#">ADMINISTRACJA SYSTEMAMI OPERACYJNYMI</a> /
+        <a href="#">Serwer Web www /part 1 - apache2</a>
+      </p>
+      <h2>Serwer Web www /part 1 - Apache2</h2>
+      Zainstaluj sambe:
+      <img src="img/idu3/1.png" />
+      Czestym rozwiązaniem błędów przy instalacji pakietów jest aktualizacja
+      listy repozytorjów:
+      <img src="img/idu1/2.png" />
+      Po instalacji <em>apache2</em> nie uruchamia się automatycznie. Należy tą
+      usługę wystartować ręcznie:
+      <img src="img/idu3/2.png" />
+      Jak widać na wirtualnej maszynie Windows 10 pod adresem serwera wyświetla
+      się domyślna strona <em>Apach2</em>.
+      <img src="img/idu3/3.png" />
+      Musimu teraz dokonać pewnych konfiguracji w maszynie wirtualnej
+      <i>Windows10</i> oraz <i>Ubuntu20.04_Server</i>. <br />
+      Na <em>Ubuntu20.04_Server</em> dodaj kolejne przekierowanie portów.
+      <img src="img/idu3/4.png" />
+      Na <em>Windows10</em> dodaj folder z zawartością zasobu
+      <i>Pliki strony świat koali</i> ( dostępny do pobrania w
+      <em>"Zasoby do pobrania"</em> ) jako udostępniony dla mszyny. <br />
+      Ps.: jak nie zainstalowałeś dodatku gościa, to bedziesz musiał to zrobić.
+      <img src="img/idu3/5.png" />
+      Przenieś pliki z folderu udostepnionego Windowsowi na serwer Ubuntu za
+      pośrednictwem udziału sieciowego samby.
+      <img src="img/idu3/6.png" />
+      Przekierowanie portu <b>http 80</b> umożliwiło mi uruchomienie na
+      <b>localhost</b> / <b>127.0.0.1</b> strony z serwera <i>Ubuntu</i> w
+      Google Chrome na moim <em>Windows 11</em>.
+      <img src="img/idu3/7.png" />
+      W katalogu <b>/pliki/</b> znajduję się też zawartość zasobu
+      <i>Pliki strony świat koali</i>.
+      <img src="img/idu3/8.png" />
+      Uruchom moduł <i>userdir</i>, który pozwoli nam na hostowanie wirtualnych
+      stron WwW przypisanych do konkretnych użytkowników na jednym serwerze.
+      <img src="img/idu3/9.png" />
+      Utwórz użytkownika <i>"koala"</i> z poniższą klauzulą <b>--shell</b>.
+      <img src="img/idu3/10.png" />
+      Dzieki zastosowanej powyżej klauzuli <b>--shell</b>, zalogowanie się
+      poprzez terminal i połączenie SSH jest niemożliwe.
+      <img src="img/idu3/11.png" />
+      Aby pliki strony mogły być prawidłowo wykrywane, wymagane jest stworzenie
+      katalogu <em>"public_html"</em> w lokalizacji <i>/home/użytkownik/</i> u
+      mnie <i>"koala"</i>.
+      <img src="img/idu3/12.png" />
+      Tworząc katalog <em>"public_html"</em> skorzystałem z <i>sudo</i> wiec
+      zrobiłem to jako <b>root</b>, co widać poniżej.
+      <img src="img/idu3/13.png" />
+      Zmień właściciela na swojego użytkownika wiedząc że podczas tworzenia
+      użytkownika powstaje jednocześnie grupa do kturej jest przypisana o nazwie
+      identycznej co użytkownik. Po tem sprawdź czy właścicielem
+      <em>"public_html"</em> jest twój użytkownik.
+      <img src="img/idu3/14.png" />
+      Pamiętasz jak wcześniej za pomocą samby przenosiłeś pliki zasobu
+      <i>"Pliki strony świat koali"</i>? To teraz za pomocą
+      <em>"mv"</em> przenieś je do katalogu <em>"public_html"</em> swojego
+      użytkownika.
+      <img src="img/idu3/15.png" />
+      Zrestartuj usługę apache2.
+      <img src="img/idu3/16.png" />
+      Pierwszy etap prac nad serwerem Web WwW za nami. Uff wszystko działa :)
+      <img src="img/idu3/17.png" />
+    </main>
+    <footer>Copyright &copy; Zbrzeźniak Kamil</footer>
+  </body>
+</html>
