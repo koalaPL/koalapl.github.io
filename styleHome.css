@@ -68,7 +68,7 @@ nav {
     text-align: center;
  }
  .card{
-  height: 220px!important;
+  height: 230px!important;
   width: 330px!important;
   margin: auto;
   padding: 0;
@@ -94,7 +94,8 @@ ul.topnav {
     display: block;
     color: white;
     text-align: center;
-    padding: 1.3em 1.2em;
+    padding: 0.7em 2em;
+    margin: -0.3em -0.8em;
     text-decoration: none;
     font-weight: 700;
     border-radius: 0 55px;
