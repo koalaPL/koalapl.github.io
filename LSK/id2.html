@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koala.pl</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header>
+      <ul class="topnav">
+        <li>
+          <a class="sizeTitle" href="index.html"><h1>KoalaPL.GitHub.io</h1></a>
+        </li>
+        <li>
+          <a href="../soaso.html"
+            >SYSTEMY OPERACYJNE <br />MATERIAŁY / PORADNIKI</a
+          >
+        </li>
+        <li>
+          <a class="active" href="../lskelsk.html"
+            >SIECI KOMPUTEROWE <br />MATERIAŁY / PORADNIKI</a
+          >
+        </li>
+        <li>
+          <a href="../bdabd.html">BAZY DANYCH <br />MATERIAŁY / PORADNIKI</a>
+        </li>
+      </ul>
+    </header>
+    <nav>
+      <h4>LOKALNE SIECI KOMPUTEROWE</h4>
+      <details open>
+        <summary class="active">Elementy składowe sieci</summary>
+        <a href="../LSK/id0.html">Wstęp</a>
+        <details open>
+          <summary class="active">Elementy pasywne</summary>
+          <a href="../LSK/id1.html">Kabel typu koncentryk</a>
+          <a href="../LSK/id2.html" class="active">Kabel typu skrętka</a>
+        </details>
+        <a href="">Elementy aktywne</a>
+      </details>
+      <details>
+        <summary>Topologie sieciowe</summary>
+        <a href="">Topologie fizyczne</a>
+        <a href="">Topologie logiczne</a>
+      </details>
+      <details>
+        <summary>TCP/IP</summary>
+        <a href="">Warstwa aplikacji</a>
+        <a href="">Warstwa transportu</a>
+        <a href="">Warstwa internetowa</a>
+        <a href="">Warstwa dostępu do sieci</a>
+      </details>
+      <details>
+        <summary>ISO/OSI</summary>
+        <a href="">Warstwa aplikacji</a>
+        <a href="">Warstwa prezentacji</a>
+        <a href="">Warstwa sesji</a>
+        <a href="">Warstwa transportu</a>
+        <a href="">Warstwa sieci</a>
+        <a href="">Warstwa łącza danych</a>
+        <a href="">Warstwa fizyczna</a>
+      </details>
+      <h4>EKSPOLATACJA LOKALNYCH SIECI KOMPUTEROWYCH</h4>
+      <details>
+        <summary>SWITCH</summary>
+        <a href="">Adresacja IP urządzenia</a>
+      </details>
+      <details>
+        <summary>ROUTER</summary>
+        <a href="">Adresacja IP urządzenia</a>
+      </details>
+    </nav>
+    <main>
+      <p>
+        <a href="#">LOKALNE SIECI KOMPUTEROWE</a> /
+        <a href="#">Pasywne elementy składowe sieci</a>
+      </p>
+
+      <h2>Media transmisyjne - Kabel typu skrętka</h2>
+
+      <i>"Skrętka"</i> zbudowana jest z czterech par skręconych ze sobą
+      przewodów, <br />
+      dzięki czemu zredukowany zostaje wpływ zakłóceń elektromagnetycznych
+      pochodzących od innych urządzeń lub wzajemnych zakłóceń (tzw. przesłuchy).
+      Najczęściej tego rodzaju kabel stosowany jest w instalacjach
+      telefonicznych czy też sieciach Ethernet.
+      <br /><br />
+
+      <h5>Klasy skrętki wg norm TIA/EIA 568A oraz europejskiej EN 50173</h5>
+      <table>
+        <tr>
+          <td style="background-color: #274d3d; color: #ffffff">
+            <b>TIA/EIA 568A</b>
+          </td>
+          <td style="background-color: #274d3d; color: #ffffff">
+            <b>EN 50173</b>
+          </td>
+          <td style="background-color: #274d3d; color: #ffffff">
+            <b>Rodzaj złącza</b>
+          </td>
+          <td style="background-color: #274d3d; color: #ffffff">
+            <b>Zastosowaniem</b>
+          </td>
+          <td style="background-color: #274d3d; color: #ffffff">
+            <b>Pasmo</b>
+          </td>
+        </tr>
+        <tr>
+          <td>kat. 3</td>
+          <td>Klasa C</td>
+          <td>
+            RJ11 <br />RJ12 <br />
+            RJ45
+          </td>
+          <td>Protokoły ze średnią szybkością bitową, Ethernet 10Base-T</td>
+          <td>do 16 MHz</td>
+        </tr>
+        <tr>
+          <td>kat. 4</td>
+          <td>--brak--</td>
+          <td>RJ45</td>
+          <td>Protokoły ze średnią szybkością bitową, Ethernet do 16 Mbit/s</td>
+          <td>do 20 MHz</td>
+        </tr>
+        <tr>
+          <td>kat. 5 / 5e</td>
+          <td>Klasa D</td>
+          <td>RJ45</td>
+          <td>
+            Protokoły z dużą szybkością bitową np. FastEthernet 100Base-TX,
+            <br />
+            GigabitEthernet 1000Base-T
+          </td>
+          <td>do 100 MHz</td>
+        </tr>
+        <tr>
+          <td>kat. 6</td>
+          <td>Klasa E</td>
+          <td>RJ45</td>
+          <td>
+            Protokoły z bardzo dużą szybkością bitową, np. ATM622, <br />
+            GigabitEthernet 1000Base-T
+          </td>
+          <td>do 250 MHz</td>
+        </tr>
+        <tr>
+          <td>kat. 6A</td>
+          <td>Klasa E<sub>A</sub></td>
+          <td>RJ45</td>
+          <td>
+            Protokoły z bardzo dużą szybkością bitową, GigabitEthernet, <br />
+            10-GigabitEthernet 10GBase-T
+          </td>
+          <td>do 500 MHz</td>
+        </tr>
+        <tr>
+          <td>kat. 7</td>
+          <td>Klasa F</td>
+          <td>GG45 <br />TERA</td>
+          <td>
+            Protokoły przyszłościowe, 10GBase-T, transmisja wideo wysokiej
+            jakości, <br />
+            współdzielenie aplikacyjne kabla (3-play)
+          </td>
+          <td>do 600 MHz</td>
+        </tr>
+        <tr>
+          <td>kat. 7A</td>
+          <td>Klasa F<sub>A</sub></td>
+          <td>GG45 <br />TERA</td>
+          <td>
+            Protokoły przyszłościowe, 10GBase-T, pełne pasmo CATV (862 MHz),
+            <br />
+            współdzielenie aplikacyjne kabla (3-play), ready for 40G, ready for
+            100G
+          </td>
+          <td>do 1GHz</td>
+        </tr>
+      </table>
+      <br /><br />
+      <i>Ekranowanie</i> <br />
+      Zastosowanie ekranowania elektrycznego powoduje, iż sygnał przesyłany za
+      pomocą wewnętrznych żył w mniejszym stopniu ulega zakłóceniom zewnętrznym
+      oraz minimalizuje emisję zakłóceń radiowych. Jednakże stosowanie przewodów
+      ekranowanych wymaga znajomości zasad prawidłowego ekranowania oraz
+      elektrycznych połączeń wyrównawczych budynku. Podstawową zasadą
+      ekranowania jest prawidłowe uziemienie ekranu na obu końcach przewodu.
+      Poniżej przedstawiono rodzaje skrętek.
+      <table>
+        <tr>
+          <td style="background-color: #f7953a; color: #ffffff">
+            <b>Skrętka nieekranowana</b>
+          </td>
+          <td style="background-color: #2c93a5; color: #ffffff">
+            <b>Skrętka foliowana</b>
+          </td>
+        </tr>
+        <tr class="defaultTable">
+          <td>
+            <img src="img/id2/5.jpg" />
+            <ol>
+              <li>Przewód biało-niebieski/niebieski</li>
+              <li>Przewód biało-brązowy/brązowy</li>
+              <li>Przewód biało-pomarańczowy/pomarańczowy</li>
+              <li>Przewód biało-zielony/zielony</li>
+              <li>Płaszcz</li>
+              <li>Rip-cord ( sznurek )</li>
+              <li>Żyły</li>
+            </ol>
+          </td>
+          <td>
+            <img src="img/id2/7.jpg" />
+            <ol>
+              <li>Przewód biało-niebieski/niebieski</li>
+              <li>Przewód biało-brązowy/brązowy</li>
+              <li>Przewód biało-pomarańczowy/pomarańczowy</li>
+              <li>Przewód biało-zielony/zielony</li>
+              <li>Płaszcz</li>
+              <li>Rip-cord ( sznurek )</li>
+              <li>Żyły</li>
+              <li>Uziemienie</li>
+              <li>Ekran pary przewodów</li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td style="background-color: #f7953a; color: #ffffff">
+            <b>Skrętka z każdą parą w osobnym ekranie z folii</b>
+          </td>
+          <td style="background-color: #2c93a5; color: #ffffff">
+            <b
+              >Skrętka z każdą parą w osobnym ekranie z folii <br />
+              dodatkowo w ekranie z folii</b
+            >
+          </td>
+        </tr>
+        <tr class="defaultTable">
+          <td>
+            <img src="img/id2/6.jpg" />
+            <ol>
+              <li>Przewód biało-niebieski/niebieski</li>
+              <li>Przewód biało-brązowy/brązowy</li>
+              <li>Przewód biało-pomarańczowy/pomarańczowy</li>
+              <li>Przewód biało-zielony/zielony</li>
+              <li>Płaszcz</li>
+              <li>Rip-cord ( sznurek )</li>
+              <li>Żyły</li>
+              <li>Uziemienie</li>
+              <li>Ekran kabla</li>
+            </ol>
+          </td>
+          <td>
+            <img src="img/id2/8.jpg" />
+            <ol>
+              <li>Przewód biało-niebieski/niebieski</li>
+              <li>Przewód biało-brązowy/brązowy</li>
+              <li>Przewód biało-pomarańczowy/pomarańczowy</li>
+              <li>Przewód biało-zielony/zielony</li>
+              <li>Płaszcz</li>
+              <li>Rip-cord ( sznurek )</li>
+              <li>Żyły</li>
+              <li>Uziemienie</li>
+              <li>Ekran kabla</li>
+              <li>Ekran pary przewodów</li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td style="background-color: #f7953a; color: #ffffff">
+            <b>Skrętka ekranowana folią i siatką.</b>
+          </td>
+          <td style="background-color: #2c93a5; color: #ffffff">
+            <b
+              >Skrętka z każdą parą foliowaną <br />
+              dodatkowo w ekranie z folii i siatki</b
+            >
+          </td>
+        </tr>
+        <tr class="defaultTable">
+          <td>
+            <img src="img/id2/11.jpg" />
+            <ol>
+              <li>Przewód biało-niebieski/niebieski</li>
+              <li>Przewód biało-brązowy/brązowy</li>
+              <li>Przewód biało-pomarańczowy/pomarańczowy</li>
+              <li>Przewód biało-zielony/zielony</li>
+              <li>Płaszcz</li>
+              <li>Rip-cord ( sznurek )</li>
+              <li>Żyły</li>
+              <li>Uziemienie</li>
+              <li>Ekran aluminiowy kabla</li>
+              <li>Siatka ekranująca kabel</li>
+            </ol>
+          </td>
+
+          <td>
+            <img src="img/id2/9.jpg" />
+            <ol>
+              <li>Przewód biało-niebieski/niebieski</li>
+              <li>Przewód biało-brązowy/brązowy</li>
+              <li>Przewód biało-pomarańczowy/pomarańczowy</li>
+              <li>Przewód biało-zielony/zielony</li>
+              <li>Płaszcz</li>
+              <li>Rip-cord ( sznurek )</li>
+              <li>Żyły</li>
+              <li>Uziemienie</li>
+              <li>Ekran aluminiowy kabla</li>
+              <li>Ekran pary przewodów</li>
+              <li>Siatka ekranująca kabel</li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td style="background-color: #f7953a; color: #ffffff"><b></b></td>
+          <td style="background-color: #2c93a5; color: #ffffff">
+            <b
+              >Skrętka z każdą parą foliowaną <br />
+              dodatkowo w ekranie z siatki</b
+            >
+          </td>
+        </tr>
+        <tr class="defaultTable">
+          <td></td>
+          <td>
+            <img src="img/id2/10.jpg" />
+            <ol>
+              <li>Przewód biało-niebieski/niebieski</li>
+              <li>Przewód biało-brązowy/brązowy</li>
+              <li>Przewód biało-pomarańczowy/pomarańczowy</li>
+              <li>Przewód biało-zielony/zielony</li>
+              <li>Płaszcz</li>
+              <li>Rip-cord ( sznurek )</li>
+              <li>Żyły</li>
+              <li>Uziemienie</li>
+              <li>Ekran pary przewodów</li>
+              <li>Siatka ekranująca kabel</li>
+            </ol>
+          </td>
+        </tr>
+      </table>
+      <img src="img/id2/2.jpg" />
+      Powyżej przedstawiono wtyki RJ-10, RJ-11, RJ-12, RJ-45 lub inaczej 4P4C,
+      6P4C, 6P6C, 8P8C. <br />
+      Drugi zapis zawiera w sobie budową złącza. <br />
+      <i>P</i> to skrót od positions (pl.: pozycje) informujący o ilości rowków
+      do których możesz włożyć żyły. <br />
+      <i>C</i> to skrót od contacts (pl.: styki) informujący o ilości żył
+      stykających się z plaszkami. <br />
+      <br />
+      Poniżej przedstawiono schamety wtyków RJ w nowoczesnym standardzie
+      kolorystycznym:
+
+      <img src="img/id2/1.jpg" />
+      Poniżej przedstawiono dwa standardy kolorystyczne nowoczesny i stary
+      stosowane w złączach RJ-11, RJ-12, RJ-14:
+      <img src="img/id2/3.jpg" />
+      <br />
+    </main>
+    <footer>Copyright &copy; Zbrzeźniak Kamil</footer>
+  </body>
+</html>
