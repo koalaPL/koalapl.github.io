@@ -1,0 +1,53 @@
+
+
+/*----- QUIZ ------- */
+
+.question{
+  width: 100%;
+  background-color: #dfdfdf;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+.question-contents{
+  background-color: #cccccc;
+  border-radius: 15px 15px 0 0;
+  padding: 10px;
+}
+.answer{
+  margin: 10px 0;
+  background-color: #f3f3f3;
+}
+.answer:hover{
+  background-color: #8E9198;
+
+}
+.answer > input{
+  display: inline-block;
+  accent-color: blueviolet;
+  
+}
+.answer > label{
+  min-height: 20px;
+  vertical-align: middle;
+  width: calc(100% - 50px);
+  display: inline-block;
+  cursor: pointer;
+}
+input[type="radio"]:checked + label {
+  color: blueviolet;
+}
+.center{
+  height: fit-content;
+  width: fit-content;
+  margin: auto;
+}
+button{
+  height: 50px; 
+  width: 300px;
+  cursor: pointer;
+}
+img{
+  margin: auto;
+  display: block;
+  border: 1px solid #8E9198;
+}
