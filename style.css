@@ -225,3 +225,8 @@ tr:nth-child(odd) {
 .defaultTable:nth-child(even), .defaultTable:nth-child(odd){
   background-color: #fff;
 }
+.center{
+  height: fit-content;
+  width: fit-content;
+  margin: auto;
+}
