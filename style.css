@@ -24,9 +24,20 @@ header{
 h1{
     margin: auto;
 }
+
 h1:hover{
     cursor: pointer;
     color: #a9a9a9;
+}
+#Menu{
+    height: 40px;
+    width: 120px;
+    background-color: #ffffff00;
+    border: 0;
+    border-radius: 5px;
+    color: aliceblue;
+    font-size: 25px;
+    position: absolute          ;
 }
 #Menu::before{
     font-size: 25px;
@@ -150,7 +161,8 @@ h1:hover{
     padding: 10px;
 }
 #lesson-content > img{
-    width: inherit;
+    max-width: 80vw;
+    width: auto;
     display: block;
     margin: 25px auto;
     border: 2px solid #555;
@@ -170,19 +182,42 @@ iframe{
     width: 100%;
 
 }
+em{
+    color: #489eff;
+    font-family: cursive;
+    font-weight: bold;
+}
+i{
+    color: #388738;
+    font-family: cursive;
+    font-weight: bold;
+}
+.dualImage{
+    width: -webkit-fill-available!important;
+}
 
 
 
-
-
-
+@media(max-width: 1600px) {
+    #lesson-content{
+        min-width: 90%;
+    }
+    #lesson-content > img{
+        max-width: 60vw;
+        width: auto;
+    }
+    
+  }
 
 
 @media(max-width: 1100px) {
     #lesson-content{
         min-width: 90%;
     }
-   
+    #lesson-content > img{
+        max-width: 80vw;
+        width: auto;
+    }
     
   }
 
@@ -193,7 +228,10 @@ iframe{
         min-width: 90%;
     }
     #Menu{
+        height: 30px;
+        width: 30px;
         font-size: 40px;
+        margin-top: -30px;
     }
     .NotMobileText{
         display: none;
