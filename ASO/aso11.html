@@ -1,0 +1,35 @@
+<h2>Serwer plików (FTP) / udziały sieciowe - samba dla Windows'a</h2>
+Zainstaluj sambe:
+<img src="ASO/img/idu1/1.png" />
+Czestym rozwiązaniem błędów przy instalacji pakietów jest aktualizacja listy
+repozytorjów:
+<img src="ASO/img/idu1/2.png" />
+Utwórz nowego użytkownika. Pamietaj aby nie stosować znaków specjelnych i dużych
+liter. <br />
+Ja utworzyłem użytkownika <em>samba_user</em>.
+<img src="ASO/img/idu1/3.png" />
+Ustaw nowo utworzonego użytkownika jako konto służące do poświadczeń w udziałach
+samba.
+<img src="ASO/img/idu1/4.png" />
+Przejdź do konfiguracji pliku <i>smb.conf</i>.
+<img src="ASO/img/idu1/5.png" />
+Poniżej dwa udziały z opisem linii:
+<img src="ASO/img/idu1/6.png" />
+Katalogi które zapisaliśmy do użytku udziałowego nie istnieją. <br />
+Utwórz je, następnie nadaj im pełne Uprawnienia i uczyń nowogo użytkownika ich
+właścicielem.
+<img src="ASO/img/idu1/7.png" />
+Poniżej przedstawiono poprawny efekt poprzednich komend:
+<img src="ASO/img/idu1/8.png" />
+Zrestartuj usługe <em>"smbd"</em> i uruchom <em>"Windows10"</em>.
+<img src="ASO/img/idu1/9.png" />
+Kombinacją klawiszy <i>Windows</i><b>+</b><em>R</em> wywołaj okno
+<i>"Uruchamianie"</i>, wpisz <b>\\adres ip serwera\</b>.
+<img src="ASO/img/idu1/10.png" />
+Do udziału <em>"Pliki"</em> wejdziesz bez problemu lecz nic tu nie zapiszesz,
+jedynie możesz pobrać zawartość lub odczytać, bo jest tylko do odczytu.
+<img src="ASO/img/idu1/11.png" />
+Drugi udział wywoła okno logowania do poświadczenia sieciowego. Wpisz nazwę
+użytkownika i hasło, aby wejść do katalogu. <br />
+Tu możesz tworzyć i wrzycać pliki ponieważ <em>Read only</em> jest na
+<b>no</b> czyli <b>nie</b> <img class="dualImage" src="ASO/img/idu1/12.png" />

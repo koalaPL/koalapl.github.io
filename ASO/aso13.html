@@ -1,0 +1,59 @@
+<h2>Serwer Web www /part 1 - Apache2</h2>
+Zainstaluj sambe:
+<img src="ASO/img/idu3/1.png" />
+Czestym rozwiązaniem błędów przy instalacji pakietów jest aktualizacja listy
+repozytorjów:
+<img src="ASO/img/idu1/2.png" />
+Po instalacji <em>apache2</em> nie uruchamia się automatycznie. Należy tą usługę
+wystartować ręcznie:
+<img src="ASO/img/idu3/2.png" />
+Jak widać na wirtualnej maszynie Windows 10 pod adresem serwera wyświetla się
+domyślna strona <em>Apach2</em>.
+<img src="ASO/img/idu3/3.png" />
+Musimu teraz dokonać pewnych konfiguracji w maszynie wirtualnej
+<i>Windows10</i> oraz <i>Ubuntu20.04_Server</i>. <br />
+Na <em>Ubuntu20.04_Server</em> dodaj kolejne przekierowanie portów.
+<img src="ASO/img/idu3/4.png" />
+Na <em>Windows10</em> dodaj folder z zawartością zasobu
+<i>Pliki strony świat koali</i> ( dostępny do pobrania w
+<em>"Zasoby do pobrania"</em> ) jako udostępniony dla mszyny. <br />
+Ps.: jak nie zainstalowałeś dodatku gościa, to bedziesz musiał to zrobić.
+<img src="ASO/img/idu3/5.png" />
+Przenieś pliki z folderu udostepnionego Windowsowi na serwer Ubuntu za
+pośrednictwem udziału sieciowego samby.
+<img src="ASO/img/idu3/6.png" />
+Przekierowanie portu <b>http 80</b> umożliwiło mi uruchomienie na
+<b>localhost</b> lub <b>127.0.0.1</b> strony z serwera <i>Ubuntu</i> w Google
+Chrome na moim <em>Windows 11</em>.
+<img class="dualImage" src="ASO/img/idu3/7.png" />
+W katalogu <b>/pliki/</b> znajduję się też zawartość zasobu
+<i>Pliki strony świat koali</i>.
+<img src="ASO/img/idu3/8.png" />
+Uruchom moduł <i>userdir</i>, który pozwoli nam na hostowanie wirtualnych stron
+WwW przypisanych do konkretnych użytkowników na jednym serwerze.
+<img src="ASO/img/idu3/9.png" />
+Utwórz użytkownika <i>"koala"</i> z poniższą klauzulą <b>--shell</b>.
+<img src="ASO/img/idu3/10.png" />
+Dzieki zastosowanej powyżej klauzuli <b>--shell</b>, zalogowanie się poprzez
+terminal i połączenie SSH jest niemożliwe.
+<img src="ASO/img/idu3/11.png" />
+Aby pliki strony mogły być prawidłowo wykrywane, wymagane jest stworzenie
+katalogu <em>"public_html"</em> w lokalizacji <i>/home/użytkownik/</i> u mnie
+<i>"koala"</i>.
+<img src="ASO/img/idu3/12.png" />
+Tworząc katalog <em>"public_html"</em> skorzystałem z <i>sudo</i> wiec zrobiłem
+to jako <b>root</b>, co widać poniżej.
+<img src="ASO/img/idu3/13.png" />
+Zmień właściciela na swojego użytkownika wiedząc że podczas tworzenia
+użytkownika powstaje jednocześnie grupa do kturej jest przypisana o nazwie
+identycznej co użytkownik. Po tem sprawdź czy właścicielem
+<em>"public_html"</em> jest twój użytkownik.
+<img src="ASO/img/idu3/14.png" />
+Pamiętasz jak wcześniej za pomocą samby przenosiłeś pliki zasobu
+<i>"Pliki strony świat koali"</i>? To teraz za pomocą <em>"mv"</em> przenieś je
+do katalogu <em>"public_html"</em> swojego użytkownika.
+<img src="ASO/img/idu3/15.png" />
+Zrestartuj usługę apache2.
+<img src="ASO/img/idu3/16.png" />
+Pierwszy etap prac nad serwerem Web WwW za nami. Uff wszystko działa :)
+<img src="ASO/img/idu3/17.png" />

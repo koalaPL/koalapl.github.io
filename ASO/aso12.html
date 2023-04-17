@@ -1,0 +1,52 @@
+<h2>
+  Dynamiczna konfiguracja hostów (DHCP) - isc-dhcp-server (Dla klientów Windows
+  i Ubuntu)
+</h2>
+Zainstaluj isc-dhcp-server :
+<img src="ASO/img/idu2/1.png" />
+Czestym rozwiązaniem błędów przy instalacji pakietów jest aktualizacja listy
+repozytorjów:
+<img src="ASO/img/idu1/2.png" />
+Poniżej widnieje moja aktualna konfiguracja interfejsów msieciowych. Sprawdź
+nazwy swoich kart oraz czy ich status wskazuje na to, że są włączone.
+<img src="ASO/img/idu2/ipa.png" />
+Dodaj interfejs karty sieciowej do nasłuchu po nazwie w pliku
+<em>"isc-dhcp-server"</em>.
+<img src="ASO/img/idu2/2.png" />
+<img src="ASO/img/idu2/3.png" />
+Wyknaj kopię pliku <i>"dhcpd.conf"</i>. Następnie otwórz go dowolnym edytorem
+tekstu, w moim przypadku nano.
+<img src="ASO/img/idu2/4.png" />
+Napoczątku usuń <em>#</em> z lini <i>authoritative</i>, aby ten serwer DHCP stał
+się autorytatywny. <br />
+Definicja z słownika polskiego <b>PWN</b> może pomóc w lepszym zrozumienu:
+<img src="ASO/img/idu2/PWN1.png" />
+<img src="ASO/img/idu2/5.png" />
+Skrolując dalej <i>"dhcpd.conf"</i> napotkasz na zahastagowany fragmęt
+konfiguracji <b>DHCP</b>. Zmodyfikuj go tak jak na poniższym obrazie:
+<img class="dualImage" src="ASO/img/idu2/6.png" />
+Zrestartuj usługę <em>"isc-dhcp-server"</em> a nastepnie sprawdź jej status.
+<img class="dualImage" src="ASO/img/idu2/7.png" />
+Uruchom Ubuntu i Windows'a. Jeżeli interfejsy są ustawione na automatyczny nowe
+adresy powinny być przypisane, można także recznie wyłączyć i włączyć interfesy
+sieciowe. Poniżej przedstawiam jak zrobić to za pomocą komend:
+<br />
+<b>Ubuntu:</b> <br />
+<i>sudo dhclient -r</i> -- zwalnia aktualny adress do puli adresów serwera DHCP.
+<br />
+<i>sudo dhclient</i> -- pobiera nowy adress do puli adresów serwera DHCP.
+<br />
+<b>Windows:</b> <br />
+<i>ipconfig /release</i> -- zwalnia aktualny adress do puli adresów serwera
+DHCP. <br />
+<i>ipconfig /renew</i> -- pobiera nowy adress do puli adresów serwera DHCP.
+<br />
+<img class="dualImage" src="ASO/img/idu2/8.png" />
+Sprawdź listę klientów / host'ów dzierżawiących adresy z puli serwera DHCP
+<img class="dualImage" src="ASO/img/idu2/9.png" />
+Do konfiguracji DHCP dopisz grupe stałych adresów IP, dodając do niej rezerwacje
+po adresach <b>MAC</b> dla <i>Ubuntu</i> i <em>Windowsa</em>.
+<img src="ASO/img/idu2/10.png" />
+Zrestartuj usługę <em>"isc-dhcp-server"</em>, następnie zweryfikuj poprawność
+przypisania adresów na systemach <i>Ubuntu</i> i <em>Windows</em>.
+<img class="dualImage" src="ASO/img/idu2/11.png" />
