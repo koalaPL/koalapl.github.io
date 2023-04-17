@@ -1,0 +1,112 @@
+<h2>Zasady grupy</h2>
+Przejdź do <em>"Edytora zarządzania zasadami grupy"</em>
+Schemat dojścia jest przedstawiony poniżej:
+<img src="ASO/img/id5/ZasadyGrupy.gif" />
+Poniżej przedstawiono dojście oraz elementy dotyczące zasad haseł
+<img src="ASO/img/id5/1.png" />
+
+<br /><br />
+Aby zasady grupy zaczęły obowiązywać należy ponownie uruchomić serwer lub wpisać
+poniżą komendę:
+<img src="ASO/img/id5/0.png" />
+
+<h5>Ukrywanie po szczególnych elementów w panelu sterowania</h5>
+Konfiguracja użytkownika >> Zasady >> Szablony administracyjne... >> Panel
+sterowania <br />
+#Ukryj określone elementy Panelu sterowania
+<img src="ASO/img/id5/2.png" />
+<img src="ASO/img/id5/3.png" />
+Konfiguracja użytkownika >> Zasady >> Szablony administracyjne... >> Panel
+sterowania <br />
+#Pokaż tylko określone elementy Panelu sterowania
+<img src="ASO/img/id5/4.png" />
+<img src="ASO/img/id5/5.png" />
+Konfiguracja użytkownika >> Zasady >> Szablony administracyjne... >> Panel
+sterowania <br />
+#Zabroń dostępu do Panelu sterowania i ekranu Ustawienia komputera
+<img src="ASO/img/id5/6.png" />
+<img src="ASO/img/id5/7.png" />
+Konfiguracja użytkownika >> Zasady >> Szablony administracyjne... >> Panel
+sterowania >> Personalizacja<br />
+#Zapobiegaj zmienianiu tła pulpitu
+<img src="ASO/img/id5/8.png" />
+<img src="ASO/img/id5/9.png" />
+Konfiguracja użytkownika >> Zasady >> Szablony administracyjne... >> Pulpit >>
+Active Desktop<br />
+#Tapeta pulpitu <br />
+Lokalna lokalizacja domyślnych plików graficznych Windows 10:
+<b>C:\Windows\Web</b>
+<img src="ASO/img/id5/10.png" />
+<img src="ASO/img/id5/11.png" />
+<br /><br />
+<h2>Instalacja oprogramowania na klientach domeny z poziomu serwera</h2>
+Pobierz Exe to Msi Converter Pro:
+<a
+  href="https://download.informer.com/win-1192178922-59505e05-63adcf1e-50616f506f38dfb49-afb198bd316c4b997-2024800627-1191312110/exe2msisetup.msi"
+  >https://download.informer.com/win-1192178922-59505e05-63adcf1e-50616f506f38dfb49-afb198bd316c4b997-2024800627-1191312110/exe2msisetup.msi</a
+>
+<br />
+Oraz instalator dowolnego oprogramowania np.: Gimp link:
+<a href="https://www.gimp.org/downloads/">https://www.gimp.org/downloads/</a>
+Przygotowanie maszyny z WindowsServer2016: <br />
+Zainstaluj dodatek gościa i udostępnij folder na natywnym systemie dla
+wirtualnego systemu. Wszelkie kroki są przedstawione poniżej:
+<img src="ASO/img/id5/ShareFolder.gif" />
+Zainstaluj Exe to MSI Converter free na Windows Server 2012 R2 i go uruchom.
+Wprowadź dane jak poniżej:
+<br />
+<img src="ASO/img/id5/12.png" />
+
+Uruchom nagrywanie skryptu.
+<img src="ASO/img/id5/13.png" />
+Instalator Gimp2.10 rozpocznie działanie. Przytrzymując CTRL kliknij opcje
+zaznaczoną na poniższym obrazie:
+<img src="ASO/img/id5/13-0.png" />
+Wyskoczy takie okno, zaznacz <em>"Continue script if action fails"</em>.
+<img src="ASO/img/id5/13-01.png" />
+Kliknij <i>"Play"</i> by sprawdzić poprawność działania skryptu instalatora. Gdy
+operacja przejdzie pomyślnie kliknij wielokropek zaznaczony na obrazie poniżej.
+<br />
+Ukarze się okno <em>"Edit Command line parameters"</em>, nic nie zmieniaj,
+kliknij OK.
+<img src="ASO/img/id5/13-012.png" />
+Po lewej stronie jest zaznaczona ikona <em>"Build package"</em> kliknij ją, a
+następnie <i>Build Package</i> <br />
+Pojawi się okno informacyjne (jeżeli nie zakupisz licencji paczki msi wygasną w
+ciągu 12h) możesz kontynuować lub zakupić licencję.
+<img src="ASO/img/id5/13-0123.png" />
+Utwórz katalog Oprogramowanie i udostępnij go w sieci. <br />
+Przenieś paczkę do katalogu <em>"Oprogramowanie"</em>.
+<img src="ASO/img/id5/13-01234.png" />
+
+Przechodzimy do Zarządzanie zasadami grupy i tworzymy nowy obiekt zasad grupy.
+<br />
+Nazywamy go <em>"Oprogramowanie dla Grafików</em> i edytujemy.
+<img src="ASO/img/id5/19.png" />
+Konfiguracja komputera >> Zasady >> Ustawienia oprogramowania >> Instalacja
+oprogramowania <br />
+Tworzymy nowy <i>Pakiet...</i>.
+<img src="ASO/img/id5/21.png" />
+Przechodzimy do katalogu Oprogramowanie poprzez ścieżkę sieciową
+<i>"\\adres ip serwera\udostępniony katalog"</i>. <br />
+Wybieramy plik instalacyjny <b>gimp-2.10.32-setup-1.msi</b>.
+<img src="ASO/img/id5/22.png" />
+Klikamy OK.
+<img src="ASO/img/id5/23.png" />
+Włącz zasadę dzięki której będzie można zaobserwować instalację Gimp'a.
+<br />
+Konfiguracja komputera >> Zasady >> Szablony administracyjne: definicje zasad >>
+System <br />
+#Wyświetlaj bardzo szczegółowe komunikaty o stanie.
+<img src="ASO/img/id5/13-012345.png" />
+
+Podłącz nowo utworzony obiekt zasad grupy do domeny:
+<img src="ASO/img/id5/26.png" />
+<img src="ASO/img/id5/27.png" />
+Sforsuj / wymuś aktualizacje zasad grupy
+<img src="ASO/img/id5/28.png" />
+Podczas uruchamiania systemu klienckiego będącego w domenie zostanie
+zainstalowany Gimp:
+<img src="ASO/img/id5/29.png" />
+Gimp został zainstalowany na stanowisku.
+<img src="ASO/img/id5/30.png" />
