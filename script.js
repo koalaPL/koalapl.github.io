@@ -4,7 +4,7 @@ topics = document.querySelector('.RightLessIcon');
 function openNav() {
     topicSidebar.classList.toggle("topic-sidebar-close");
     
-    
+    dokumenty.body.innerHTML=' ';
 }
 
 
