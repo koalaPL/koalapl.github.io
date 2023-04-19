@@ -1,47 +1,112 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Koala.pl</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   </head>
-  <body>
+  <body onload="openNav()">
     <header>
-      <ul class="topnav">
-        <li>
-          <a class="sizeTitle" href="index.html"><h1>KoalaPL.GitHub.io</h1></a>
-        </li>
-        <li><a href="soaso.html">SYSTEMY OPERACYJNE <br>MATERIAŁY / PORADNIKI</a></li>
-        <li><a href="lskelsk.html">SIECI KOMPUTEROWE <br>MATERIAŁY / PORADNIKI</a></li>
-        <li><a href="bdabd.html">BAZY DANYCH <br>MATERIAŁY / PORADNIKI</a></li>
-      </ul>
+      <button id="Menu" onclick="openNav()">
+        &#9776;
+        <span class="NotMobileText">Menu</span>
+      </button>
+      <h1 onclick=" document.location = 'index.html';">KoalaPL.GitHub.io</h1>
     </header>
-    <nav>
-      <h4>ADMINISTRACJA SYSTEMAMI OPERACYJNYMI</h4>
-      <h3>Zadania</h3>
-      <a href="zadania/ASO/asoZ1.html">Zadanie 1 - Galaktyczna domena</a>
-      <a href="zadania/ASO/asoZ2.html">Zadanie 2 - Firma modelarska 3D</a>
-      <a href="zadania/ASO/asoZ3.html">Zadanie 3 - DHCP i www.swiat-koali.pl</a>
-
-      <h3>Zasoby do pobrania</h3>
-      <a
-        href="https://drive.google.com/file/d/16ArFt2LQNnaVQcad_TFycaAGlBRWib50/view?usp=sharing"
-        >Pliki strony świat koali</a
-      >
-    </nav>
     <main>
-      <p>
-        <a href="#">ADMINISTRACJA SYSTEMAMI OPERACYJNYMI</a> /
-        <a href="#">Zadania</a>
-      </p>
-      <h2>Strona Główna</h2>
-      <a href="zadania/ASO/asoZ1.html">Zadanie 1 - Galaktyczna domena</a><br />
-      <a href="zadania/ASO/asoZ2.html">Zadanie 2 - Firma modelarska 3D</a><br />
-      <a href="zadania/ASO/asoZ3.html">Zadanie 3 - DHCP i www.swiat-koali.pl</a
-      ><br />
+      <div
+        class="topic-sidebar topic-sidebar-close"
+        data-overview-sidebar="true"
+      >
+        <div id="tittle-course">
+          <h2>SYSTEMY OPERACYJNE I ADMINISTRACJA NIMI</h2>
+
+          <progress class="complete-progressbar" max="100" value="70">
+            70%
+          </progress>
+          <label class="progressbar-complete-label" for="complete-progressbar"
+            >Poczyniony progres:
+          </label>
+        </div>
+        <details open>
+          <summary>WINDOWS SERWER</summary>
+          <ul>
+            <li class="topic" id="aso1">
+              <span class="RightLessIcon"></span>
+              Konfiguracja w VirtualBox
+            </li>
+            <li class="topic" id="aso2">
+              <span class="RightLessIcon"></span>Interfejs sieciowy
+            </li>
+            <li class="topic" id="aso3">
+              <span class="RightLessIcon"></span>Active Directory (AD)
+            </li>
+            <li class="topic" id="aso4">
+              <span class="RightLessIcon"></span>(AD) użytkownicy
+            </li>
+            <li class="topic" id="aso5">
+              <span class="RightLessIcon"></span>(AD) profile mobilne i udziały
+              sieciowe
+            </li>
+            <li class="topic" id="aso6">
+              <span class="RightLessIcon"></span>(AD) zasady grupy
+            </li>
+            <li class="topic" id="aso7">
+              <span class="RightLessIcon"></span>Dynamiczna konfiguracja hostów
+              (DHCP)
+            </li>
+            <li class="topic" id="aso8">
+              <span class="RightLessIcon"></span>Serwer Web www /part 1 - DNS
+            </li>
+            <li class="topic" id="aso9">
+              <span class="RightLessIcon"></span>Serwer Web www /part 2 - IIS
+            </li>
+          </ul>
+        </details>
+        <details open>
+          <summary>LINUX SERWER</summary>
+          <ul>
+            <li class="topic" id="aso10">
+              <span class="RightLessIcon"></span>
+              Połączenie SSH i konfiguracja interfesów sieciowych netplan
+            </li>
+            <li class="topic" id="aso11">
+              <span class="RightLessIcon"></span>
+              Serwer plików (FTP) / udziały sieciowe - samba
+            </li>
+            <li class="topic" id="aso12">
+              <span class="RightLessIcon"></span>
+              Dynamiczna konfiguracja hostów (DHCP) - isc-dhcp-server
+            </li>
+            <li class="topic" id="aso13">
+              <span class="RightLessIcon"></span>Serwer Web www /part 1 -
+              apache2
+            </li>
+            <li class="topic" id="aso14">
+              <span class="RightLessIcon"></span>Serwer Web www /part 2 - php
+            </li>
+            <li class="topic" id="aso15">
+              <span class="RightLessIcon"></span>Serwer Web www /part 3 - mysql
+            </li>
+            <li class="topic" id="aso16">
+              <span class="RightLessIcon"></span>Serwer Web www /part 4 - DNS
+            </li>
+          </ul>
+        </details>
+      </div>
+      <div id="lesson-contener" data-overview-sidebar="true">
+        <div id="lesson-content">
+          <iframe
+            id="myframe"
+            src="https://www.testportal.pl/test.html?t=Yiy7k5BYq2Di"
+          ></iframe>
+        </div>
+      </div>
     </main>
-    <footer>Copyright &copy; Zbrzeźniak Kamil</footer>
+    <footer></footer>
   </body>
+  <script src="script.js"></script>
 </html>

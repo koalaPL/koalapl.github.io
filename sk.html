@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+  <body onload="openNav()">
+    <header>
+      <button id="Menu" onclick="openNav()">
+        &#9776;
+        <span class="NotMobileText">Menu</span>
+      </button>
+      <h1 onclick=" document.location = 'index.html';">KoalaPL.GitHub.io</h1>
+    </header>
+    <main>
+      <div
+        class="topic-sidebar topic-sidebar-close"
+        data-overview-sidebar="true"
+      >
+        <div id="tittle-course">
+          <h2>SIECI KOMPUTEROWE I ICH EKSPLOATACJA</h2>
+
+          <progress class="complete-progressbar" max="100" value="70">
+            70%
+          </progress>
+          <label class="progressbar-complete-label" for="complete-progressbar"
+            >Poczyniony progres:
+          </label>
+        </div>
+        <details open>
+          <summary>Elementy składowe sieci</summary>
+          <ul>
+            <li class="topic" id="sk1">
+              <span class="RightLessIcon"></span>
+              Wstęp
+            </li>
+            <li>Elementy pasywne</li>
+            <li class="topic" id="sk2">
+              <span class="RightLessIcon"></span>Kabel typu koncentryk
+            </li>
+            <li class="topic" id="sk3">
+              <span class="RightLessIcon"></span>Kabel typu skrętka
+            </li>
+            <li class="topic" id="sk4">
+              <span class="RightLessIcon"></span>Kabel światłowodowy
+            </li>
+            <li>Elementy aktywne</li>
+            <li class="topic" id="sk5"><span class="RightLessIcon"></span>#</li>
+            <li class="topic" id="sk6"><span class="RightLessIcon"></span>#</li>
+            <li class="topic" id="sk7"><span class="RightLessIcon"></span>#</li>
+            <li class="topic" id="sk8"><span class="RightLessIcon"></span>#</li>
+            <li class="topic" id="aso9">
+              <span class="RightLessIcon"></span>#
+            </li>
+          </ul>
+        </details>
+        <details open>
+          <summary>Topologie sieciowe</summary>
+          <ul>
+            <li class="topic" id="aso10">
+              <span class="RightLessIcon"></span>Topologie fizyczne
+            </li>
+            <li class="topic" id="aso11">
+              <span class="RightLessIcon"></span>Topologie logiczne
+            </li>
+          </ul>
+        </details>
+      </div>
+      <div id="lesson-contener" data-overview-sidebar="true">
+        <div id="lesson-content">
+          <iframe
+            id="myframe"
+            src="https://www.testportal.pl/test.html?t=Yiy7k5BYq2Di"
+          ></iframe>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+  <script src="script.js"></script>
+</html>

@@ -116,6 +116,24 @@ $(document).ready(function () {
    });
 });
 
-
-
+$(document).ready(function () {
+  $('#sk1').click(function () {
+          $('#lesson-content').load('LSK/sk1.html');
+   });
+});
+$(document).ready(function () {
+  $('#sk2').click(function () {
+          $('#lesson-content').load('LSK/sk2.html');
+   });
+});
+$(document).ready(function () {
+  $('#sk3').click(function () {
+          $('#lesson-content').load('LSK/sk3.html');
+   });
+});
+$(document).ready(function () {
+  $('#sk4').click(function () {
+          $('#lesson-content').load('LSK/sk4.html');
+   });
+});
 

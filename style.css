@@ -74,11 +74,11 @@ h1:hover{
     position: sticky;
     top: -10px;
 }
-#complete-progressbar{
+.complete-progressbar{
     height: 5px;
     width: 100%;
 }
-#progressbar-complete-label{
+.progressbar-complete-label{
     font-size: 12px;
 }
 .topic{
@@ -168,7 +168,7 @@ h1:hover{
     border: 2px solid #555;
 }
 #lesson-content> .fiFtiIMG > img{
-    height: 30px;
+    height: 30px!important;
     margin-top: 10px;
     display: inline-block;
     border: 2px solid #555;
@@ -195,8 +195,46 @@ i{
 .dualImage{
     width: -webkit-fill-available!important;
 }
-
-
+.card{
+    height: 120px;
+    max-height: 120px;
+    width: 320px;
+    background-color: rgb(48, 48, 48);
+    color: aliceblue;
+    padding: 10px;
+    margin: 5px;
+}
+.card-tittle{
+    height: 70px;
+    width: 200px;
+    font-weight: bold;
+    margin: 5px;
+}
+.card >.RightLessIcon{
+    height: 50px;
+    width: 50px;
+    position: relative;
+    left: 240px;
+    bottom: 70px;
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(0%);
+}
+.card >.complete-progressbar, .card>.progressbar-complete-label{
+    position: relative;
+    bottom: 70px;
+}
+.card >.RightLessIcon:hover , .card >.RightLessIcon:focus {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(162deg) brightness(104%) contrast(97%);
+    cursor: pointer;
+  }
+#cards-container{
+    width: 60%;
+    margin: auto;
+    background-color: #ddd8ce;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 
 @media(max-width: 1600px) {
     #lesson-content{
@@ -240,4 +278,30 @@ i{
     #lesson-content > img {
         width: -webkit-fill-available;
     }
+  }
+  table{
+    margin: auto;
+  }
+  td{
+    padding: 5px 10px;
+    border: 2px solid #1b2127;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #c1bae9;
+  }
+  tr:nth-child(odd) {
+    background-color: #e9e8ba;
+  }
+  .defaultTable:nth-child(even), .defaultTable:nth-child(odd){
+    background-color: #fff;
+  }
+  .center{
+    height: fit-content;
+    width: fit-content;
+    margin: auto;
+  }
+  ol{
+    width: 90%;
+    margin-left: 20px;
   }
