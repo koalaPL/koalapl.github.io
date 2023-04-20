@@ -1,0 +1,231 @@
+Sekwencja rozruchowa przełącznika
+Zanim będziesz mógł skonfigurować przełącznik, musisz go włączyć i pozwolić mu przejść przez pięcietapową sekwencję rozruchu. W tym temacie omówiono podstawy konfiguracji przełącznika i dodano laboratorium na końcu.
+
+Po podłączeniu przełącznika Cisco do zasilania, wykonuje on następującą pięcio-krokową sekwencję operacji:
+<br>
+<br><b>Krok 1:</b> Przełącznik wykonuje procedurę POST zapisaną w pamięci ROM. POST sprawdza podsystem CPU. Procedura POST sprawdza stan procesora, pamięci DRAM oraz stan systemu plików w pamięci flash.
+<br><b>Krok 2:</b> Przełącznik ładuje do pamięci krótki program nazywany boot loader. Boot loader to niewielki program zapisany w pamięci ROM, który jest uruchamiany bezpośrednio po pomyślnie zakończonej procedurze POST.
+<br><b>Krok 3:</b> Boot loader inicjuje pracę procesora CPU w trybie niskiego poziomu. Oznacza to ustawianie domyślnych wartości rejestrów adresujących obszar pamięci fizycznej, określanie jej wielkości i czasu dostępu.
+<br><b>Krok 4:</b> Boot loader inicjalizuje system plików dla pamięci flash znajdującej się na płycie głównej.
+<br><b>Krok 5:</b> Wreszcie boot loader wyszukuje lokalizację obrazu systemu IOS, ładuje system IOS do pamięci i przekazuje kontrolę nad przełącznikiem do IOS.
+<br><br> System operacyjny IOS następnie inicjuje interfejsy za pomocą poleceń Cisco IOS znajdujących się w pliku startup-config. Plik startup-config jest nazwany jako config.text i znajduje się w pamięci flash.
+<br><br>
+
+<h2>Podstawowa konfiguracaja</h2>
+<br>
+
+<table>
+  <tr>
+    <td><b>Zadanie</b></td>
+    <td><b>Polecenia IOS</b></td>
+  </tr>
+
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Włącz tryb uprzywilejowany, zmieni się znak zachęty <em>">"</em> na <i>"#"</i>.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">Switch></span>
+        enable</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Przejdź do trybu konfiguracji globalnej.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">Switch#</span>
+        configure terminaln</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Wyłącz wyszukiwanie domen DNS 
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">Switch(config)#</span>
+        no ip domain-lookup
+</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Zmień nazwę urządzenia.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">Switch(config)#</span>
+        hostname S1</span>
+    </td>
+  </tr>
+
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Włącz szyfrowanie haseła.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config)#</span>
+        service password-encryption</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Ustaw hasło dla <b>enable</b> jako <i>qwer</i>.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config)#</span>
+        enable secret qwer</span>
+    </td>
+  </tr>
+ 
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Skonfiguruj baner (powiadomienie) w przypadku złego hasła.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config)#</span>
+        banner motd #Hakuna matata!#</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Wróć do trybu uprzywilejowanego EXEC.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config)#</span>
+        end</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Zapisz bieżącą konfigurację do konfiguracji startowej.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1#</span>
+        copy running-config startup-config</span>
+    </td>
+  </tr>
+ 
+</table>
+
+<br><br>
+<h2>Zastowsowanie szablonu <b>dual ipv4 i ipv6 jako domyślny szablon SDM</b>.</h2>
+<br>
+
+<table>
+  <tr>
+    <td><b>Zadanie</b></td>
+    <td><b>Polecenia IOS</b></td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Wyświetl aktualne ustawienia preferowanego SDM.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">	
+        S1#</span>
+        show sdm prefer</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Przejdź do trybu konfiguracji globalnej.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1#</span>
+        configure terminaln</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Ustaw preferowany SDM na <b>dual ipv4 i ipv6</b> jako domyślny.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-if)#</span>
+        sdm prefer dual-ipv4-and-ipv6 default</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Wyjdź z konfiguracji globalnej.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-if)#</span>
+        end</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Przeładuj ustawienia ISO.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1#</span>
+        reload</span>
+    </td>
+  </tr>
+</table>
+
+
+<br><br>
+<h2>Konfiguracja bramy domyślnej.</h2>
+<br>
+
+<table>
+  <tr>
+    <td><b>Zadanie</b></td>
+    <td><b>Polecenia IOS</b></td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Przejdź do trybu konfiguracji globalnej.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1#</span>
+        configure terminaln</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Dla przełącznika skonfiguruj bramę domyślną.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config)#</span>
+        ip default-gateway 172.17.99.1</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Wyjdź z konfiguracji globalnej.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-if)#</span>
+        end</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Zapisz bieżącą konfigurację do konfiguracji startowej.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1#</span>
+        copy running-config startup-config</span>
+    </td>
+  </tr>
+</table>

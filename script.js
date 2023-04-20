@@ -28,6 +28,8 @@ function checkedCompletedTopic() {
     
 }
 
+//-----------SO---------------//
+
 $(document).ready(function () {
   $('#aso1').click(function () {
           $('#lesson-content').load('ASO/aso1.html');
@@ -116,6 +118,8 @@ $(document).ready(function () {
    });
 });
 
+//-----------SK---------------//
+
 $(document).ready(function () {
   $('#sk1').click(function () {
           $('#lesson-content').load('LSK/sk1.html');
@@ -137,3 +141,20 @@ $(document).ready(function () {
    });
 });
 
+//-----------CISCO---------------//
+
+$(document).ready(function () {
+  $('#cisco1').click(function () {
+          $('#lesson-content').load('CISCO/id1.html');
+   });
+});
+$(document).ready(function () {
+  $('#cisco2').click(function () {
+          $('#lesson-content').load('CISCO/id2.html');
+   });
+});
+$(document).ready(function () {
+  $('#cisco3').click(function () {
+          $('#lesson-content').load('CISCO/id3.html');
+   });
+});
