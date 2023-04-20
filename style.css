@@ -236,6 +236,20 @@ i{
     flex-wrap: wrap;
 }
 
+
+.cisco-command{
+    background-color: #1b2127;
+    color: #fff;
+    padding: 5px 10px;
+    display: block;
+    border-radius: 5px;
+    
+}
+.cisco-prompter{
+    color: #b8b8b8;
+    margin-right: 5px;
+}
+
 @media(max-width: 1600px) {
     #lesson-content{
         min-width: 90%;
