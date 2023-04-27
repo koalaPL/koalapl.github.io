@@ -90,6 +90,7 @@ h1 > a:hover{
 .progressbar-complete-label{
     font-size: 12px;
 }
+
 .topic{
     margin: 5px;
     border: 2px dashed #888;
@@ -97,7 +98,7 @@ h1 > a:hover{
     list-style: none;
     display: flex;
     align-items: center;
-    
+    transition: 0.5s all linear;
 
 }
 .RightLessIcon{
@@ -108,12 +109,13 @@ h1 > a:hover{
     background-size: cover;
     background-repeat: no-repeat;
     margin: 10px;
+    transition: 0.5s all linear;
 }
 
 .topic:hover{
     cursor: pointer;
     background-color: #c2c2c2;
-    border-radius: 5px;
+    border-radius: 10px;
     font-weight: 600;
     font-size: 14.5px;
 }
