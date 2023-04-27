@@ -1,4 +1,11 @@
 
+var menuBtn = document.getElementsByClassName('burger')[0];
+
+        menuBtn.addEventListener('click', function (event) {
+            document.querySelector(".topic-sidebar").classList.toggle("a");
+        });
+
+
 topicSidebar = document.querySelector('.topic-sidebar');
 topics = document.querySelector('.RightLessIcon');
 function openNav() {
@@ -8,11 +15,7 @@ function openNav() {
 }
 
 
-window.addEventListener('click', function(e){   
-  if (! document.querySelector('.topic-sidebar').contains(e.target) && !document.getElementById('Menu').contains(e.target)){
-    topicSidebar.classList.add("topic-sidebar-close");
-  } 
-});
+
 
 window.addEventListener('resize', function(e){   
     if (window.innerWidth<1100){

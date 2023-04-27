@@ -1,4 +1,13 @@
+:root{
+    --black-background:#303030;
+    --hover-blue:#008a83;
+    --light-font-color:#f1f1f1;
+    --document-background-1:#c2bcb1;
+    --document-background-2:#ddd8ce;
+    --border-sidebar:#888888;
+}
 *{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -7,65 +16,61 @@ html{
 }
 body{
     overflow-y: hidden;
+    background-color: var(--document-background-1);
 }
 h2{
     font-size: 18px;
 }
 header{
     
-    height: 40px;
-    background-color: rgb(48, 48, 48);
-    color: aliceblue;
+    background-color: var(--black-background);
+    height: 60px;
+    text-align: center;
+    font-size: 18px;
     padding: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
 }
-h1{
-    margin: auto;
-}
-
-h1>a:hover{
-    cursor: pointer;
-    color: #a9a9a9;
-}
-h1>a{
+h1 > a{
     text-decoration: none;
-    color: aliceblue;
+    color: var(--light-font-color);
+    transition: 0.5s all linear;
 }
-#Menu{
-    height: 40px;
-    width: 120px;
-    background-color: #ffffff00;
-    border: 0;
-    border-radius: 5px;
-    color: aliceblue;
-    font-size: 25px;
-    position: absolute          ;
+h1 > a:hover{
+    color: var(--hover-blue);
 }
-#Menu::before{
-    font-size: 25px;
-    
+.burger{
+    color: var(--light-font-color);
+    font-size: 40px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px 10px;
+    transition: 0.5s all linear;
 }
-#Menu:hover{
+.burger:hover{
     cursor: pointer;
-    color: #a9a9a9;
+    color: var(--hover-blue);
 }
 
 
 .topic-sidebar{
-    width: 300px;
     padding: 10px;
-    height: calc(100vh - 80px);
-    background-color: #d1ccc1;
+    width: 375px;
+    height: calc(100vh - 60px);
+    background-color: var(--document-background-2);
+    position: absolute;
+    left: -375px;
+    transition: 0.5s all linear;
+    border:  5px solid var(--border-sidebar);
+    border-left: 0;
     overflow-y: auto;
     margin: 0;
-    position: fixed;
     z-index: 1;
 }
-.topic-sidebar-close{
-    width: 0px;
-    padding: 0px;
+.a{
+    left: 0;
+    
+    
 }
 
 #tittle-course{
@@ -133,10 +138,10 @@ h1>a{
 }
 
 #lesson-contener{
-    height: calc(100vh - 80px);
-    background-color: #c2bcb1;
+    height: calc(100vh - 60px);
+    width: 100%;
     overflow-y: auto;
-    padding: 10px;
+
 }
 /* width */
 ::-webkit-scrollbar {
@@ -158,10 +163,11 @@ h1>a{
     background: #555; 
   }
 #lesson-content{
-
+    height: calc(100vh - 60px);
     width: 60%;
-    margin: auto;
-    background-color: #ddd8ce;
+    overflow-y: auto;
+    margin: 0 auto;
+    background-color: var(--document-background-2);
     padding: 10px;
 }
 #lesson-content > img{
@@ -200,8 +206,8 @@ i{
     width: -webkit-fill-available!important;
 }
 .card{
-    height: 120px;
-    max-height: 120px;
+    height: 130px;
+    max-height: 130px;
     min-width: 320px;
     width: 320px;
     background-color: rgb(48, 48, 48);
@@ -222,6 +228,7 @@ i{
     left: 240px;
     bottom: 70px;
     filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(0%);
+    transition: 0.5s all linear;
 }
 .card >.complete-progressbar, .card>.progressbar-complete-label{
     position: relative;
