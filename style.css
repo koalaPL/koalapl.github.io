@@ -13,10 +13,12 @@
 }
 html{
     font-family: system-ui;
+    
 }
 body{
-    overflow-y: hidden;
+    overflow-y: hidden!important;
     background-color: var(--document-background-1);
+    
 }
 h2{
     font-size: 18px;
@@ -45,7 +47,7 @@ h1 > a:hover{
     position: absolute;
     top: 0;
     left: 0;
-    padding: 5px 10px;
+    margin: 5px 10px;
     transition: 0.5s all linear;
 }
 .burger:hover{
@@ -196,7 +198,7 @@ iframe{
 
 }
 em{
-    color: #489eff;
+    color: #106bd3;
     font-family: cursive;
     font-weight: bold;
 }
@@ -240,6 +242,7 @@ i{
 .card >.RightLessIcon:hover , .card >.RightLessIcon:focus {
     filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(162deg) brightness(104%) contrast(97%);
     cursor: pointer;
+    outline:none;
   }
 #cards-container{
     width: 60%;
@@ -292,7 +295,7 @@ i{
         min-width: 90%;
     }
     #lesson-contener{
-        height: calc(100vh - 80px);
+        height: calc(100vh - 60px);
         background-color: #c2bcb1;
         width: 100vw;
         overflow-y: auto;
@@ -309,7 +312,7 @@ i{
         flex-direction: column;
       }
       .burger{
-          padding:5px 15px;
+          margin:5px 15px;
       }
       header {
           text-align: right;
@@ -324,7 +327,7 @@ i{
         padding: 0;
     }
   }
-  @media(max-width: 280px) {
+  @media(max-width: 285px) {
     header{
         font-size: 12px;
     }
@@ -341,6 +344,9 @@ i{
     }
     .card > .card-tittle{
         width: 170px;
+    }
+    #lesson-content{
+        width: 100%;
     }
   }
 

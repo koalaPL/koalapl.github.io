@@ -2,24 +2,82 @@ function toggleMenu(){
   document.querySelector(".topic-sidebar").classList.toggle("a");
 }
 
-var menuBtn = document.getElementsByClassName('burger')[0];
+  var menuBtn = document.getElementsByClassName('burger')[0];
 
-        menuBtn.addEventListener('click', function (event) {
-            toggleMenu();
-        });
+  menuBtn.addEventListener('click', function (event) {
+    toggleMenu();
+  });
 
 
-topicSidebar = document.querySelector('.topic-sidebar');
-topics = document.querySelector('.RightLessIcon');
-function openNav() {
-    topicSidebar.classList.toggle("topic-sidebar-close");
-    
-    //document.body.innerHTML=' ';
+function topicSelect(pageName)
+{
+  $('#lesson-content').load('ASO/'+pageName+'.html');
+          toggleMenu();
 }
 
 
 
 
+
+
+
+document.addEventListener('keypress', (event)=>{
+
+  if(event.key === "Enter" && document.activeElement==menuBtn) {
+    toggleMenu()
+  }
+  if(event.key === "Enter" && document.activeElement==document.getElementById("aso1")) {
+    topicSelect("aso1");
+  }
+  if(event.key === "Enter" && document.activeElement==document.getElementById("aso2")) {
+    topicSelect("aso2");
+  }
+  if(event.key === "Enter" && document.activeElement==document.getElementById("aso3")) {
+    topicSelect("aso3");
+  }
+  if(event.key === "Enter" && document.activeElement==document.getElementById("aso4")) {
+    topicSelect("aso4");
+  }
+  if(event.key === "Enter" && document.activeElement==document.getElementById("aso5")) {
+    topicSelect("aso5");
+  }
+  if(event.key === "Enter" && document.activeElement==document.getElementById("aso6")) {
+    topicSelect("aso6");
+  }
+  if(event.key === "Enter" && document.activeElement==document.getElementById("aso7")) {
+    topicSelect("aso7");
+  }
+  if(event.key === "Enter" && document.activeElement==document.getElementById("aso8")) {
+    topicSelect("aso8");
+  }
+  if(event.key === "Enter" && document.activeElement==document.getElementById("aso9")) {
+    topicSelect("aso9");
+  }
+  if(event.key === "Enter" && document.activeElement==document.getElementById("aso10")) {
+    topicSelect("aso10");
+  }
+  if(event.key === "Enter" && document.activeElement==document.getElementById("aso11")) {
+    topicSelect("aso11");
+  }
+  if(event.key === "Enter" && document.activeElement==document.getElementById("aso12")) {
+    topicSelect("aso12");
+  }
+  if(event.key === "Enter" && document.activeElement==document.getElementById("aso13")) {
+    topicSelect("aso13");
+  }
+  if(event.key === "Enter" && document.activeElement==document.getElementById("aso14")) {
+    topicSelect("aso14");
+  }
+  if(event.key === "Enter" && document.activeElement==document.getElementById("aso15")) {
+    topicSelect("aso15");
+  }
+  if(event.key === "Enter" && document.activeElement==document.getElementById("aso16")) {
+    topicSelect("aso16");
+  }
+  if(event.key === "Enter" && document.activeElement==document.getElementById("aso17")) {
+    topicSelect("aso17");
+  }
+});
 
  
 
@@ -38,8 +96,7 @@ function checkedCompletedTopic() {
 
 $(document).ready(function () {
   $('#aso1').click(function () {
-          $('#lesson-content').load('ASO/aso1.html');
-          toggleMenu();
+          topicSelect("aso1");
    });
 });
 $(document).ready(function () {
