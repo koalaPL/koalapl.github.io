@@ -14,37 +14,88 @@ var menuBtn = document.getElementsByClassName('burger')[0];
     toggleMenu();
   });
 
-  setLesson("aso")
-function setLesson(how){
+
+function setLesson(dir, how){
   if(document.location.hash.replace("#","")!="")
-  topicSelect(how + document.location.hash.replace("#",""))
+  {
+    topicSelect(dir, how + document.location.hash.replace("#",""));
+  }
+  
 }
+
 
 
 toggleMenu();
 
-function topicSelect(pageName)
+function topicSelect(dir, pageName)
 {
-  $('#lesson-content').load('ASO/'+pageName+'.html');
-  document.location.href = document.location.pathname+"#"+pageName.replace("aso","");
-  document.querySelector("h2").scrollIntoView();
+  document.getElementById('lesson-content').innerHTML=" ";
+  $('#lesson-content').load(dir+'/'+pageName+'.html');
+
+  switch(dir)
+  {
+    case "ASO":document.location.href = document.location.pathname+"#"+pageName.replace("aso","");
+      break;
+    case "LSK": document.location.href = document.location.pathname+"#"+pageName.replace("sk","");
+      break;
+    case "CISCO": document.location.href = document.location.pathname+"#"+pageName.replace("id","");;
+      break;
+  }
   
+ 
+ 
           toggleMenu();
 }
 
 
-
+switch(document.location.pathname)
+{
+  case "/aso.html":
+    setLesson("ASO/","aso");
+  break;
+  case "/sk.html":
+    setLesson("LSK/","sk");
+  break;
+  case "/id.html":
+    setLesson("CISCO/","id");
+  break;
+}
 document.addEventListener('keypress', (event)=>{
 
   if(event.key === "Enter" && document.activeElement==menuBtn) {
     toggleMenu()
   }
-  for(var i=1; i<=17; i++)
+  switch(document.location.pathname)
   {
-    if(event.key === "Enter" && document.activeElement==document.getElementById("aso"+i)) {
-      topicSelect("aso"+i);
-    }
+    case "/aso.html":
+      for(var i=1; i<=17; i++)
+      {
+        if(event.key === "Enter" && document.activeElement==document.getElementById("aso"+i)) {
+          topicSelect("ASO","aso"+i);
+        }
+      }
+      setLesson("ASO/","aso");
+    break;
+    case "/sk.html":
+      for(var i=1; i<=4; i++)
+      {
+        if(event.key === "Enter" && document.activeElement==document.getElementById("sk"+i)) {
+          topicSelect("LSK","sk"+i);
+        }
+      }
+      setLesson("LSK/","sk");
+    break;
+    case "/cisco.html":
+      for(var i=1; i<=3   ; i++)
+      {
+        if(event.key === "Enter" && document.activeElement==document.getElementById("cisco"+i)) {
+          topicSelect("CISCO","id"+i);
+        }
+      }
+      setLesson("CISCO/","id");
+    break;
   }
+  
 });
 
  
@@ -57,96 +108,93 @@ function checkedCompletedTopic() {
 
 
 
-
-
-
 //-----------SO---------------//
 
 $(document).ready(function () {
   $('#aso1').click(function () {
-    topicSelect("aso1");
+    topicSelect("ASO","aso1");
    });
 });
 $(document).ready(function () {
   $('#aso2').click(function () {
-    topicSelect("aso2");
+    topicSelect("ASO","aso2");
    });
 });
 $(document).ready(function () {
   $('#aso3').click(function () {
-    topicSelect("aso3");
+    topicSelect("ASO","aso3");
    });
 });
 $(document).ready(function () {
   $('#aso4').click(function () {
-    topicSelect("aso4");
+    topicSelect("ASO","aso4");
    });
 });
 $(document).ready(function () {
   $('#aso5').click(function () {
-    topicSelect("aso5");
+    topicSelect("ASO","aso5");
    });
 });
 $(document).ready(function () {
   $('#aso6').click(function () {
-    topicSelect("aso6");
+    topicSelect("ASO","aso6");
    });
 });
 $(document).ready(function () {
   $('#aso7').click(function () {
-    topicSelect("aso7");
+    topicSelect("ASO","aso7");
    });
 });
 $(document).ready(function () {
   $('#aso8').click(function () {
-    topicSelect("aso8");
+    topicSelect("ASO","aso8");
    });
 });
 $(document).ready(function () {
   $('#aso9').click(function () {
-    topicSelect("aso9");
+    topicSelect("ASO","aso9");
    });
 });
 $(document).ready(function () {
   $('#aso10').click(function () {
-    topicSelect("aso10");
+    topicSelect("ASO","aso10");
    });
 });
 $(document).ready(function () {
   $('#aso11').click(function () {
-    topicSelect("aso11");
+    topicSelect("ASO","aso11");
    });
 });
 $(document).ready(function () {
   $('#aso12').click(function () {
-    topicSelect("aso12");
+    topicSelect("ASO","aso12");
    });
 });
 
 $(document).ready(function () {
   $('#aso13').click(function () {
-    topicSelect("aso13");
+    topicSelect("ASO","aso13");
    });
 });
 
 $(document).ready(function () {
   $('#aso14').click(function () {
-    topicSelect("aso14");
+    topicSelect("ASO","aso14");
    });
 });
 $(document).ready(function () {
   $('#aso15').click(function () {
-    topicSelect("aso15");
+    topicSelect("ASO","aso15");
    });
 });
 $(document).ready(function () {
   $('#aso16').click(function () {
-    topicSelect("aso16");
+    topicSelect("ASO","aso16");
    });
 });
 $(document).ready(function () {
   $('#aso17').click(function () {
-    topicSelect("aso17");
+    topicSelect("ASO","aso17");
    });
 });
 
@@ -154,26 +202,22 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('#sk1').click(function () {
-          $('#lesson-content').load('LSK/sk1.html');
-          toggleMenu();
+    topicSelect("LSK", "sk1");
    });
 });
 $(document).ready(function () {
   $('#sk2').click(function () {
-          $('#lesson-content').load('LSK/sk2.html');
-          toggleMenu();
+    topicSelect("LSK", "sk2");
    });
 });
 $(document).ready(function () {
   $('#sk3').click(function () {
-          $('#lesson-content').load('LSK/sk3.html');
-          toggleMenu();
+    topicSelect("LSK", "sk3");
    });
 });
 $(document).ready(function () {
   $('#sk4').click(function () {
-          $('#lesson-content').load('LSK/sk4.html');
-          toggleMenu();
+    topicSelect("LSK", "sk4");
    });
 });
 
@@ -181,19 +225,16 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('#cisco1').click(function () {
-          $('#lesson-content').load('CISCO/id1.html');
-          toggleMenu();
+    topicSelect("CISCO", "id1");
    });
 });
 $(document).ready(function () {
   $('#cisco2').click(function () {
-          $('#lesson-content').load('CISCO/id2.html');
-          toggleMenu();
+    topicSelect("CISCO", "id2");
    });
 });
 $(document).ready(function () {
   $('#cisco3').click(function () {
-          $('#lesson-content').load('CISCO/id3.html');
-          toggleMenu();
+    topicSelect("CISCO", "id3");
    });
 });
