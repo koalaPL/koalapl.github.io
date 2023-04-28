@@ -23,13 +23,15 @@ function setLesson(how){
 
 toggleMenu();
 
-
 function topicSelect(pageName)
 {
   $('#lesson-content').load('ASO/'+pageName+'.html');
   document.location.href = document.location.pathname+"#"+pageName.replace("aso","");
+  document.querySelector("h2").scrollIntoView();
+  
           toggleMenu();
 }
+
 
 
 document.addEventListener('keypress', (event)=>{
