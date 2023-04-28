@@ -20,6 +20,22 @@ body{
     background-color: var(--document-background-1);
     
 }
+.logoIMG{
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    background-color: #727272;
+    padding: 1.5px;
+    border-radius: 50%;
+    border: 2.5px solid #4d4d4d;
+}
+.logoIMG:hover{
+    background-color: #fff;
+    cursor: pointer;
+}
+.Reverse{
+    left: 2px;
+}
 h2{
     font-size: 18px;
 }
