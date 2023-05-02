@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/img/favicon-32x32.png"/>
+    <title>Bazy Danych</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="../index.html">KoalaPL.GitHub.io</a></h1>
+      <span class="burger" tabindex="0">&#9776;</span>
+      <a href="../index.html">
+        <img
+          class="logoIMG"
+          src="img/koalaPL_logo.png"
+          alt="Logo KoalaPL"
+        />
+      </a>
+    </header>
+    <main>
+      
+      <div
+        class="topic-sidebar"
+        data-overview-sidebar="true"
+      >
+        <div id="tittle-course">
+          <h2>CCNA v7 CISCO</h2>
+
+          <progress class="complete-progressbar" max="100" value="70">
+            70%
+          </progress>
+          <label class="progressbar-complete-label" for="complete-progressbar"
+            >Poczyniony progres:
+          </label>
+        </div>
+        <details open>
+          <summary>Elementy składowe sieci</summary>
+          <ul>
+            <li class="topic" id="cisco1" tabindex="0" tabindex="0">
+              <span class="RightLessIcon"></span>
+              Budowa baz danych
+            </li>
+            <li class="topic" id="cisco2" tabindex="0" tabindex="0">
+              <span class="RightLessIcon"></span>VLAN`y
+            </li>
+            <li class="topic" id="cisco3" tabindex="0" tabindex="0"> 
+              <span class="RightLessIcon"></span>Połączenia
+            </li>
+            
+        </details>
+      </div>
+    
+      <div id="lesson-contener" data-overview-sidebar="true"> 
+        <div id="lesson-content">
+
+          Baza danych to obiekt, który składa się z tabel. <br> 
+          Tabela zbudowana jest krotek czyli kolumn oraz atrybutów czyli wierszy. <br>
+          Krotki okraślają cechy obiektów przechowywanych w wierszach. <br>
+          Wiersz to szereg wartości odpowiadających cechom w krotkach tabeli. <br>
+          <br>
+          No dobrze, regułka została odbębniona to teraz włączmy myślenie. <br>
+          <br>
+          W pewnej Europejskej miejscowości urząd miasta postanowił wybudować publiczną bibliotekę dla jego mieszkaniców.
+          Budenk już stoi, książki czekają na pułkach. Lecz biblioteka nie może rozpocząć leganie pracy. <br>
+          Ponieważ budenek i zbiór literatury został częściowo sfinasowany z grandu technologiczno-informatycznego. <br>
+          Aby ten wymóg zosytał spełniony poproszono nas o zaprojektowanie i wdrożenie systemu bazodanowego dla biblioteki. <br>
+          <br>
+          <br>
+          Zastanówmy sie jak tego dokonamy. <br>
+          Wiemy że promotorem całego przedsiebźiecia jest urząd miasta i robi to dla swoich mieszkaniców. <br>
+          Wiec mamy dostęp do listy mieszkaniców. System bedzie budowany dla biblioteki wiec mamy też informacje o 
+          książkach. Miejscowość znajduje się w europie wiec beziemy musieli przestrzegać RODO. <br>
+          Biblioteka potrzbuje też informacji kto i od kiedy posiad dany egzendlaż aby w razie przekroczenia terminu oddania wystawić mu karę. <br>
+          Dodatkowo informacja o wypożyczonych książkach zaoszczedzi niepotrzebny czas na szukanie czegoś co nie ma na satanie. <br>  
+          <br>
+          Czas na zdefiniowanie struktóry tabeli mieszkanicy. <br>
+          Oto lista przykładowych danych uzyskanych do urzędu miasta: <br>
+          
+          
+          <ol type="I">
+            <li>Imię Nazwisko</li>
+            <li>Płeć</li>
+            <li>Adres zamieszkania</li>
+            <li>Status cywilny</li>
+            <li>Data narodzin</li>
+            <li>Dochód roczny</li>
+            <li>Status majotkowy gospodarstwa</li>
+          </ol>
+        <br>
+        Chojny ten urząd miasta. Ale czy w bibliotece potrzebujemy tak wielu informacji? <br>
+        Otóż nie. Dla prawidłowego działania biblioteki wystaczy nam Imie, Nazwisko oraz adres zamieszkania by w razie co wystwić karę dla telikwenta który nie oddał książki w terminie. <br>
+        Przykładowa tabela bedie wyglądać tak:
+          <br>
+          <br>
+          <h3>Miszkanicy</h3>
+          <table>
+            <tr>
+                <td>Imię</td> <td>Nazwisko</td> <td>Adres</td>
+            </tr>
+            <tr>
+                <td>Marcin</td> <td>Bąk</td> <td>Polna 37</td>
+            </tr>
+            <tr>
+                <td>Jan</td> <td>Kowalski</td> <td>Miodowa 13</td>
+            </tr>
+            <tr>
+                <td>Anna</td> <td>Nowak</td> <td>Miodowa 13</td>
+            </tr>
+            <tr>
+                <td>Izabela</td> <td>Łęcka</td> <td>Krucza 9</td>
+            </tr>
+          </table>
+          <br>
+          Skoro mamy już bazę mieszkaniców zajmijmy się książkami. <br>
+          Otóż nic bardziej mylnego. <br>
+          Pozostawienie tabeli w takim stanie i wpiswanie kilku set atrybutów spowoduje że w przypadku chęci dodania nowej krotki, trzeba bedzie zmodyfikować kilka set rekordów tabeli. <br>
+          Zadaj sobie pytania z serji "a co jeżeli?". Oto przykładowe pytania:<br>
+          - Pojawią się osoby z innych miast chcących wypożyczyć książkę? <br>
+          - Imie i nazwisko może się powtóżyć. To samo z ulicą i numerem domu / mieszkania. <br>
+          - Kto wtedy wypożyczył książkę? <br>
+          - Komu wystawić karę za nie terminowy zwrot? <br>
+          <br>
+          Odpowiedzią na pierwsze pytanie bedzie dodanie miasta do adresu. <br>
+          Na kolejne pytania odpowiedzią bedzie <b>"Spójność danych"</b> czyli zastosowanie w tabeli krotki przeznaczonej do niepowtarzalnych danych. <br>
+          Takimi danymi może być nr PESEL. Gdyż każdy ma swoje indywidualne 11 cyfr. <br>
+          Dla uproszczenia zastosujemy id ( skrót od identification / identyfikacja).
+          Dodatkowo zmieńmy nazwę tabeli aby opisywała faktyczny stan zbioru informacji.
+          <br>
+          <br>
+          <h3>Klienci biblioteki</h3>
+          <table>
+            <tr>
+               <td>Identyfikator</td> <td>Imię</td> <td>Nazwisko</td> <td>Adres</td>
+            </tr>
+            <tr>
+                <td>0</td> <td>Marcin</td> <td>Bąk</td> <td>Polna 37 Gdańsk</td>
+            </tr>
+            <tr>
+                <td>1</td> <td>Jan</td> <td>Kowalski</td> <td>Miodowa 13 Gdańsk</td>
+            </tr>
+            <tr>
+                <td>2</td> <td>Anna</td> <td>Nowak</td> <td>Miodowa 13 Gdańsk</td>
+            </tr>
+            <tr>
+                <td>3</td> <td>Izabela</td> <td>Łęcka</td> <td>Krucza 9 Kraków</td>
+            </tr>
+          </table>
+          <br>
+          <br>
+          Czas na normalizację są trzy etapy
+          <br>
+          <br>
+          <h3>Repertuar księgarni</h3>
+          <br>
+          <table>
+            <tr>
+                <td>Tytuł</td> <td>Autor</td>
+            </tr>
+            <tr>
+                <td>Rok 1984</td> <td>George Orwell</td>
+            </tr>
+            <tr>
+                <td>Stephen Hawking</td> <td>Krótka historia czasu</td>
+            </tr>
+            <tr>
+                <td>Dave Eggers</td> <td>Wstrząsające dzieło kulejącego geniusza</td>
+            </tr>
+            <tr>
+                <td>Ishmael Beah</td> <td>Było minęło. Wspomnienia dziecka-żołnierza</td>
+            </tr>
+          </table>
+
+
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+  <script src="script.js"></script>
+</html>
