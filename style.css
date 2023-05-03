@@ -403,3 +403,27 @@ i{
     width: 90%;
     margin-left: 20px;
   }
+  /*-----Formating Code SQL--------*/
+code{
+    
+    background-color: #303030;
+    padding: 10px;
+    margin: 10px 0 10px 0;
+    color: #e6e6e6;
+    font-weight: 700;
+    display: inline-block;
+}
+.review{
+    background-color: #acacac6e;
+    padding: 10px;
+    margin: 10px 0 10px 0;
+    color: #1f1f1f;
+    font-weight: 700;
+    display: inline-block;
+    border: 2px solid #353535;
+    border-radius: 5px;
+}
+.sql{
+    color: #b402e5;
+    display: inline;
+}
