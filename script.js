@@ -40,6 +40,8 @@ function topicSelect(dir, pageName)
       break;
     case "CISCO": document.location.href = document.location.pathname+"#"+pageName.replace("id","");;
       break;
+    case "BD": document.location.href = document.location.pathname+"#"+pageName.replace("bd","");;
+      break;
   }
   
  
@@ -58,6 +60,9 @@ switch(document.location.pathname)
   break;
   case "/id.html":
     setLesson("CISCO/","id");
+  break;
+  case "/bd.html":
+    setLesson("BD/","bd");
   break;
 }
 document.addEventListener('keypress', (event)=>{
@@ -93,6 +98,15 @@ document.addEventListener('keypress', (event)=>{
         }
       }
       setLesson("CISCO/","id");
+    break;
+    case "/bd.html":
+      for(var i=1; i<=3   ; i++)
+      {
+        if(event.key === "Enter" && document.activeElement==document.getElementById("bd"+i)) {
+          topicSelect("BD","bd"+i);
+        }
+      }
+      setLesson("BD/","bd");
     break;
   }
   
@@ -236,5 +250,12 @@ $(document).ready(function () {
 $(document).ready(function () {
   $('#cisco3').click(function () {
     topicSelect("CISCO", "id3");
+   });
+});
+
+//----------Bazy Danych-----------//
+$(document).ready(function () {
+  $('#bd1').click(function () {
+    topicSelect("BD", "bd1");
    });
 });
