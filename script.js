@@ -259,3 +259,13 @@ $(document).ready(function () {
     topicSelect("BD", "bd1");
    });
 });
+$(document).ready(function () {
+  $('#bd2').click(function () {
+    topicSelect("BD", "bd2");
+   });
+});
+$(document).ready(function () {
+  $('#bd3').click(function () {
+    topicSelect("BD", "bd3");
+   });
+});

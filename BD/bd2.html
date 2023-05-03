@@ -1,0 +1,22 @@
+<h2>Relacje</h2>
+Relacja to nic innego jak powiącanie atrybutów klucza głównego i obcego, poprzez które dochodzi do scalenia tabel. <br>
+Stosowanie relacji ma na celu głównie zapobiegać redundancji samych tabel tak jak i zapytań czyli kwerend (query). <br>
+<br>
+<br>
+Pomiedzy tabelami dochodzą tzry rodzaje relacji.
+<br>
+<br>
+<em>jeden do jednego</em> <br>
+Jednemu wierszowi pierwszej tebeli odpowiada jeden wiersz drugej tabeli. <br>
+Głównie stosowana do późniejszego scalania podzielonych tabel <br>
+<em>jeden do wielu</em><br>
+Jednemu wierszowi pierwszej tebeli odpowiada wiele wierszy drugej tabeli. <br>
+Przykład: <br>
+W jednym domu na stałe mieszka kilku ludzi, a jeden człowiek ma tylko jedno stałe miejsce zamieszkania. <br>
+<em>wiele do wielu</em><br>
+Wiele wierszy pierwszej tebeli odpowiada wielum wierszom drugej tabeli. <br>
+Do zastosowania takiej relacji trzeba utworzyć nową tabelę pośredniczocą na zasadach relcji jeden do wielu z pozostałymi tabelami. <br>
+Przykład: <br>
+Jedna firma ma wielu pracowników a jeden pracownik pracuje w wielu firmach. <br>
+<br>
+Nie zastosowanie tabeli pośredniczącej spowoduje koniczność dodawania krotek i nie wypełniania ich wszystkich danymi, co jest marnotractwem miejsca. <br>
