@@ -35,15 +35,18 @@
         <details open>
           <summary>System biblioteki (SQL)</summary>
           <ul>
-            <li class="topic" id="bd1" tabindex="0" tabindex="0">
+            <li class="topic" id="bd1" tabindex="0">
               <span class="RightLessIcon"></span>
               Budowa baz danych oraz jej normalizacja.
             </li>
-            <li class="topic" id="bd2" tabindex="0" tabindex="0">
+            <li class="topic" id="bd2" tabindex="0">
               <span class="RightLessIcon"></span>Relacje pomiedzy tabelami
             </li>
-            <li class="topic" id="bd3" tabindex="0" tabindex="0"> 
+            <li class="topic" id="bd3" tabindex="0"> 
               <span class="RightLessIcon"></span>Tworzenie, usuwanie i modyfikowanie struktury tabeli
+            </li>
+            <li class="topic" id="bd4" tabindex="0"> 
+              <span class="RightLessIcon"></span>Warunkowe dodawanie wierszy (atrybutów) do tabel
             </li>
             
         </details>
@@ -51,27 +54,6 @@
     
       <div id="lesson-contener" data-overview-sidebar="true"> 
         <div id="lesson-content">
-         <h2>Tworzenie, usuwanie i modyfikowanie struktury tabeli</h2> <br>
-         Uruchom program XAMPP, a w nim dwa moduły "Apache" oraz "MySQL". <br>
-         <img src="../BD/img/id3/1.png" alt="">
-         <a href="http://localhost/phpmyadmin/" target="_blank" rel="noopener noreferrer">Przejdź do phpMyAdmin</a>
-         Utwórz nową bazę danych <i>"biblioteka"</i> <br>
-         <img src="../BD/img/id3/2.png" alt="">
-         Lub za pomocą SQL: <br>
-         <code>
-           <div class="sql">CREATE DATABASE</div>  biblioteka <div class="sql">CHARACTER SET</div>  utf8 <div class="sql">COLLATE</div> utf8_polish_ci;
-         </code>
-        
-        <code class="review"><div class="sql">CREATE DATABASE</div>  biblioteka</code> - Tworzy bazę danych o nazwie biblioteka <br>
-        <code class="review"><div class="sql">CHARACTER SET  </div>utf8</code> - Ustawia kodowanie znaków na UTF-8 <br>
-        <code class="review"><div class="sql">COLLATE</div>code utf8_polish_ci</code> - Wskazuje sposób porównania danych w UTF-8 <br> 
-        <br>
-        <h3>Tworzenie tabeli Mieszkańcy</h3>
-        Struktura: <br>
-        <b>identyfikator</b> jako int (liczba całkowita) z opcją "Auto increment" aby atrybuty samoistnie się numerowały. <br>
-        <b>imie</b> jako tekst (nazwij krotkę bez stosowania znaków diakretycznych np.: ąęćśźż). <br>
-        <b>nazwisko</b> jako tekst (nazwij krotkę bez stosowania znaków diakretycznych np.: ąęćśźż). <br>
-        <b>identyfikator_adresu</b> jako int (liczba całkowita)
           
         </div>
       </div>

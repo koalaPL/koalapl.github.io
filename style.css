@@ -406,12 +406,12 @@ i{
   /*-----Formating Code SQL--------*/
 code{
     
-    background-color: #303030;
+    background-color: #1a1a1a;
     padding: 10px;
     margin: 10px 0 10px 0;
     color: #e6e6e6;
     font-weight: 700;
-    display: inline-block;
+    display: block;
 }
 .review{
     background-color: #acacac6e;
@@ -424,6 +424,18 @@ code{
     border-radius: 5px;
 }
 .sql{
-    color: #b402e5;
+    color: #708;
+    display: inline;
+}
+.sql2{
+    color: #085;
+    display: inline;
+}
+.sql3{
+    color:#b78b0b;
+    display: inline;
+}
+.sql4{
+    color: #05a;
     display: inline;
 }
