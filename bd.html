@@ -74,8 +74,24 @@
           <img src="../BD/img/id7/3.png" alt="">
           Sprawdź poprawność działania znaczników datalist. Czy pojawiły się poprawne dane? <br>
           <br>
-          Jak zapewne zaówarzyłeś formulaż ma akcję na <em>"insertRent.php"</em>.
+          Jak zapewne zaówarzyłeś formulaż ma akcję na <em>"insertRent.php"</em>. Wiec utwórz ten plik. <br>
+          Poniżej przedstawiono pierwszą cześć kodu w raz z komentarzami zwróć uwagę na zastosowane separatory.
+          <img src="../BD/img/id7/4.png" alt="">
+          Na tym etapie zwróć szczegulną uwagę na stosowane cudzysłowia w zapytaniach <b>SQL</b>.
+          <img src="../BD/img/id7/5.png" alt="">
+          
+          W mktime (make time) (Godziny, minuty, sekundy, miesiąc, dzień, rok)
+          <pre>
+            &lt;?php
+            $data=mktime(12, 15, 30, 30, 4, 2023);
+            echo "Data z zmiennej:" . date("Y-m-d h:i:s a", $data);
+            ?&gt;
+          </pre>
+          Powyrzej masz kod do testowania formatowania daty.
 
+
+
+          <img src="../BD/img/id7/6.png" alt="">
 
 
         </div>
