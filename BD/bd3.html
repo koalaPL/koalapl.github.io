@@ -1,67 +1,84 @@
 <h2>Tworzenie, usuwanie i modyfikowanie struktury tabeli</h2> <br>
-         Uruchom program XAMPP, a w nim dwa moduły "Apache" oraz "MySQL". <br>
-         <img src="../BD/img/id3/1.png" alt="">
-         <a href="http://localhost/phpmyadmin/" target="_blank" rel="noopener noreferrer">Przejdź do phpMyAdmin</a>
-         Utwórz nową bazę danych <i>"biblioteka"</i> <br>
-         <img src="../BD/img/id3/2.png" alt="">
-         Lub za pomocą SQL: <br>
-         <code>
+Uruchom program XAMPP, a w nim dwa moduły "Apache" oraz "MySQL". <br>
+<img src="../BD/img/id3/1.png" alt="">
+<a href="http://localhost/phpmyadmin/" target="_blank" rel="noopener noreferrer">Przejdź do phpMyAdmin</a>
+Utwórz nową bazę danych <i>"biblioteka"</i> <br>
+<img src="../BD/img/id3/2.png" alt="">
+Lub za pomocą SQL: <br>
+<code>
           <div class="sql">CREATE DATABASE</div>  biblioteka <div class="sql">CHARACTER SET</div>  utf8 <div class="sql">COLLATE</div> utf8_polish_ci;
          </code>
-        
-        <code class="review"><div class="sql">CREATE DATABASE</div>  biblioteka</code> - Tworzy bazę danych o nazwie biblioteka <br>
-        <code class="review"><div class="sql">CHARACTER SET  </div>utf8</code> - Ustawia kodowanie znaków na UTF-8 <br>
-        <code class="review"><div class="sql">COLLATE</div> utf8_polish_ci</code> - Wskazuje sposób porównania danych w UTF-8 <br> 
-        <br>
-        <h3>Tworzenie tabeli Mieszkańcy</h3>
-        Struktura: <br>
-        <b>identyfikator</b> jako int (liczba całkowita) z opcją "Auto increment" aby atrybuty samoistnie się numerowały. <br>
-        <b>imie</b> jako tekst (nazwij krotkę bez stosowania znaków diakretycznych np.: ąęćśźż). <br>
-        <b>nazwisko</b> jako tekst (nazwij krotkę bez stosowania znaków diakretycznych np.: ąęćśźż). <br>
-        <b>identyfikator_adresu</b> jako int (liczba całkowita)
-        <br>
-        <code>
+
+<code class="review"><div class="sql">CREATE DATABASE</div>  biblioteka</code> - Tworzy bazę danych o nazwie biblioteka
+<br>
+<code class="review"><div class="sql">CHARACTER SET  </div>utf8</code> - Ustawia kodowanie znaków na UTF-8 <br>
+<code class="review"><div class="sql">COLLATE</div> utf8_polish_ci</code> - Wskazuje sposób porównania danych w UTF-8
+<br>
+<br>
+<h3>Tworzenie tabeli Mieszkańcy</h3>
+Struktura: <br>
+<b>identyfikator</b> jako int (liczba całkowita) z opcją "Auto increment" aby atrybuty samoistnie się numerowały. <br>
+<b>imie</b> jako tekst (nazwij krotkę bez stosowania znaków diakretycznych np.: ąęćśźż). <br>
+<b>nazwisko</b> jako tekst (nazwij krotkę bez stosowania znaków diakretycznych np.: ąęćśźż). <br>
+<b>identyfikator_adresu</b> jako int (liczba całkowita)
+<br>
+<code>
           <div class="sql">CREATE TABLE</div> biblioteka.<div class="sql4">mieszkancy</div> (identyfikator <div class="sql2">INT </div>
           <div class="sql">NOT</div><div class="sql3"> NULL</div><div class="sql"> AUTO_INCREMENT</div> , imie <div class="sql2">TEXT</div><div class="sql"> NOT</div><div class="sql3"> NULL</div>
            , nazwisko <div class="sql2">TEXT</div><div class="sql"> NOT</div><div class="sql3"> NULL</div> , identyfikator_adresu <div class="sql2">INT</div><div class="sql"> NOT</div><div class="sql3"> 
             NULL</div> , <div class="sql">PRIMARY KEY</div> (identyfikator));
         </code>
-        <br>
-        <code class="review"><div class="sql">CREATE TABLE</div> biblioteka.<div class="sql4">mieszkancy</div></code> - Tworzy tablice mieszkanicy w bazie biblioteka. <br>
-        <code class="review">identyfikator <div class="sql2">INT </div><div class="sql">NOT</div><div class="sql3"> NULL </div><div class="sql">AUTO_INCREMENT</div></code> - W nawiasie deklarujemy krotki. Nazwa, typ, czy moze byc NULL oraz uzyamy słowa kluczowego do inkrementacji (AUTO_INCREMENT=100 rozpocznie numerowanie od 100).  <br>
-        <code class="review"><div class="sql">PRIMARY KEY </div> (identyfikator)</code> - Ustawienie klucza glównego jako konkretna krotka nie bedaca NULL'em <br>
-        <br>
-        <b>Przyjezdni</b> maja dokladnie taką samą strukturę. <br>
-        Spróbuj stworzy tabelę Przyjezdni oraz Adresy wzorując się na przykładzie powyżej. <br>
-        Struktura tabeli Adresy jest poniżej. <br>
-        Nie przepisuj postaraj się zapisać całe zapytanie. <br>
-        <br>
-        <h3>Tworzenie tabeli Adresy</h3>
-        Struktura: <br>
-        <b>identyfikator</b> jako int (liczba całkowita) z opcją "Auto increment" aby atrybuty samoistnie się numerowały. <br>
-        <b>ulica</b> jako tekst (nazwij krotkę bez stosowania znaków diakretycznych np.: ąęćśźż). <br>
-        <b>nr_domu</b> jako int (liczba całkowita) <br>
-        <b>miejscowosc</b> jako tekst (nazwij krotkę bez stosowania znaków diakretycznych np.: ąęćśźż). <br>
-        <br>
-        <h3>Modyfikacja krotek istniejącej tabeli</h3>
-        Przez pomyłkę w tabeli Adresy przez pomyłkę dopisałem do nazwy krotki nr_domu literę "s".
-        <code>
+<br>
+<code class="review"><div class="sql">CREATE TABLE</div> biblioteka.<div class="sql4">mieszkancy</div></code> - Tworzy
+tablice mieszkanicy w bazie biblioteka. <br>
+<code
+  class="review">identyfikator <div class="sql2">INT </div><div class="sql">NOT</div><div class="sql3"> NULL </div><div class="sql">AUTO_INCREMENT</div></code>
+- W nawiasie deklarujemy krotki. Nazwa, typ, czy moze byc NULL oraz uzyamy słowa kluczowego do inkrementacji
+(AUTO_INCREMENT=100 rozpocznie numerowanie od 100). <br>
+<code class="review"><div class="sql">PRIMARY KEY </div> (identyfikator)</code> - Ustawienie klucza glównego jako
+konkretna krotka nie bedaca NULL'em <br>
+<br>
+<b>Przyjezdni</b> maja dokladnie taką samą strukturę. <br>
+Spróbuj stworzy tabelę Przyjezdni oraz Adresy wzorując się na przykładzie powyżej. <br>
+Struktura tabeli Adresy jest poniżej. <br>
+Nie przepisuj postaraj się zapisać całe zapytanie. <br>
+<br>
+<h3>Tworzenie tabeli Adresy</h3>
+Struktura: <br>
+<b>identyfikator</b> jako int (liczba całkowita) z opcją "Auto increment" aby atrybuty samoistnie się numerowały. <br>
+<b>ulica</b> jako tekst (nazwij krotkę bez stosowania znaków diakretycznych np.: ąęćśźż). <br>
+<b>nr_domu</b> jako int (liczba całkowita) <br>
+<b>miejscowosc</b> jako tekst (nazwij krotkę bez stosowania znaków diakretycznych np.: ąęćśźż). <br>
+<br>
+<h3>Modyfikacja krotek istniejącej tabeli</h3>
+Przez pomyłkę w tabeli Adresy przez pomyłkę dopisałem do nazwy krotki nr_domu literę "s".
+<code>
           <div class="sql"> ALTER TABLE</div> biblioteka.<div class="sql4">adresy</div> <div class="sql">CHANGE</div> nr_domus nr_domu <div class="sql2">INT</div><div class="sql"> NOT</div><div class="sql3"> NULL</div>;        
         </code>
-        <code class="review"><div class="sql">ALTER TABLE</div> biblioteka.<div class="sql4">adresy</div></code> - Instrukcja ALTER TABLE służy do dodawania, usuwania lub modyfikowania kolumn w istniejącej tabeli. W tym przypadku do tablicy adresy znajdującej się w bazie biblioteka. <br>
-        <code class="review"><div class="sql">CHANGE</div> nr_domus nr_domu <div class="sql2">INT</div><div class="sql"> NOT</div><div class="sql3"> NULL</div></code> - zmienia krotkę na nową (<em>"RENAME COLUMN old_name TO new_name"</em> nie zadziała w MySQL jest to zapis ORACLE). <br>
-        <br>
-        <h3>Dodawanie krotek do istniejącej tabeli</h3>
-        <code>
+<code class="review"><div class="sql">ALTER TABLE</div> biblioteka.<div class="sql4">adresy</div></code> - Instrukcja
+ALTER TABLE służy do dodawania, usuwania lub modyfikowania kolumn w istniejącej tabeli. W tym przypadku do tablicy
+adresy znajdującej się w bazie biblioteka. <br>
+<code
+  class="review"><div class="sql">CHANGE</div> nr_domus nr_domu <div class="sql2">INT</div><div class="sql"> NOT</div><div class="sql3"> NULL</div></code>
+- zmienia krotkę na nową (<em>"RENAME COLUMN old_name TO new_name"</em> nie zadziała w MySQL jest to zapis ORACLE). <br>
+<br>
+<h3>Dodawanie krotek do istniejącej tabeli</h3>
+<code>
           <div class="sql"> ALTER TABLE</div> biblioteka.<div class="sql4">adresy</div> <div class="sql">ADD</div> kraj <div class="sql2">TEXT</div><div class="sql"> NOT</div><div class="sql3"> NULL</div>;        
         </code>
-        <code class="review"><div class="sql">ALTER TABLE</div> biblioteka.<div class="sql4">adresy</div></code> - Instrukcja ALTER TABLE służy do dodawania, usuwania lub modyfikowania kolumn w istniejącej tabeli. W tym przypadku do tablicy adresy znajdującej się w bazie biblioteka. <br>
-        <code class="review"><div class="sql">ADD</div> kraj <div class="sql2">TEXT</div><div class="sql"> NOT</div><div class="sql3"> NULL</div></code> - Dodaje nową krotkę o nazwie kraj i typie TEXT. <br>
-        <br>
-        <h3>Usuwanie krotek z istniejącej tabeli</h3>
-        <code>
+<code class="review"><div class="sql">ALTER TABLE</div> biblioteka.<div class="sql4">adresy</div></code> - Instrukcja
+ALTER TABLE służy do dodawania, usuwania lub modyfikowania kolumn w istniejącej tabeli. W tym przypadku do tablicy
+adresy znajdującej się w bazie biblioteka. <br>
+<code
+  class="review"><div class="sql">ADD</div> kraj <div class="sql2">TEXT</div><div class="sql"> NOT</div><div class="sql3"> NULL</div></code>
+- Dodaje nową krotkę o nazwie kraj i typie TEXT. <br>
+<br>
+<h3>Usuwanie krotek z istniejącej tabeli</h3>
+<code>
           <div class="sql"> ALTER TABLE</div> biblioteka.<div class="sql4">adresy</div> <div class="sql">DROP COLUMN</div> kraj;        
         </code>
-        <code class="review"><div class="sql">ALTER TABLE</div> biblioteka.<div class="sql4">adresy</div></code> - Instrukcja ALTER TABLE służy do dodawania, usuwania lub modyfikowania kolumn w istniejącej tabeli. W tym przypadku do tablicy adresy znajdującej się w bazie biblioteka. <br>
-        <code class="review"><div class="sql">DROP COLUMN</div> kraj </code> - Usuwa istniejącą krotkę o nazwie kraj z istniejącej tabeli adresy. <br>
-       
+<code class="review"><div class="sql">ALTER TABLE</div> biblioteka.<div class="sql4">adresy</div></code> - Instrukcja
+ALTER TABLE służy do dodawania, usuwania lub modyfikowania kolumn w istniejącej tabeli. W tym przypadku do tablicy
+adresy znajdującej się w bazie biblioteka. <br>
+<code class="review"><div class="sql">DROP COLUMN</div> kraj </code> - Usuwa istniejącą krotkę o nazwie kraj z
+istniejącej tabeli adresy. <br>

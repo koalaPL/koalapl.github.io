@@ -1,0 +1,14 @@
+Kolejną funkcjonalnością jest dodawanie klienta do bazy danych. <br>
+Zanim zostanie wykonane zapytanie należy sprawdzić do jakiej tabeli wpisać atrybut. <br>
+Klienci dzielą się na mieszkańców i przyjezdnych uznajmy że mieszkańcami są wszyscy z miejscowością <i>Gdańsk</i>.
+Dodatkowo obie tabele <em>`przyjezdni`</em> i <em>`mieszkancy`</em> łączą się w relacji wiele do jednego z tabelą <em>`adresy`</em>. <br>
+Co znaczy że pod jednym adresem może być wielu klientów. Ma to sens ze względu na to że klienci mogą mieszkać razem.
+<img src="../BD/img/id6/1.png" alt="">
+Poniżej przedstawiono zawartość pliku który należy utwożyć <em>InsertClient.php</em> wraz z komentarzami.
+Gdy zostanie dodany adres klienta kolejne zapytanie ma na celu zwrócenie identyfikatora, który bedzie potrzebny w tabeli <em>`przyjezdni`</em> lub <em>`mieszkancy`</em>. <br>  
+
+<img src="../BD/img/id6/2.png" alt="">
+Dalsza część kodu dodaje klienta do odpowiadającej mu tabeli w raz z identyfikatorem jego adresu.
+<img src="../BD/img/id6/3.png" alt="">
+Na koniec wykonaj test poprawności działania funkcjonalności. <br>
+Aktualny kod przed dodaniem adresu i klienta nie sprawdza czy atrybut który chcemy dodać znajduje się już w tabeli.

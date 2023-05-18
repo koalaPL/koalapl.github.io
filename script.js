@@ -274,3 +274,25 @@ $(document).ready(function () {
     topicSelect("BD", "bd4");
    });
 });
+$(document).ready(function () {
+  $('#bd5').click(function () {
+    topicSelect("BD", "bd5");
+   });
+});
+$(document).ready(function () {
+  $('#bd6').click(function () {
+    topicSelect("BD", "bd6");
+   });
+});
+$(document).ready(function () {
+  $('#bd7').click(function () {
+    topicSelect("BD", "bd7");
+   });
+});
+
+$(document).ready(function () {
+  $('#bd8').click(function () {
+    topicSelect("BD", "bd8");
+   });
+});
+

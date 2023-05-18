@@ -1,27 +1,31 @@
 Pobierz paczkę strony "Biblioteka miejska", do której dopiszemy funkcjonalności. <br>
-          <a href="https://drive.google.com/file/d/1gLBW-FQKOSJAPjYM8PsaONeF8qLAljyV/view">Pobierz</a> <br>
-          Zawartość wypakuj do katalogu <em>htdocs</em> ( C:\xampp\htdocs ). <br>
-          Utwórz plik connect.php zawierający trzy zmienne dotyczące połączenia z bazą danych MySQL. <br>
-          <img src="../BD/img/id4/1.png" alt="">
-          Zmień rozszerzenie pliku index z html na php. <br>
-          Nastepnie skonfiguruj w nim połączenie zgodnie z zawartością obrazka poniżej.
-          <img src="../BD/img/id4/2.png" alt="">
-          Gdy połączenie jest poprawne, pierwszą funkcjonalnością którą zaimplementujemy bedzie uzupełnienie danych dla tych trzech kart.
-          <img src="../BD/img/id4/3.png" alt="">
-          Wykonaj odpowiedznie zapytania do bazy i przygotuj zmienne z danymi dla kart zgodnie z obrazkiem poniżej.
-          <img src="../BD/img/id4/4.png" alt="">
-          Zmodyfikuj karty wywołując za pomocą <i>echo</i> zmienne z informacją o ilości książek.
-          <img src="../BD/img/id4/5.png" alt="">
-          Zmodyfikuj pierwszy wiersz tabeli zawarty pomiędzy znacznikami <b>&lt;tr&gt;...&lt;/tr&gt;</b>. <br>
-          if($linkchoice == "Wartość") -- sprawdza czy warunek porównania zawarty w nawiasach jest prawdą. <br>
-          Jeżeli tak to za pomocą echo wypisze klasę html/css modyfikującą styl rekordu tabeli. <br>
-          W znaczniku <b>&lt;a&gt; </b> zastosowanie linku " <em>?sort=wartość</em> " sprawi że strona odświerzy sią a z dopiskiem <em>?sort=wartość</em> w adresie <b>URL</b>. <br>
-          <img src="../BD/img/id4/6.png" alt="">
-          Logika sprawdzania po której kolumnie użytkownik bedzie chiał sortować tabelę książek.
-          <img src="../BD/img/id4/7.png" alt="">
-          Na koniec zmodyfikuj zapytanie stosując słowo kluczowe <i>ORDER BY</i> <br><div class=""></div>
-          Posłuży do sortowania zestawu wyników domyślnie rosnoco Wiec nie ma patrzeby zapisywać słowa kluczowego <i>ASC</i>, aby uzyskać sortowanie malejące użyj <i>DESC</i> <br>
-          Zmienna $column pozwoli na "dynamiczne" dostosowanie po jakej krotce ma zostać posortowania tablica wyniku zapyatnia.  
-          <img src="../BD/img/id4/8.png" alt="">
-          Efekt końcowy strony główne z sortowaniem tabeli rosnoco po nazwie Autora 
-          <img src="../BD/img/id4/9.png" alt="">
+<a href="https://drive.google.com/file/d/1gLBW-FQKOSJAPjYM8PsaONeF8qLAljyV/view">Pobierz</a> <br>
+Zawartość wypakuj do katalogu <em>htdocs</em> ( C:\xampp\htdocs ). <br>
+Utwórz plik connect.php zawierający trzy zmienne dotyczące połączenia z bazą danych MySQL. <br>
+<img src="../BD/img/id4/1.png" alt="">
+Zmień rozszerzenie pliku index z html na php. <br>
+Nastepnie skonfiguruj w nim połączenie zgodnie z zawartością obrazka poniżej.
+<img src="../BD/img/id4/2.png" alt="">
+Gdy połączenie jest poprawne, pierwszą funkcjonalnością którą zaimplementujemy bedzie uzupełnienie danych dla tych
+trzech kart.
+<img src="../BD/img/id4/3.png" alt="">
+Wykonaj odpowiedznie zapytania do bazy i przygotuj zmienne z danymi dla kart zgodnie z obrazkiem poniżej.
+<img src="../BD/img/id4/4.png" alt="">
+Zmodyfikuj karty wywołując za pomocą <i>echo</i> zmienne z informacją o ilości książek.
+<img src="../BD/img/id4/5.png" alt="">
+Zmodyfikuj pierwszy wiersz tabeli zawarty pomiędzy znacznikami <b>&lt;tr&gt;...&lt;/tr&gt;</b>. <br>
+if($linkchoice == "Wartość") -- sprawdza czy warunek porównania zawarty w nawiasach jest prawdą. <br>
+Jeżeli tak to za pomocą echo wypisze klasę html/css modyfikującą styl rekordu tabeli. <br>
+W znaczniku <b>&lt;a&gt; </b> zastosowanie linku " <em>?sort=wartość</em> " sprawi że strona odświerzy sią a z dopiskiem
+<em>?sort=wartość</em> w adresie <b>URL</b>. <br>
+<img src="../BD/img/id4/6.png" alt="">
+Logika sprawdzania po której kolumnie użytkownik bedzie chiał sortować tabelę książek.
+<img src="../BD/img/id4/7.png" alt="">
+Na koniec zmodyfikuj zapytanie stosując słowo kluczowe <i>ORDER BY</i> <br>
+<div class=""></div>
+Posłuży do sortowania zestawu wyników domyślnie rosnoco Wiec nie ma patrzeby zapisywać słowa kluczowego <i>ASC</i>, aby
+uzyskać sortowanie malejące użyj <i>DESC</i> <br>
+Zmienna $column pozwoli na "dynamiczne" dostosowanie po jakej krotce ma zostać posortowania tablica wyniku zapyatnia.
+<img src="../BD/img/id4/8.png" alt="">
+Efekt końcowy strony główne z sortowaniem tabeli rosnoco po nazwie Autora
+<img src="../BD/img/id4/9.png" alt="">
