@@ -18,7 +18,6 @@ html{
 body{
     overflow-y: hidden!important;
     background-color: var(--document-background-1);
-    
 }
 .logoIMG{
     position: absolute;
