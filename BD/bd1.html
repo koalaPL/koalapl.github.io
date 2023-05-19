@@ -1,26 +1,26 @@
 Baza danych to obiekt, który składa się z tabel. <br>
 Tabela zbudowana jest krotek czyli kolumn oraz atrybutów czyli wierszy. <br>
-Krotki okraślają cechy obiektów przechowywanych w wierszach. <br>
+Krotki określają cechy obiektów przechowywanych w wierszach. <br>
 Wiersz to szereg wartości odpowiadających cechom w krotkach tabeli. <br>
 <br>
 No dobrze, regułka została odbębniona to teraz włączmy myślenie. <br>
 <br>
-W pewnej Europejskej miejscowości urząd miasta postanowił wybudować publiczną bibliotekę dla jego mieszkaniców.
-Budenk już stoi, książki czekają na pułkach. Lecz biblioteka nie może rozpocząć leganie pracy. <br>
-Ponieważ budenek i zbiór literatury został częściowo sfinasowany z grandu technologiczno-informatycznego. <br>
+W pewnej Europejskiej miejscowości urząd miasta postanowił wybudować publiczną bibliotekę dla jego mieszkańców.
+Budynek już stoi, książki czekają na pułkach. Lecz biblioteka nie może rozpocząć leganie pracy. <br>
+Ponieważ budynek i zbiór literatury został częściowo sfinansowany z grantu technologiczno-informatycznego. <br>
 Aby ten wymóg zosytał spełniony poproszono nas o zaprojektowanie i wdrożenie systemu bazodanowego dla biblioteki. <br>
 <br>
 <br>
 Zastanówmy sie jak tego dokonamy. <br>
-Wiemy że promotorem całego przedsiebźiecia jest urząd miasta i robi to dla swoich mieszkaniców. <br>
-Wiec mamy dostęp do listy mieszkaniców. System bedzie budowany dla biblioteki wiec mamy też informacje o
-książkach. Miejscowość znajduje się w europie wiec beziemy musieli przestrzegać RODO. <br>
-Biblioteka potrzbuje też informacji kto i od kiedy posiad dany egzendlaż aby w razie przekroczenia terminu oddania
+Wiemy że promotorem całego przedsięwzięcia jest urząd miasta i robi to dla swoich mieszkańców. <br>
+Wiec mamy dostęp do listy mieszkańców. System będzie budowany dla biblioteki wiec mamy też informacje o
+książkach. Miejscowość znajduje się w Europie wiec będziemy musieli przestrzegać RODO. <br>
+Biblioteka potrzebuje też informacji kto i od kiedy posiad dany legendarz aby w razie przekroczenia terminu oddania
 wystawić mu karę. <br>
-Dodatkowo informacja o wypożyczonych książkach zaoszczedzi niepotrzebny czas na szukanie czegoś co nie ma na satanie.
+Dodatkowo informacja o wypożyczonych książkach zaoszczędzi niepotrzebny czas na szukanie czegoś co nie ma na stanie.
 <br>
 <br>
-Czas na zdefiniowanie struktóry tabeli mieszkanicy. <br>
+Czas na zdefiniowanie struktury tabeli mieszkańcy. <br>
 Oto lista przykładowych danych uzyskanych do urzędu miasta: <br>
 
 
@@ -31,16 +31,16 @@ Oto lista przykładowych danych uzyskanych do urzędu miasta: <br>
   <li>Status cywilny</li>
   <li>Data narodzin</li>
   <li>Dochód roczny</li>
-  <li>Status majotkowy gospodarstwa</li>
+  <li>Status majątkowy gospodarstwa</li>
 </ol>
 <br>
 Chojny ten urząd miasta. Ale czy w bibliotece potrzebujemy tak wielu informacji? <br>
-Otóż nie. Dla prawidłowego działania biblioteki wystaczy nam Imie, Nazwisko oraz adres zamieszkania by w razie co
-wystwić karę dla telikwenta który nie oddał książki w terminie. <br>
-Przykładowa tabela bedie wyglądać tak:
+Otóż nie. Dla prawidłowego działania biblioteki wystarczy nam Imię, Nazwisko oraz adres zamieszkania by w razie co
+wystawić karę dla delikwenta który nie oddał książki w terminie. <br>
+Przykładowa tabela będzie wyglądać tak:
 <br>
 <br>
-<h3>Miszkanicy</h3>
+<h3>Mieszkańcy</h3>
 <table>
   <tr>
     <td>Imię</td>
@@ -69,18 +69,18 @@ Przykładowa tabela bedie wyglądać tak:
   </tr>
 </table>
 <br>
-Skoro mamy już bazę mieszkaniców zajmijmy się książkami. <br>
+Skoro mamy już bazę mieszkańców zajmijmy się książkami. <br>
 Otóż nic bardziej mylnego. <br>
-Pozostawienie tabeli w takim stanie i wpiswanie kilku set atrybutów spowoduje że w przypadku chęci dodania nowej krotki,
-trzeba bedzie zmodyfikować kilka set rekordów tabeli. <br>
-Zadaj sobie pytania z serji "a co jeżeli?". Oto przykładowe pytania:<br>
+Pozostawienie tabeli w takim stanie i wpisywanie kilku set atrybutów spowoduje że w przypadku chęci dodania nowej krotki,
+trzeba Bedzie zmodyfikować kilka set rekordów tabeli. <br>
+Zadaj sobie pytania z serii "a co jeżeli?". Oto przykładowe pytania:<br>
 - Pojawią się osoby z innych miast chcących wypożyczyć książkę? <br>
-- Imie i nazwisko może się powtóżyć. To samo z ulicą i numerem domu / mieszkania. <br>
+- Imię i nazwisko może się powtórzyć. To samo z ulicą i numerem domu / mieszkania. <br>
 - Kto wtedy wypożyczył książkę? <br>
 - Komu wystawić karę za nie terminowy zwrot? <br>
 <br>
-Odpowiedzią na pierwsze pytanie bedzie dodanie miasta do adresu. <br>
-Na kolejne pytania odpowiedzią bedzie <b>"Spójność danych"</b> czyli zastosowanie w tabeli krotki przeznaczonej do
+Odpowiedzią na pierwsze pytanie będzie dodanie miasta do adresu. <br>
+Na kolejne pytania odpowiedzią będzie <b>"Spójność danych"</b> czyli zastosowanie w tabeli krotki przeznaczonej do
 niepowtarzalnych danych. <br>
 Takimi danymi może być nr PESEL. może ona w pełni zastąpić krotkę ID. Gdyż każdy ma swoje indywidualne 11 cyfr. <br>
 Dla uproszczenia zastosujemy id ( skrót od identification / identyfikacja).
@@ -173,29 +173,29 @@ Dodatkowo zmieńmy nazwę tabeli aby opisywała faktyczny stan zbioru informacji
 </table>
 <br>
 Posiadamy już dwie główne tabele naszej biblioteki. <br>
-<em>(Dostaliśmy informację że klienci spoza miejscowości powinni mieć krutczy czas na oddanie książki).</em> <br>
+<em>(Dostaliśmy informację że klienci spoza miejscowości powinni mieć krótszy czas na oddanie książki).</em> <br>
 Uwzględnimy to w dalszych etapach. <br>
 <br>
-Czas na normalizację, są trzy etapy a dokładniej czetery. <br>
+Czas na normalizację, są trzy etapy a dokładniej cztery. <br>
 <h4>Pierwsza postać normalna</h4>
-<i>Wszystkie elementy są autonomiczne i żadne wiersze się nie powtarzaja.</i>
+<i>Wszystkie elementy są autonomiczne i żadne wiersze się nie powtarzają.</i>
 <br>
-Ta postać normalna została przez nas cześciowo zastosowana dzieki dodaniu identyfikatora. <br>
+Ta postać normalna została przez nas częściowo zastosowana dzięki dodaniu identyfikatora. <br>
 Lecz nie w pełni... <br>
-Skoro rodzimi mieszkanicy miejscowości mają swoist bonus czasowy na przyswojenie lektury, to trzeba zmodyfikować tabelę
+Skoro rodzimi mieszkańcy miejscowości mają swoisty bonus czasowy na przyswojenie lektury, to trzeba zmodyfikować tabelę
 klienci biblioteki. <br>
-Utwórzmy wiec dwie tabele "Mieszkanicy" oraz "Przyjezdni". Uwzgledniając pierwszą postać normalną.
-Dzieki podzile klientów na dwie grupy unikneliśmy przymusu stworzenia dodatkowej krotki definującej przynależność do
+Utwórzmy wiec dwie tabele "Mieszkańcy" oraz "Przyjezdni". Uwzględniając pierwszą postać normalną.
+Dzięki podziel klientów na dwie grupy uniknęliśmy przymusu stworzenia dodatkowej krotki definiującej przynależność do
 miejscowości.
 <br>
-Kontynułując normalizację zaóważ bezsensowność krotki "Aderes". <br>
-Posiadamy w niej wiele informacji skaładowych ulicę, numer domu oraz miejscowość. <br>
-Skoro krotka zawiera w sobie wiele istotnych informacji należy ją rozdzielić na cześci składowe. <br>
+Kontynuując normalizację zauważ bezsensowność krotki "Aderes". <br>
+Posiadamy w niej wiele informacji składowych ulicę, numer domu oraz miejscowość. <br>
+Skoro krotka zawiera w sobie wiele istotnych informacji należy ją rozdzielić na części składowe. <br>
 <br>
 Oto wynik pierwszej normalizacji tabeli "Klienci biblioteki":
 <br>
 <br>
-<h3>Mieszkanicy</h3>
+<h3>Mieszkańcy</h3>
 <table>
   <tr>
     <td>Identyfikator</td>
@@ -277,21 +277,21 @@ Oto wynik pierwszej normalizacji tabeli "Klienci biblioteki":
 </table>
 <br>
 <h3>Podsumowanie zasad pierwszej postaci normalnej</h3>
-- Wyeliminuj powtarzające się grupy w poszczegulnych tabelach. <br>
+- Wyeliminuj powtarzające się grupy w poszczególnych tabelach. <br>
 - Utwórz osobną tabelę dla każdego zestawu powiązanych danych. <br>
 - Zidentyfikuj każdy zestaw powiązanych danych za pomocą klucza podstawowego (Primary key / Klucz główny). <br>
 <br>
 <h4>Druga postać normalna</h4>
-<i>Zawiera w sobie pierwszą postać normalną oraz wymusza separację danych nie bedących kluczowymi dla tabeli oraz
+<i>Zawiera w sobie pierwszą postać normalną oraz wymusza separację danych nie będących kluczowymi dla tabeli oraz
   powiązanymi z atrybutami inych tabel.</i> <br>
 Zaóważ że mieszkanicy oraz przyjezdni mają w sobie adres który mógłby być oddzielną tabelą. <br>
 W naszym przykładzie biblioteki możesz nie widzieć sensu takiego działania ale wyobraź sobie dział rachunkowości w
-jakejś firmie. <br>
+jakiejś firmie. <br>
 Adres klienta jest potrzebny w tabeli klienci, zamówienia, faktury, wysyłka oraz serwis urządzeń niezdatnych do
 transportu. <br>
 <br>
-Po zastosowaniu podziłu na trzy tabele trzeba przywrócić integralność danych. <br>
-Tu z pomocą przychodzi nam klucz obcy (Foreign key) zalokowany w tabelach Mieszkanicy oraz Przyjezdni, powiązany z
+Po zastosowaniu podziału na trzy tabele trzeba przywrócić integralność danych. <br>
+Tu z pomocą przychodzi nam klucz obcy (Foreign key) zalokowany w tabelach Mieszkańcy oraz Przyjezdni, powiązany z
 numerem identyfikacyjnym z tabeli Adresy. <br>
 
 <br>
@@ -344,7 +344,7 @@ numerem identyfikacyjnym z tabeli Adresy. <br>
 
 </table>
 <br>
-<h3>Mieszkanicy</h3>
+<h3>Mieszkańcy</h3>
 <table>
   <tr>
     <td>Identyfikator</td>
@@ -408,7 +408,7 @@ numerem identyfikacyjnym z tabeli Adresy. <br>
 </table>
 <br>
 <br>
-<h3>Podsumowanie zasad drugej postaci normalnej</h3>
+<h3>Podsumowanie zasad drugiej postaci normalnej</h3>
 - Utwórz osobne tabele dla zestawów wartości dotyczących wielu rekordów. <br>
 - Powiąż te tabele za pomocą klucza obcego (Foreign key). <br>
 <br>
@@ -416,17 +416,17 @@ numerem identyfikacyjnym z tabeli Adresy. <br>
 <i>Zawiera w sobie pozostałe postaci normalne oraz wprowadza zasadę, że wszystkie atrybuty niekluczowe są bezpośrednio
   zależne od klucza podstawowego </i>
 <br>
-Aktualna struktura tabel z informacjami o klientach uwzglednia tą postać normalną,
-ponieważ chcąc uzyskać klientów bedących mieszkanicami tej miejscowości którzy skożystali już z biblioteki,
-bedzie bezproblemowa. Ponieważ te dane są zależne od klucza adresu.
+Aktualna struktura tabel z informacjami o klientach uwzględnia tą postać normalną,
+ponieważ chcąc uzyskać klientów będących mieszkańcami tej miejscowości którzy skorzystali już z biblioteki,
+będzie bezproblemowa. Ponieważ te dane są zależne od klucza adresu.
 <br>
 <h3>Podsumowanie zasad trzeciej postaci normalnej</h3>
 - Wyeliminuj pola, które nie zależą od klucza.
 <br>
-Uwzglednienie tych trzech postaci normalnych jest wymagane do utworzenia poprawnej struktury tabel bazy danych. <br>
-Istnieją jescze dwie kolejne postacie które nie są wymagane a niektóre struktury danych nawet nie umożliwią ich
+Uwzględnienie tych trzech postaci normalnych jest wymagane do utworzenia poprawnej struktury tabel bazy danych. <br>
+Istnieją jeszcze dwie kolejne postacie które nie są wymagane a niektóre struktury danych nawet nie umożliwią ich
 zastosowanie. <br>
-Dla lepszego zobrazowania ich pożućmy plan biblioteki i weźmy prostą tabelę "Olimpiada". <br>
+Dla lepszego zobrazowania ich porzućmy plan biblioteki i weźmy prostą tabelę "Olimpiada". <br>
 <br>
 <h3>Olimpiada</h3>
 <br>
@@ -482,12 +482,12 @@ Dla lepszego zobrazowania ich pożućmy plan biblioteki i weźmy prostą tabelę
 </table>
 <br>
 <h4>Czwarta postać normalna</h4>
-<i>Zawiera w sobie trzecią zasadę normalizacji, oraz tabela nie może zawierać zależności wielo wartościowych.</i> <br>
+<i>Zawiera w sobie trzecią zasadę normalizacji, oraz tabela nie może zawierać zależności wielowartościowych.</i> <br>
 Powyższa tabela nie spełnia trzech pierwszych postaci normalnych. Widać w niej także redundancje czyli nadmiarowość.
 <br>
-Wielowartościowoś tej tabeli sprawia że przypisujemy zależność pomiedzy znajomością języka a dyscypliną.
+Wielowartościowość tej tabeli sprawia że przypisujemy zależność pomiędzy znajomością języka a dyscypliną.
 <br>
-Najprawdopodobniej wykożystanie trzech postaci normalnych zniweluje wszelkie problemy z tą tabelą. <br>
+Najprawdopodobniej wykorzystanie trzech postaci normalnych zniweluje wszelkie problemy z tą tabelą. <br>
 Ponieważ rozwiązaniem wielowartościowości jest dekompozycja całości na dwie trzy tabele Zawodnicy, Dyscypliny, Języki.
 <br>
 <br>
