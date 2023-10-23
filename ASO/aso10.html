@@ -1,5 +1,5 @@
 <h2>
-  Przekierowanie portów VirtualBox Połączenie SSH i konfiguracja interfesów
+  Przekierowanie portów VirtualBox Połączenie SSH i konfiguracja interfejsów
   sieciowych netplan
 </h2>
 Zaimportuj maszyny wirtualne <em>"Ubuntu20.04_Server.ova"</em> i
@@ -11,17 +11,17 @@ W maszynie wirtualnej Ubuntu serwer ustaw dwie karty sieciowe. <br />
 Na karcie <i>NAT</i> skonfiguruj <em>"Przekierowanie portów"</em> dla
 <b>SSH</b> z połączeniem <b>localhost</b> na port 22.
 <img src="ASO/img/idu0/3.png" />
-Uruchom jedną z poniszych konsol poleceń: <br />
+Uruchom jedną z poniższych konsol poleceń: <br />
 - <i>CMD</i> <br />
 - <i>PowerShell</i> <br />
 - <i>Terminal</i> dostępny w windows 11 <br />
-Uruchom maszynę z serwerem Ubuntu, a nastepnie dokonaj zdalnego połączenia
-poprzez SSH. <br />Wpisz jedną z poniszych lini komend w wybranej konsoli
+Uruchom maszynę z serwerem Ubuntu, a następnie dokonaj zdalnego połączenia
+poprzez SSH. <br />Wpisz jedną z poniższych linii komend w wybranej konsoli
 poleceń:
 
 <img src="ASO/img/idu0/4.png" />
-Przy połączeniu zostaniesz zapytany czy napewno chcesz sie połączyć. Wpisz
-<b>yes</b> (tak), a nastepnie zaloguj się do konta egza (hasło w opisie mszyny).
+Przy połączeniu zostaniesz zapytany czy na pewno chcesz się połączyć. Wpisz
+<b>yes</b> (tak), a następnie zaloguj się do konta egza (hasło w opisie maszyny).
 <br />
 PS. podczas wpisywania hasła nie pojawi się żaden znak, ale hasło jest
 wpisywane.
@@ -31,8 +31,8 @@ Zaktualizuj linki pakietów i zainstaluj aktualizacje do zainstalowanych
 pakietów.
 <img src="ASO/img/idu0/6.png" />
 Możesz także doinstalować <em>"Midnight Commander"</em> z pakietu <b>mc</b>. Ja
-to zrobię dla lepszego zobrazowania konfiguracji interfesów sieciowych. Potem
-bedę kożystac z natywnego <b>nano</b>.
+to zrobię dla lepszego zobrazowania konfiguracji interfejsów sieciowych. Potem
+będę korzystać z natywnego <b>nano</b>.
 
 <img src="ASO/img/idu0/7.png" />
 Polecenie <em>ip a</em> wyświetla wszystkie interfejsy sieciowe. <br />
@@ -46,13 +46,13 @@ Przed przystąpieniem do edycji <b>00-installer-config</b>, zrób kopię tego pl
 z dopiskiem <i>"_Kopia"</i>.
 <img src="ASO/img/idu0/9.png" />
 Pliki .yaml są bardzo upierdliwe. Uruchomiłem
-<b>00-installer-config.yaml</b> w mcedit aby zobrazować błąd dabulacji (w tym
-pliku nie może być tabulacji). Ważne jest to aby zachować odpowiednie wcięcia i
+<b>00-installer-config.yaml</b> w mcedit aby zobrazować błąd tabulacji (w tym
+pliku nie może być podwójnej tabulacji). Ważne jest to aby zachować odpowiednie wcięcia i
 odstępy. <br />
-W prawej części poniżego obrazka przedstawiam przykładową konfigurację
+W prawej części poniższego obrazka przedstawiam przykładową konfigurację 
 interfejsów.
 <img src="ASO/img/idu0/10.png" />
-Aby zmiany w pliku <b>00-installer-config.yaml</b> zostały zastosowane skożystaj
+Aby zmiany w pliku <b>00-installer-config.yaml</b> zostały zastosowane skorzystaj
 z poniższej komendy. Gdy nic ci nie zwróci, to jest dobrze.
 <img src="ASO/img/idu0/11.png" />
 Weryfikacja konfiguracji: <br />
@@ -64,3 +64,4 @@ Dodatkowo zweryfikuj poprawność konfiguracji interfejsów wykonując
 <b>ping</b> do <em>wp.pl</em>.
 <img src="ASO/img/idu0/ping.png" />
 Aktualne konfiguracje pozwalają na wykonanie dalszych zadań.
+<br /><br /><br /><br /><br />
