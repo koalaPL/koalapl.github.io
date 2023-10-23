@@ -36,3 +36,16 @@ komputerami.
 <img src="ASO/img/id1/5.png" />
 Taki wynik informuje cię o <b>niepoprawnym</b> przesyłaniu pakietów między
 komputerami. <img src="ASO/img/id1/6.png" />
+<br />
+<h3> Przykładowe problemy i rozwiązania</h3>
+<ol>
+<li> Upewnij się czy wpisana przez ciebie adresacja jest poprawna</li>
+<li>Często gdy nie podasz na serwerze adresu DNS zostanie on uzupełniony jako localhost 127.0.0.1 <br /> 
+Wystarczy wtedy wejść znowu w konfigurację IPv4 i go usunąć</li>
+<li>Ping może być blokowany przez zaporę sieciową. <br /> 
+Możesz dodać regułę przepuszczającą (wersja bezpieczniejsza) lub całkowicie wyłączyć zaporę sieciową (wersja prostsza) [ Panel Sterowania => System i zabezpieczenia => Zapora Windows Defender => { po lewej stronie } Włącz lub wyłącz Zaporę Windows Defender]</li>
+<li>Nieprawidłowa konfiguracja sieci w maszynach VirtualBox`a. <br />
+Aby umożliwić komunikację pomiędzy maszynami obie maszyny powinny posiadać przynajmniej jedną kartę typu <b> Sieć wewnętrzna </b> o tej samej nazwie. <br /> 
+Czasem wymagane jest aby w <i>Zaawansowane zmienić opcję z odmawiaj na pozwalaj wszystkim </i> </li>
+
+</ol>
