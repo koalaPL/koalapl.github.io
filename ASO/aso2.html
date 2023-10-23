@@ -3,7 +3,7 @@ Aby móc świadczyć usługi sieciowe, musi zachodzić komunikacja pomiędzy us�
 dawcą a usługo odbiorcą. <br />
 Skonfigurujmy zatem
 <b>statyczne połączenie</b>
-pomiędzy wirtualnymi maszynami. <br />
+pomiędzy wirtualnymi maszynami. <br /><br />
 Poniżej przedstawiono jak przejść do konfiguracji interfejsu sieciowego na
 Windows 10:
 
@@ -11,21 +11,23 @@ Windows 10:
 Poniżej przedstawiono jak przejść do konfiguracji interfejsu sieciowego na
 Windows Server 2012 R2:
 <img src="ASO/img/id1/ipWinServer2012.gif" />
-<img src="ASO/img/id1/1.png" />
 Ta konfiguracja sprawi że serwer będzie robił za tymczasowego DNS'a.
+<br />
+
+<img src="ASO/img/id1/2.png" />
 <br />
 Czasem pojawi się o tym taka informacja.
 <img src="ASO/img/id1/3.png" />
 Więc na kliencie podasz adres serwera jako bramę domyślną oraz jako DNS.
-<img src="ASO/img/id1/2.png" />
+<img src="ASO/img/id1/1.png" />
 
 Teraz weryfikujemy czy komunikacja jest poprawna.<br />
 Uruchom wiersz poleceń <b>CMD</b>. Komenda <i>ipconfig</i> pokaże ci podstawową
 konfigurację interfejsu sieciowego. <br />Natomiast <i>ipconfig /all</i> da ci
 wszystkie informacje o karcie sieciowej gdzie na przykład:<br />
 <em>"Host Name"</em> to nazwa hosta.<br />
-<em>"Physical Address"</em> jest to address MAC przydatny do konfiguracji
-konkretnego urządzenia.
+<em>"Physical Address"</em> jest to adres MAC przydatny do konfiguracji
+konkretnego urządzenia w sieci.
 
 <img src="ASO/img/id1/4.png" />
 Aby sprawdzić czy serwer wraz z klientem się "widzą" wykonaj ping<br />
