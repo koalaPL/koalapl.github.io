@@ -13,7 +13,7 @@ function coursSelect(number){
      case 0: document.location = 'aso.html'; break;
      case 1: document.location = 'sk.html'; break;
      case 2: document.location = 'Malware/index.html'; break;
-   // case 3: document.location = 'Malware/MalwareTest/index.html'; break;
+   case 3: document.location = 'Malware/MalwareTest/index.html'; break;
      case 4: document.location = 'bd.html'; break;
     }
    }
