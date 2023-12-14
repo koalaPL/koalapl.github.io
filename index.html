@@ -66,5 +66,50 @@
     </main>
     <footer></footer>
   </body>
-  <script src="indexFunctional.js"></script>
+  <script src="indexFunctional.js">
+    // disable rightclick
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+document.onkeydown = function (e) {
+
+// disable F12 key
+if(e.keyCode == 123) {
+alert("co probojesz? Nie MA B)");
+    return false;
+}
+
+
+// disable c key
+if(e.ctrlKey && e.keyCode == 67){
+    alert("cos nie wychodzi co nie? Nie MA.");
+    return false;
+
+}
+
+    // disable c key
+if(e.ctrlKey && e.keyCode == 67){
+    alert("proboj dalej ;) | Nie MA");
+    return false;
+
+}
+
+
+// wypierdol i
+if(e.ctrlKey && e.keyCode == 73) {
+alert("do kogo kurwa?  | Nie MA");
+    return false;
+}
+
+    // disable c key
+if(e.ctrlKey && e.keyCode == 80){
+    alert("Fanozo ty chcesz to drukowac? XDDDDDDDD");
+    return true;
+    alert("Trzymaj fanie");
+
+}
+
+}
+
+
+  </script>
 </html>
