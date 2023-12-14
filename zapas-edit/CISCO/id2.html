@@ -1,0 +1,257 @@
+<br><br>
+<h2>Konfiguracja VLAN</h2>
+<br>
+
+<table>
+  <tr>
+    <td><b>Zadanie</b></td>
+    <td><b>Polecenia IOS</b></td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Przejdź do trybu konfiguracji globalnej.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">	
+        S1#</span>
+        configure terminal</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Przejdź w tryb konfiguracji interfejsu dla SVI.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">	
+        S1(config)#</span>
+        interface vlan 99</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Skonfiguruj adres IPv4 interfejsu zarządzania.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-if)#</span>
+        ip address 172.17.99.11 255.255.255.0</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Skonfiguruj adres IPv6 interfejsu VLAN.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-if)#</span>
+        ipv6 address 2001:db8:acad:99::1/64</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Skonfiguruj prefix IPv6 interfejsu VLAN.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-if)#</span>
+        ipv6 address fe80::4 link-local</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Włącz interfejs VLAN.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-if)#</span>
+        no shutdown</span>
+    </td>  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Wróć do trybu uprzywilejowanego EXEC.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-if)#</span>
+        end</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Zapisz bieżącą konfigurację do konfiguracji startowej.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1#</span>
+        copy running-config startup-config</span>
+    </td>
+  </tr>
+ 
+</table>
+  
+
+<br><br>
+<h2>Weryfikacja adresacji interfejsów.</h2>
+<br>
+
+<table>
+  <tr>
+    <td><b>Zadanie</b></td>
+    <td><b>Polecenia IOS</b></td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Adresacja ipv6
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1#</span>
+        show ip interface brief</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Adresacja ipv4
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1#</span>
+        show ipv6 interface brief</span>
+    </td>
+  </tr>
+
+</table>
+
+<br><br>
+<h2>Przypisanie VLAN`u do portów.</h2>
+<br>
+
+<table>
+  <tr>
+    <td><b>Zadanie</b></td>
+    <td><b>Polecenia IOS</b></td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Informacje o VLAN`ach i przypisanych do nich portów.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1#</span>
+        show vlan</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Przejdź do trybu konfiguracji globalnej.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">	
+        S1#</span>
+        configure terminal</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Rozpoczecie konfiguracji portów FastEthernet od 1 do 2.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config)#</span>
+        interface range Fa0/1-2</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Konfiguracja trybu członkostwa.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-if-range)#</span>
+        switchport mode access</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Przypisanie VLAN`a 99 do portów z zakresu.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-if-range)#</span>
+        switchport access vlan 99</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Zakończ konfigurację
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-if-range)#</span>
+        exit</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Konfiguracja pojedyczego portu.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config)#</span>
+        interface Gig0/1</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Zakończ konfigurację
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-if)#</span>
+        exit</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Konfiguracja trybu członkostwa.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-if-range)#</span>
+        switchport mode access</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Przypisanie VLAN`a 99 do portu.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-if-range)#</span>
+        switchport access vlan 99</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Zakończ konfigurację
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-if)#</span>
+        end</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Informacje o VLAN`ach i przypisanych do nich portów.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1#</span>
+        show vlan</span>
+    </td>
+  </tr>
+</table>
+

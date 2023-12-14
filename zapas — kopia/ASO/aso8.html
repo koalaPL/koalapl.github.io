@@ -1,0 +1,38 @@
+<h2>DNS pod stronę WwW</h2>
+Cały proces, można w dużym uproszczeniu zobrazować następująco:
+<br /><br />
+
+1. Użytkownik wpisuje w przeglądarce adres: www.koala.pl. <br />
+2. System wysyła zapytanie do znanego mu serwera DNS, z prośbą o wysłanie adresu
+IP, dla domeny www.koala.pl. <br />
+3. Serwer DNS, odsyła do komputera użytkownika adres IP przyporządkowany dla
+podanej domeny. <br />
+4. Komputer użytkownika łączy się ze wskazanym adresem IP wyświetlając stronę.
+<img src="ASO/img/id7/2.png" />
+
+Dodaj i zainstaluj rolę <em>Serwer DNS</em> <br />
+Konfiguracja Stref wyszukiwania do przodu i wstecznego trochę się różni gdy
+serwer jest kontrolerem domeny (AD) od sytuacji gdy owym kontrolerem nie jest.
+Dlatego poniższy obrazek przedstawia konfigurację w obu przypadkach:
+<img class="dualImage" src="ASO/img/id7/StrefyDNS.gif" />
+Jak są dodane obie strefy wyszukiwania, to dodaj nowy <em>host A</em> lub
+<em>AAAA</em> po czym przypisz go do
+<i>"Adres startowy uwierzytelniania (SOA)"</i>. Pamiętaj by zaznaczyć check box
+<i>"Utwórz skojarzony rekord wskaźnika (PTR)"</i>.
+<img class="dualImage" src="ASO/img/id7/HostA.gif" />
+Do weryfikacji poprawności działania DNS zainstaluj rolę serwera WwW
+<em>"Serwer sieci Web (IIS)"</em>. Konfiguracja <i>IIS</i> będzie w kolejnym
+rozdziale. <br />
+Czas na weryfikację poprawności działania DNS. (Pamiętaj o ustawieniu
+statycznego adresu DNS serwera na klientach nie będących w Domenie (AD)).
+<br />
+Na obrazie poniżej przedstawiono poprawne połączenie z domyślną stronią
+<i>IIS</i> z wykorzystaniem DNS na adres <em>"www.koala.pl"</em> w dwóch
+wersjach na kliencie będącym w domenie oraz na kliencie nie będącym w domenie:
+<img class="dualImage" src="ASO/img/id7/1.png" />
+Możemy sprawdzić informacje o znanych serwerach i domenach oraz sub-domenech
+DNS: <i>ipconfig /displaydns</i>
+<img src="ASO/img/id7/3.png" />
+Możemy wyczyścić pamięć cache przechowywującą informacje o znanych serwerach i
+domenach oraz subdomenach DNS: <i>ipconfig /flushdns</i>
+<img src="ASO/img/id7/4.png" />

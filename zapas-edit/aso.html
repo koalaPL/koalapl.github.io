@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/img/favicon-32x32.png" />
+    <title>Systemy operacyjne</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="../index.html">KoalaPL.GitHub.io</a></h1>
+      <span class="burger" tabindex="0">&#9776;</span>
+    </header>
+    <main>
+      <div class="topic-sidebar" data-overview-sidebar="true">
+        <div id="tittle-course">
+          <h2>SYSTEMY OPERACYJNE I ADMINISTRACJA NIMI</h2>
+
+          <progress class="complete-progressbar" max="100" value="70">
+            70%
+          </progress>
+          <label class="progressbar-complete-label" for="complete-progressbar">
+          </label>
+        </div>
+        <details open>
+          <summary>WINDOWS SERWER</summary>
+          <ul>
+            <li class="topic" id="aso1" tabindex="0">
+              <span class="RightLessIcon"></span>
+              Konfiguracja w VirtualBox
+            </li>
+            <li class="topic" id="aso2" tabindex="0">
+              <span class="RightLessIcon"></span>Interfejs sieciowy
+            </li>
+            <li class="topic" id="aso3" tabindex="0">
+              <span class="RightLessIcon"></span>Active Directory (AD)
+            </li>
+            <li class="topic" id="aso4" tabindex="0">
+              <span class="RightLessIcon"></span>(AD) użytkownicy
+            </li>
+            <li class="topic" id="aso5" tabindex="0">
+              <span class="RightLessIcon"></span>(AD) profile mobilne i udziały
+              sieciowe
+            </li>
+            <li class="topic" id="aso6" tabindex="0">
+              <span class="RightLessIcon"></span>(AD) zasady grupy
+            </li>
+            <li class="topic" id="aso7" tabindex="0">
+              <span class="RightLessIcon"></span>Dynamiczna konfiguracja hostów
+              (DHCP)
+            </li>
+            <li class="topic" id="aso8" tabindex="0">
+              <span class="RightLessIcon"></span>Serwer Web www /part 1 - DNS
+            </li>
+            <li class="topic" id="aso9" tabindex="0">
+              <span class="RightLessIcon"></span>Serwer Web www /part 2 - IIS
+            </li>
+          </ul>
+        </details>
+        <details open>
+          <summary>LINUX SERWER</summary>
+          <ul>
+            <li class="topic" id="aso10" tabindex="0">
+              <span class="RightLessIcon"></span>
+              Połączenie SSH i konfiguracja interfesów sieciowych netplan
+            </li>
+            <li class="topic" id="aso11" tabindex="0">
+              <span class="RightLessIcon"></span>
+              Serwer plików (FTP) / udziały sieciowe - samba
+            </li>
+            <li class="topic" id="aso12" tabindex="0">
+              <span class="RightLessIcon"></span>
+              Dynamiczna konfiguracja hostów (DHCP) - isc-dhcp-server
+            </li>
+            <li class="topic" id="aso13" tabindex="0">
+              <span class="RightLessIcon"></span>Serwer Web www /part 1 -
+              apache2
+            </li>
+            <li class="topic" id="aso14" tabindex="0">
+              <span class="RightLessIcon"></span>Serwer Web www /part 2 - php
+            </li>
+            <li class="topic" id="aso15" tabindex="0">
+              <span class="RightLessIcon"></span>Serwer Web www /part 3 - mysql
+            </li>
+            <li class="topic" id="aso16" tabindex="0">
+              <span class="RightLessIcon"></span>Serwer Web www /part 4 - DNS
+            </li>
+          </ul>
+        </details>
+      </div>
+      <div id="lesson-contener" data-overview-sidebar="true">
+        <div id="lesson-content"></div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+  <script src="script.js"></script>
+  <script src="ser.js"></script>
+  <script src="up.js"></script>
+</html>

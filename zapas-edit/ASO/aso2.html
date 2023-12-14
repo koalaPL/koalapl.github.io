@@ -1,0 +1,53 @@
+<h2>Konfiguracja interfejsów sieciowych Windows w wersji klient i serwer</h2>
+Aby móc świadczyć usługi sieciowe, musi zachodzić komunikacja pomiędzy usługo
+dawcą a usługo odbiorcą. <br />
+Skonfigurujmy zatem
+<b>statyczne połączenie</b>
+pomiędzy wirtualnymi maszynami. <br /><br />
+Poniżej przedstawiono jak przejść do konfiguracji interfejsu sieciowego na
+Windows 10:
+
+<img src="ASO/img/id1/ipWin10.gif" />
+Poniżej przedstawiono jak przejść do konfiguracji interfejsu sieciowego na
+Windows Server 2012 R2:
+<img src="ASO/img/id1/ipWinServer2012.gif" />
+Ta konfiguracja sprawi że serwer będzie robił za tymczasowego DNS'a.
+<br />
+
+<img src="ASO/img/id1/2.png" />
+<br />
+Czasem pojawi się o tym taka informacja.
+<img src="ASO/img/id1/3.png" />
+Więc na kliencie podasz adres serwera jako bramę domyślną oraz jako DNS.
+<img src="ASO/img/id1/1.png" />
+
+Teraz weryfikujemy czy komunikacja jest poprawna.<br />
+Uruchom wiersz poleceń <b>CMD</b>. Komenda <i>ipconfig</i> pokaże ci podstawową
+konfigurację interfejsu sieciowego. <br />Natomiast <i>ipconfig /all</i> da ci
+wszystkie informacje o karcie sieciowej gdzie na przykład:<br />
+<em>"Host Name"</em> to nazwa hosta.<br />
+<em>"Physical Address"</em> jest to adres MAC przydatny do konfiguracji
+konkretnego urządzenia w sieci.
+
+<img src="ASO/img/id1/4.png" />
+Aby sprawdzić czy serwer wraz z klientem się "widzą" wykonaj ping<br />
+Taki wynik informuje cię o <b>poprawnym</b> przesyłaniu pakietów między
+komputerami.
+<img src="ASO/img/id1/5.png" />
+Taki wynik informuje cię o <b>niepoprawnym</b> przesyłaniu pakietów między
+komputerami. <img src="ASO/img/id1/6.png" />
+<br />
+<h3> Przykładowe problemy i rozwiązania</h3>
+<ol>
+<li> Upewnij się czy wpisana przez ciebie adresacja jest poprawna</li>
+<li>Często gdy nie podasz na serwerze adresu <i>DNS</i> zostanie on uzupełniony jako <b>localhost 127.0.0.1</b> <br /> 
+Wystarczy wtedy wejść znowu w konfigurację IPv4 i go usunąć</li>
+<li>Ping może być blokowany przez zaporę sieciową. <br /> 
+Możesz dodać regułę przepuszczającą (wersja bezpieczniejsza) lub całkowicie wyłączyć zaporę sieciową (wersja prostsza) <br />
+<b>  [ Panel Sterowania => System i zabezpieczenia => Zapora Windows Defender => { po lewej stronie } Włącz lub wyłącz Zaporę Windows Defender]</b>
+</li>
+<li>Nieprawidłowa konfiguracja sieci w maszynach VirtualBox`a. <br />
+Aby umożliwić komunikację pomiędzy maszynami obie maszyny powinny posiadać przynajmniej jedną kartę typu <b> Sieć wewnętrzna </b> o tej samej nazwie. <br /> 
+Czasem wymagane jest aby w <i>Zaawansowane zmienić opcję z odmawiaj na pozwalaj wszystkim </i> </li>
+
+</ol>

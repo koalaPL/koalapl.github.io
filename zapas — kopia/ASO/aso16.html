@@ -1,0 +1,29 @@
+<h2>Serwer Web www /part 4 - DNS</h2>
+Zainstaluj bind9:
+<img src="ASO/img/idu6/1.png" />
+Czestym rozwiązaniem błędów przy instalacji pakietów jest aktualizacja listy
+repozytorjów:
+<img src="ASO/img/idu1/2.png" />
+Skopiuj plik <i>000-default.conf</i> zmieniając nazwę na <em>koala.pl.conf</em>.
+<img class="dualImage" src="ASO/img/idu6/2.png" />
+Przechodzimy do modyfikacji kopi <em>koala.pl.conf</em>.
+<img src="ASO/img/idu6/3.png" />
+W tym pliku napotkasz linie przedstawione w górnej części poniższego obrazka.
+Zmodyfikuj je tak jak niżej. ( Kolory cie nakierują. )
+<img src="ASO/img/idu6/4.png" />
+Włącz w apache2 stronę <b>"koala.pl.conf"</b>
+<img src="ASO/img/idu6/5.png" />
+Skopiuj plik <i>"db.empty"</i> zmieniając mu nazwę na <em>"koala.pl"</em>.
+<img src="ASO/img/idu6/6.png" />
+Zmodyfikuj ledwo co utwożona kopię <em>"koala.pl"</em>.
+<img src="ASO/img/idu6/7.png" />
+Na czerwono zaznaczyłem miejsca modyfikacji pliku. <br />
+Na zielono jest liczba którą należy zmieniać przy każdej zmianie w pliku aby
+bind9 uwzględnił nową konfigurację.
+<img src="ASO/img/idu6/8.png" />
+Zmodyfikuj <em>named.conf.local </em> dopisując nową strefę <i>"koala.pl"</i>.
+<img src="ASO/img/idu6/9.png" />
+Zrestartuj usługi. <br />
+Aby <b>DNS</b> <em>"koala.pl"</em> i <i>Alias</i>
+<em>"www.koala.pl"</em> zadziałał musisz ustalić statyczne adresy dla karty
+sieciowej. <img src="ASO/img/idu6/10.png" />

@@ -1,0 +1,29 @@
+<h2>Serwer Web www /part 3 - MySQL</h2>
+Zainstaluj mysql-server:
+<img src="ASO/img/idu5/1.png" />
+Zmodyfikuj <i>mysqld.cnf</i> dodając <em>#</em> do podanych niżej lini. Jeżeli
+tego niezrobisz mysql bedzie blokować wszystkie połączenia inne niż na maszynie
+wirtualnej lub fizycznym urządzeniu świadczącym usługi serwerowe. <br />
+Ps.: Przez SSH też się nie da bo jest to zdalne połączenie z konsolą serwera.
+<img src="ASO/img/idu5/2.png" />
+Wykożystując poniższą linię komend połączysz się z serwerem mysql jako
+<b>root</b>.
+<img src="ASO/img/idu5/3.png" />
+Będąc na <b>mysql></b> wprowadź następujące zapytania <i>SQL</i>: <br />
+Utworzenie bazy danych "koala": <br />
+<b>CREATE DATABASE koala;</b> <br />
+Utworzenie użytkownika koala dla dowolnego połączenia ip z hasłem bambus:<br />
+<b>CREATE USER 'koala'@'%' IDENTIFIED BY 'bambus';</b><br />
+Nadanie wszystkich praw do wszystkich tabel w bazie koala dla użytkownika koala
+@'%' --łączącego się z dowolnego adresu ip: <br />
+<b>GRANT ALL PRIVILEGES ON koala.* TO 'koala'@'%';</b>
+<img src="ASO/img/idu5/4.png" />
+Sprawdź czy posiadasz pakiet <b>php8.2-mysql</b>:
+<img src="ASO/img/idu5/5.png" />
+Jak nie posiadasz to zainstaluj:
+<img src="ASO/img/idu5/6.png" />
+Zrestartuj usługi lub uruchom ponownie serwer.
+<img src="ASO/img/idu5/7.png" />
+No tym razem się udało, bez wiekszych błedów na maszynie wirtualnej. Za to
+dzieki przekierowaniu <i>HTTP</i> przez <em>NAT</em> w Google Chrome za
+pierwszym razem zadziałało :p <img src="ASO/img/idu5/8.png" />

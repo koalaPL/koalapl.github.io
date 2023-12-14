@@ -1,0 +1,174 @@
+<br><br>
+<h2>Konfiguracja połączenia po kablu konsolowym.</h2>
+<br>
+
+<table>
+  <tr>
+    <td><b>Zadanie</b></td>
+    <td><b>Polecenia IOS</b></td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Przejdź do konfiguracji połączenia po kablu konsolowym
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1#</span>
+        line con 0</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Zapobiegaj przerwaniu połączenia przez powiadomienia konsoli.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-line)#</span>
+        loggin synchronous</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Ustaw hasło dla połączenia.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-line)#</span>
+        password kabelek</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Wymagaj logowania
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-line)#</span>
+        login</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Zapobiegaj przerwaniu połączenia przez powiadomienia konsoli.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-line)#</span>
+        loggin synchronous</span>
+    </td>
+  </tr>
+
+</table>
+<h2 style="color: red; font-size: 40px;"> Połączenia proszę wykonywać na adres VLAN`a nie na bramę domyślną!!! </h2>
+
+<br><br>
+<h2>Weryfikacja adresacji interfejsów.</h2>
+<br>
+
+<table>
+  <tr>
+    <td><b>Zadanie</b></td>
+    <td><b>Polecenia IOS</b></td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Ustaw nazwę domeny
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config)#</span>
+        ip domain-name twoja-stara</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Wygeneruj klucz RSA
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config)#</span>
+        crypto key generate rsa</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Włącz ssh w wersji 2
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config)#</span>
+        ip ssh version 2</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Skonfiguruj użytkawnika i jego hasło
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config)#</span>
+        username rock secret alone</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Przejdź do konfiguracji połączenia sieciowego / zdalnego
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config)#</span>
+        line vty 0 15</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Skonfiguruj hasło do połączenia SSH
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-line)#</span>
+        password asdf</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Włącz wymóg logowania
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-line)#</span>
+        login</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Ustaw transmisję danych na SSH
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-line)#</span>
+        transport input ssh</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Powrót do "S1#"
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1(config-line)#</span>
+        end</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #c5c5c5; color: #000000">
+      Zapisz bieżącą konfigurację do konfiguracji startowej.
+    </td>
+    <td style="background-color: #525252; color: #ffffff;padding: 2px;">
+      <span class="cisco-command">
+        <span class="cisco-prompter">S1#</span>
+        copy running-config startup-config</span>
+    </td>
+  </tr>
+
+</table>

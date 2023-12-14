@@ -1,0 +1,32 @@
+<h2>Serwer Web www /part 2 - PHP</h2>
+Zainstaluj php:
+<img src="ASO/img/idu4/1.png" />
+Czestym rozwiązaniem błędów przy instalacji pakietów jest aktualizacja listy
+repozytorjów:
+<img src="ASO/img/idu1/2.png" />
+Sprawdź swoją wersję <b>PHP</b>. Ja mam 7.4.3.
+<img src="ASO/img/idu4/2.png" />
+Aktualna wersja to <b>PHP 8.2.0 Beta 3</b>
+<img src="ASO/img/idu4/phpV.png" />
+Aby muc skożystać z najnowszej wersji <b>PHP</b> należy dodać linki do
+repozytorjum: <em> sudo add-apt-repository ppa:ondrej/php</em> oraz zatwierdzić
+dodanie klawiszem <b>ENTER</b> lub anulować kobinacją
+<b>CTRL C</b>
+<img class="dualImage" src="ASO/img/idu4/3.png" />
+Po całej operacji musisz jeszcze zaktualizować linki dla <b>apt</b>:
+<img src="ASO/img/idu1/2.png" />
+Zainstaluj najnowszą wersję, u mnie <b>PHP 8.2</b>.
+<img src="ASO/img/idu4/4.png" />
+Edytując php8.2.conf zmień engine z <em>Off</em> na <em>On</em>.
+<img src="ASO/img/idu4/5.png" />
+Wyłącz bądź upewnij się że jest wyłączona starsza wersja <b>PHP 7.4</b>.
+<img src="ASO/img/idu4/6.png" />
+Włącz moduł najnowszej wersji <b>PHP</b>.
+<img src="ASO/img/idu4/7.png" />
+Sam restart usługi apache2 może spowodować w środowiskach wirtualnych błąd
+jakoby interpreter php nie działał poprawnie. Zalecam pełny restart serwera i
+ponowne połączenie się z nim poprzez <i>SSH</i>.
+<img src="ASO/img/idu4/8.png" />
+Jak widać działa. Lecz musiałem zrestartować cały serwer i z minutę odczekać
+zanim zaczeło działać
+<img src="ASO/img/idu4/9.png" />

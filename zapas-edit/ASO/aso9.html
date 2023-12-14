@@ -1,0 +1,119 @@
+<h2>Stronę WwW z obsługą interpretera PHP i bazy danych MySQL</h2>
+W poprzednim rozdziale zainstalowaliśmy role
+<em>"Serwer sieci Web (IIS)"</em>. Jeżeli tego nie uczyniłeś, zrób to teraz.
+<br />
+Zanim zaczniemy konfigurację ISS musimy pobrać zasoby niezbędne do uzyskania
+końcowego wyniku. <br />
+<i>Pliki strony WwW Świat koali</i> : 
+<a href="../../StronaAppacheKoalaPL.zip"><em>Pliki Strony</em></a>. <br />
+<i>Interpreter PHP</i>:
+<a
+  href="https://windows.php.net/downloads/releases/php-8.2.3-nts-Win32-vs16-x64.zip"
+  >https://windows.php.net/downloads/releases/php-8.2.3-nts-Win32-vs16-x64.zip</a
+>
+<br />
+<i>MySQL Community</i>:
+<a
+  href="https://cdn.mysql.com//Downloads/MySQLInstaller/mysql-installer-community-8.0.32.0.msi"
+  >https://cdn.mysql.com//Downloads/MySQLInstaller/mysql-installer-community-8.0.32.0.msi</a
+>
+<br />
+<i>Microsoft Visual C++ 2015-2019 Redistributable (x64)</i>:
+<a
+  href="https://download.visualstudio.microsoft.com/download/pr/b929b7fe-5c89-4553-9abe-6324631dcc3a/296F96CD102250636BCD23AB6E6CF70935337B1BBB3507FE8521D8D9CFAA932F/VC_redist.x64.exe"
+  >https://download.visualstudio.microsoft.com/download/pr/b929b7fe-5c89-4553-9abe-6324631dcc3a/296F96CD102250636BCD23AB6E6CF70935337B1BBB3507FE8521D8D9CFAA932F/VC_redist.x64.exe</a
+>
+<br />
+<i>Microsoft .NET Framework 4.5.2 (instalator offline)</i>:
+<a
+  href="https://download.microsoft.com/download/E/2/1/E21644B5-2DF2-47C2-91BD-63C560427900/NDP452-KB2901907-x86-x64-AllOS-ENU.exe"
+  >https://download.microsoft.com/download/E/2/1/E21644B5-2DF2-47C2-91BD-63C560427900/NDP452-KB2901907-x86-x64-AllOS-ENU.exe</a
+>
+<br /><br />
+Zainstaluj Dodatek gościa i udostępnij folder Gospodarza dla
+WindowsServer2012R2. Umieść w nim pliki które pobrałeś w katalogu udostępnionym
+dla maszyny wirtualnej.
+<img src="ASO/img/id8/1.png" />
+Z archiwum <i>"Pliki strony świat koali.zip"</i> przenieś katalog
+<em>"Strony"</em> wraz z zawartością na dysk lokalny <b>C:\</b>.
+<img src="ASO/img/id8/2.png" />
+Usuń domyślną witrynę <i>"Default Web Site"</i> i dodaj nową wskazując na
+lokalizację <em>C:\Strony</em>, uzupełniając pozostałe lubryki według schematu.
+<br />
+Przenieś <em>index.html</em> na górę listy plików.
+<img src="ASO/img/id8/ISS.gif" />
+Możesz dodać niestandardową nazwę pliku strony WwW, klikając
+<i>"Dodaj..."</i> i wpisując jej nazwę.
+<img src="ASO/img/id8/3.png" />
+Witryna WwW już działa, ale nie do końca. Nie ma interpretera PHP bzy danych
+MySQL oraz zdjęcia się nie wczytują <br />
+(chyba że dodasz drugą kartę sieciową NAT na kliencie Windows 10).
+<img src="ASO/img/id8/4.png" />
+Poprzez dodawanie ról doinstaluj <i>Interfejs CGI</i>:
+<img src="ASO/img/id8/5.png" />
+Zainstaluj na serwerze:
+<i>Microsoft Visual C++ 2015-2019 Redistributable (x64)</i>.
+<img src="ASO/img/id8/6.png" />
+1. Rozpakuj archiwum <em>"php-8.2.3-nts-Win32-vs16-x64.zip"</em>. <br />
+2. Zmień nazwę katalogu na <b>"PHP"</b>. <br />
+3. Przenieś na Dysk lokalny <b>C:\</b> <br />
+<img src="ASO/img/id8/7.png" />
+Przejdź w Menadżerze internetowych usług informacyjnych (IIS) do
+<em>"Mapowania obsługi"</em>. <br />
+<i>Dodaj mapowanie modułu...</i> <br />
+<b>Ścieżka żądania</b>: *.php <br />
+<b>Moduł</b>: FastCgiModule <br />
+<b>Plik wykonywalny</b>: C:\PHP\php-cgi.exe <br />
+<b>Nazwa</b>: Tu możesz wpisać cokolwiek, ale warto aby nazwa była samoopisująca
+się. Ja to mapowanie nazwałem PHP_FastCGI poniważ wykorzystuje moduł FastCgi do
+opsługi interpretera PHP.
+<img class="dualImage" src="ASO/img/id8/8.png" />
+Po kliknięciu <i>"Ograniczenia żądań..."</i> ukaże się okno z trzema zakładkami.
+Poniżej przedstawiono poprawna konfigurację pod mapowanie <b>PHP</b>.
+<img class="dualImage" src="ASO/img/id8/9.png" />
+Tu klikamy oczywiście <em>"Tak"</em>.
+<img src="ASO/img/id8/10.png" />
+Jak widać poniżej Interpreter PHP działa poprawnie. Pozostała nam jeszcze
+obsługa bazodanowa <em>MySQL</em>.
+<img src="ASO/img/id8/11.png" />
+Zainstaluj na serwerze:
+<i>Microsoft .NET Framework 4.5.2 (instalator offline)</i>.
+<img src="ASO/img/id8/12.png" />
+Koniecznie uruchom ponownie teraz serwer.
+<img src="ASO/img/id8/13.png" />
+Rozpoczynamy instalację
+<em>MySQL Community</em> (mysql-installer-community-8.0.32.0.msi). <br />
+Klikaj cały czas Next, Execute oraz Yes, aż do strony
+<em>"Accounts and Roles"</em>:
+<img src="ASO/img/id8/14.png" />
+Podajemy hasło do <b>root</b>'a czyli takiego administratora <br />
+Po kliknięciu <i>"Add User"</i> tworzymy następującego użytkownika ( Wszelkie
+dane podane na obrazku poniżej):
+<img src="ASO/img/id8/15.png" />
+Po kolejnej serii prze klikiwania napotkasz taką stronę. Musisz podać hasło do
+root'a, po czym kliknąć <em>"Check"</em>. <br />
+Gdy połączenie zakończy się sukcesem klikaj dalej.
+<img src="ASO/img/id8/16.png" />
+Po instalacji wyskoczą takie dwa okna zamknij je. Do niczego nam się nie
+przydadzą :p
+<img src="ASO/img/id8/17.png" />
+Uruchom wiersz poleceń MySQL:
+<img src="ASO/img/id8/18.png" />
+Podaj hasło do root'a, następnie wykonaj dwa zapytania SQL widoczne na obrazku
+poniżej:
+<img src="ASO/img/id8/19.png" />
+W katalogu <b>C:\PHP</b> znajduje się plik <i>"php.ini-production"</i> będącym
+templatką konfiguracji <b>PHP</b>.
+<br />
+Skopiuj go i zmień nazwę na <i>"php.ini"</i>
+<img src="ASO/img/id8/20.png" />
+Modyfikując <i>"php.ini"</i> wyszukaj frazę <em>"extension="</em> i usuń znak
+średnika <b>";"</b> dla rozszerzeń <em>"mysqli"</em> oraz <em>"pdo_mysql"</em>.
+<img src="ASO/img/id8/21.png" />
+Serwer na którym wykonuje konfigurację ma ustawiony statyczny adres
+<b>192.168.0.10</b>, dlatego muszę zmodyfikować plik
+<i>"C:\Strony\indexMySQL.php"</i>.
+<img src="ASO/img/id8/22.png" />
+Teraz serwer Web jest w pełni skonfigurowany bo, oprócz wyświetlania stron
+<b>html</b>, interpretuje język <b>PHP</b> oraz posiada działającą bazę danych
+<b>MySQL</b>. <img src="ASO/img/id8/23.png" />

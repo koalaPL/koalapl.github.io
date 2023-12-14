@@ -1,0 +1,76 @@
+<h2>DHCP - Dynamic Host Configuration Protocol</h2>
+
+Instalacja i konfiguracja DHCP ma niewielkie różnice w zależności czy serwer
+jest kontrolerem domeny (AD) czy nie, dlatego wykonamy konfigurację w dwóch
+wersjach. <br />
+Dodaj rolę <em>"Serwer DHCP"</em>.
+<img class="dualImage" src="ASO/img/id6/1.png" />
+
+Będąc na serwerze który nie jest kontrolerem domeny wyskoczy takie okienko.
+Można je zignorować klikając <em>"Kontynuuj"</em>.
+<img src="ASO/img/id6/2.png" />
+Jak mamy skonfigurowane karty sieciowe to możemy to ostrzeżenie zignorować
+klikając kontynuuj. No i znowu dalej, dalej… zainstaluj<br />
+Jak się zainstaluje klikamy na niebiesko “Dokończ konfigurację funkcji DHCP”<br />
+Jak zamkniemy to będzie w powiadomieniach
+<img class="small_img" src="ASO/img/id6/9.png" />“Dokończ konfigurację funkcji
+DHCP” <br />
+Tam klikamy potwierdź zatwierdź. <br />
+W Menedżerze serwera prawy górny róg klikamy narzędzia>DHCP <br />
+<br />
+W razie gdyby wystąpił poniższy błąd, że server DHCP się nie uruchomił należy to
+zrobić ręcznie tak jak na poniższym obrazku:
+<img src="ASO/img/id6/4.png" />
+
+Jak będzie czerwona ikona to klikamy tak jak wyżej w uruchom teraz mamy coś
+takiego dalej DHCP nie działa.
+<img src="ASO/img/id6/10.png" alt="" />
+To tak jak wyżej klikamy uruchom ponownie jak się już uruchomi, wystarczy
+odświeżyć IPv4. Jest zielony znaczek to prawym przyciskiem myszy na IPv4 >nowy
+zakres…
+<br />
+Prze kalikujemy do okna “Zakres adresów IP” Ja podałem takie dane wiec mój win10
+dostanie adres <b>192.168.0.50</b>
+<br />
+Jak na egzaminie będą chcieli DHCP w zakresach <br />
+<b>192.168.0.50 - 192.168.0.56</b> <br />
+<b>192.168.0.67 - 192.168.0.95</b> <br />
+to nasz zakres będzie początkowy <b>192.168.0.50</b> końcowy
+<b>192.168.0.95</b> <br />
+a na kolejnej karcie wykluczamy początkowy <b>192.168.0.56 </b> końcowy
+<b> 192.168.0.67</b>
+<br />
+Kolejna karta określa czas dzierżawy mogą chcieć na egzaminie inny niż domyślny
+<b>8 Dni</b> <br />
+Na karcie Nazwa domeny i serwery DNS dodajemy adres ip naszego serwera dodaj i
+dalej (Przy komunikacie ostrzegawczym kontynuujemy mimo to) Serwery WINS też
+dodajemy adres IP serwera
+<img src="ASO/img/id6/DHCPZakres.gif" />
+
+<img src="ASO/img/id6/5.png" />
+Pamiętaj że klienci muszą mieć ustawione uzyskiwanie adresów IP i DNS na
+automatyczne.
+<img src="ASO/img/id6/6.png" />
+Teraz na kliencie odpalamy wiersz poleceń CMD (koniecznie jako administrator,
+konto lokalne Max jest adminem). <br /><i> ipconfig /release</i> -- zwalnia /
+oddaje swój adres ip do puli serwera DHCP<br />
+<i> ipconfig /renew</i> -- pobiera nowy adres ip z puli serwera DHCP <br />(jak
+zapomnisz tych komend to przy ponownym uruchomieniu klienta adres się
+zaktualizuje)
+
+<img src="ASO/img/id6/8.png" />
+
+Ustawmy stały adres spoza zakresu: <br />Potrzebujemy adresu fizycznego karty
+sieciowej klienta uzyskamy ją za pomocą <i> ipconfig /all</i> <br />
+Tak ta linia wygląda u mnie
+<img src="ASO/img/id6/14.png" />
+
+Klikamy prawym na Zastrzeżenia > Nowe zastrzeżenie
+
+<img src="ASO/img/id6/15.png" />
+<img src="ASO/img/id6/16.png" />
+Zauważ że fizyczny adres możesz wpisać bez - myślników i małymi literami Po
+odnowieniu dzierżawy uzyskałem adres ip 192.168.0.3 i jest on na stałe
+przypisany do mojej karty sieciowej
+
+<img src="ASO/img/id6/17.png" />
