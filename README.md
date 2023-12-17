@@ -43,6 +43,9 @@ Edycję wersji beta pod adresem [KoalaPL - Wersja do Edycji](https://koalapl.git
 
 Ten projekt jest dostępny na zasadach licencji MIT. Szczegółowe informacje znajdziesz w pliku [LICENSE](LICENSE).
 
+## UpDate
+- [1.0.0](CHANGE.md)
+
 ---
 
 **Happy coding!**
