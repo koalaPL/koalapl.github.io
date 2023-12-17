@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tajna Strona</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+  </head>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+    }
+    canvas {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #111a22;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Adjust as needed */
+    }
+
+    .box,
+    .box2 {
+      position: relative;
+      width: 220px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.5s;
+      z-index: 1;
+      margin: 20px; /* Dodane odstępy między boxami */
+    }
+
+    .box::before,
+    .box2::before,
+    .box::after,
+    .box2::after {
+      content: " ";
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      opacity: 0;
+      transition: 0.1s;
+      animation: animate 2s ease-in-out infinite;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .box::before,
+    .box2::before {
+      top: -55px;
+      left: -25px;
+    }
+
+    .box::after,
+    .box2::after {
+      bottom: -55px;
+      right: -25px;
+      animation-delay: -1s;
+    }
+
+    .box:hover::before,
+    .box:hover::after,
+    .box2:hover::before,
+    .box2:hover::after {
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+    }
+
+    .box span,
+    .box2 span {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .box .content,
+    .box2 .content {
+      position: relative;
+      width: 190px;
+      height: 254px;
+      padding: 20px 40px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      z-index: 1;
+      transform: 0.5s;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box .content h2,
+    .box2 .content h2 {
+      font-size: 20px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+  </style>
+  <canvas></canvas>
+  <body>
+    <div class="container">
+        <div class="box">
+          <span></span>
+          <div class="content">
+            <h2>Hover me!</h2>
+          </div>
+        </div>
+        <!-- Drugi box -->
+        <div class="box2">
+          <span></span>
+          <div class="content">
+            <h2>Hover me too!</h2>
+          </div>
+        </div>
+    </div>
+  </body>
+  <script src="bg.js"></script>
+</html>

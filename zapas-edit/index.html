@@ -6,7 +6,18 @@
     <link rel="icon" type="image/x-icon" href="img/favicon-32x32.png" />
     <title>KoalaPL</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- AI CHAT -->
+    <!-- <script>
+      window.roboassistApiKey = "50bc16f9-ed40-4141-bfb1-2c83fde29c7a";
+    </script>
+    <script
+      src="https://script.roboassist.ai/roboassist.js"
+      id="50bc16f9-ed40-4141-bfb1-2c83fde29c7a"
+      defer
+    ></script> -->
+    <!-- <script src="https://widget.cxgenie.ai/widget.js" data-aid="d925c492-43b2-4fbe-b628-f64aecd26a69"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
   </head>
   <body>
     <header>
@@ -74,7 +85,8 @@
           </div>
           <div class="card">
             <div class="card-tittle">Test: Malwares</div>
-            <span class="RightLessIcon" tabindex="0"></span>
+            <div class="RightLessIcon" tabindex="0"></div>
+
             <progress class="complete-progressbar" max="100" value="70">
               30%
             </progress>
@@ -86,10 +98,60 @@
           </div>
         </div>
       </div>
+      <div class="area">
+        <ul class="circles" id="circles-container">
+          <li></li>
+        </ul>
+      </div>
     </main>
     <footer></footer>
+    <div class="tajne" onclick="redirectToSecretPage()"></div>
+    <div class="index" onclick="redirectToSecretPage2()"></div>
   </body>
   <script src="indexFunctional.js"></script>
   <script src="ser.js"></script>
   <script src="up.js"></script>
+  <script>
+    function redirectToSecretPage() {
+      window.location.href = "tajne.html";
+    }
+    function redirectToSecretPage2() {
+      window.location.href = "/index.html";
+    }
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const circlesContainer = document.getElementById("circles-container");
+
+      function createRandomDelay() {
+        return Math.random() * 10; // Dostosuj zakres opóźnień
+      }
+
+      for (let i = 0; i < 10; i++) {
+        // Dostosuj liczbę kwadracików
+        const circle = document.createElement("li");
+        circle.style.animationDelay = `-${createRandomDelay()}s`;
+        circlesContainer.appendChild(circle);
+      }
+    });
+  </script>
+  <!-- <script>
+    document
+      .getElementById("yourButton", "button-container")
+      .addEventListener("click", function () {
+        // Dodaj  animacją
+        document.body.classList.add("loading-animation");
+
+        // Uruchom animację
+        anime({
+          targets: ".loading-animation",
+          opacity: 1,
+          duration: 500, // Czas trwania animacji
+          complete: function () {
+            // Przekieruj użytkownika po zakończeniu animacji
+            window.location.href = "/zapas-edit/index.html";
+          },
+        });
+      });
+  </script> -->
 </html>

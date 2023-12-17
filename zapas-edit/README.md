@@ -1,1 +1,0 @@
-## Juz Nie Dlugo

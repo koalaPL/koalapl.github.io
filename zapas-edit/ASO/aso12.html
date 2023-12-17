@@ -37,26 +37,29 @@ sieciowe. Poniżej przedstawiam jak zrobić to za pomocą komend:
 <i>sudo dhclient</i> -- pobiera nowy adres do puli adresów serwera DHCP.
 <br />
 <b>Windows:</b> <br />
-<i>ipconfig /release</i> -- zwalnia aktualny adres do puli adresów serwera
-DHCP. <br />
+<i>ipconfig /release</i> -- zwalnia aktualny adres do puli adresów serwera DHCP.
+<br />
 <i>ipconfig /renew</i> -- pobiera nowy adres do puli adresów serwera DHCP.
 <br />
 <img class="dualImage" src="ASO/img/idu2/8.png" />
 Sprawdź listę klientów / host'ów dzierżawiących adresy z puli serwera DHCP
 <img class="dualImage" src="ASO/img/idu2/9.png" />
 Do konfiguracji DHCP dopisz grupe stałych adresów IP, dodając do niej rezerwacje
-po adresach <b>MAC</b> ( Adres fizyczny karty sieciowej )dla <i>Ubuntu</i> ( Hardware Address ) i <em>Windowsa</em> ( Physical Address ).
+po adresach <b>MAC</b> ( Adres fizyczny karty sieciowej )dla <i>Ubuntu</i> (
+Hardware Address ) i <em>Windowsa</em> ( Physical Address ).
 <img src="ASO/img/idu2/10.png" />
 Zrestartuj usługę <em>"isc-dhcp-server"</em>, następnie zweryfikuj poprawność
 przypisania adresów na systemach <i>Ubuntu</i> i <em>Windows</em>.
 <img class="dualImage" src="ASO/img/idu2/11.png" />
 <br /><br />
-<h3> Przykładowe problemy i rozwiązania</h3>
+<h3>Przykładowe problemy i rozwiązania</h3>
 <ol>
-<li> Upewnij się czy wpisana przez ciebie adresacja jest poprawna</li>
-<li> W razie niepowodzenia w restarcie usługi możesz wykorzystać komendę: <br />
-<b>journalctl _PID=</b><i>****</i> <br />
-W miejsce <i>*</i> wstaw identyfikator procesu  </li> 
-<img src="ASO/img/idu2/12.png" />
+  <li>Upewnij się czy wpisana przez ciebie adresacja jest poprawna</li>
+  <li>
+    W razie niepowodzenia w restarcie usługi możesz wykorzystać komendę: <br />
+    <b>journalctl _PID=</b><i>****</i> <br />
+    W miejsce <i>*</i> wstaw identyfikator procesu
+  </li>
+  <img src="ASO/img/idu2/12.png" />
 </ol>
 <br /><br /><br /><br /><br />
