@@ -17,7 +17,7 @@ function coursSelect(number) {
     case 2:
       document.location = "Malware/index.html";
       break;
-    //  case 3: document.location = 'Malware/MalwareTest/index.html'; break;
+     case 3: document.location = 'Malware/MalwareTest/index.html'; break;
     case 4:
       document.location = "bd.html";
       break;
