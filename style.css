@@ -537,3 +537,60 @@ button:hover .play {
   box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.3);
   transform: translate(0.1em, 0.1em);
 }
+
+.discord-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-shadow: 2px 2px #000;
+  text-transform: uppercase;
+  border: solid 2px #fff;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 17px;
+  background-color: rgba(88, 101, 242, 1);
+  border-radius: 50px;
+  position: relative;
+  top: -50px;
+  left: 1px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.discord-button:active {
+  transform: scale(0.9);
+  transition: all 100ms ease;
+}
+
+.discord-button svg {
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+
+.play {
+  transition: all 0.5s ease;
+  transition-delay: 300ms;
+}
+
+.discord-button:hover svg {
+  transform: scale(1.3) translate(-40%);
+}
+
+.now {
+  position: absolute;
+  left: 0;
+  transform: translateX(290%);
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+
+.discord-button:hover .now {
+  transform: translateX(90%);
+  transition-delay: 300ms;
+}
+
+.discord-button:hover .play {
+  transform: translateX(200%);
+  transition-delay: 300ms;
+}
