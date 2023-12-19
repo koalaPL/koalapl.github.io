@@ -47,5 +47,4 @@ Ten projekt jest dostępny na zasadach licencji MIT. Szczegółowe informacje zn
 - [1.0.0](CHANGE.md)
 
 ---
-
 **Happy coding!**
