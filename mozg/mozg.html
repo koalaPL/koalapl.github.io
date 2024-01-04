@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Użyj Mózgu</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        .rounded-square {
+            width: 300px;
+            height: 300px;
+            border-radius: 25px;
+            background-color: rgba(255, 255, 255, 0.8); /* Domyślnie przezroczysty */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1; /* Wysokość w stosunku do tła wideo */
+        }
+
+        .image {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 20px;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .play-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #0329ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease; /* Animacja */
+        }
+
+        .play-button:focus {
+            outline: none;
+        }
+
+        .glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #08115f;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+body{
+  text-align:center;
+  background-color:#ffcc8e;
+}
+
+.button{
+  position:relative;
+  display:inline-block;
+  margin:20px;
+}
+
+.abutton a{
+  color:white;
+  font-family:Helvetica, sans-serif;
+  font-weight:bold;
+  font-size:20px;
+  text-align: center;
+  text-decoration:none;
+  background-color:#08115f;
+  display:block;
+  position:relative;
+  padding:20px 20px;
+  
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-shadow: 0px 1px 0px #000;
+  filter: dropshadow(color=#000, offx=0px, offy=1px);
+  
+  -webkit-box-shadow:inset 0 1px 0 #c4cdff, 0 10px 0 #004491;
+  -moz-box-shadow:inset 0 1px 0 #c4cdff, 0 10px 0 #004491;
+  box-shadow:inset 0 1px 0 #c4cdff, 0 10px 0 #004491;
+  
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.abutton a:active{
+  top:10px;
+  background-color:#3600f7;
+  
+  -webkit-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #005c91;
+  -moz-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3pxpx 0 #005c91;
+  box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #005c91;
+}
+
+.abutton:after{
+  content:"";
+  height:100%;
+  width:100%;
+  padding:4px;
+  position: absolute;
+  bottom:-15px;
+  left:-4px;
+  z-index:-1;
+  background-color:#2B1800;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+        @keyframes moveButton {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(calc(100vw - 100px), calc(100vh - 50px));
+            }
+        }
+    </style>
+</head>
+<body>
+    <video class="video-background" autoplay loop muted>
+        <source src="Human.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="rounded-square" onclick="changeImageOnClick()">
+      <img src="mozg.jpg" alt="mozg" class="image">
+  </div>
+
+    <div class="button-container">
+        <button id="myButton" href="javascript:void(0)" class="glow-on-hover" type="button"onclick="playMusic()">CLICK ME!</button>
+    </div>
+
+    <audio id="background-music">
+        <source src="Human.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function playMusic() {
+            var audio = document.getElementById("background-music");
+            audio.play();
+            var button = document.querySelector('.music-button');
+            button.style.animation = "moveButton 5s ease-in-out"; 
+        }
+        
+        function getRandomPosition() {
+  const button = document.getElementById('myButton');
+  const windowHeight = window.innerHeight - button.clientHeight;
+  const windowWidth = window.innerWidth - button.clientWidth;
+  const randomY = Math.floor(Math.random() * windowHeight);
+  const randomX = Math.floor(Math.random() * windowWidth);
+  return { x: randomX, y: randomY };
+}
+
+
+const images = ["mozg.jpg", "mozg2.jpg", "mozg3.jpg", "mozg4.jpg", "mozg5.jpg", "mozg6.jpg", "mozg7.png"];
+        let currentImageIndex = 0;
+
+        function changeImage() {
+            const imageElement = document.querySelector('.image');
+            imageElement.src = images[currentImageIndex];
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+        }
+
+        setInterval(changeImage, 2000);
+
+function rotateButton() {
+            var button = document.querySelector('myButton');
+            button.style.animation = "spinButton 2s linear infinite"; // Przykładowy czas obrotu - 2s
+            // Po 2 sekundach, zatrzymujemy animację obrotu przycisku
+            setTimeout(function() {
+                button.style.animation = "none";
+            }, 2000);
+        }
+
+document.getElementById('myButton').addEventListener('click', function () {
+  let button = this;
+
+// disable rightclick
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+document.onkeydown = function (e) {
+
+// disable F12 key
+if(e.keyCode == 123) {
+alert("E śmieciu zajebany)");
+return false;
+}
+
+
+// disable c key
+if(e.ctrlKey && e.keyCode == 67){
+alert("cos nie wten tego? qwerciak szef.");
+return false;
+
+}
+
+// disable c key
+if(e.ctrlKey && e.keyCode == 67){
+alert("proboj dalej ;) | QWERCIAk TOPKA");
+return false;
+
+}
+
+
+// wypierdol i
+if(e.ctrlKey && e.keyCode == 73) {
+alert("do kogo kurwa?  | QWERCIAk TOPKA");
+return false;
+}
+
+// disable c key
+if(e.ctrlKey && e.keyCode == 80){
+alert("Fanozo ty chcesz to drukowac? XDDDDDDDD");
+return true;
+alert("Trzymaj fanie");
+
+}
+const originalLog = console.log;
+console.log = function (message) {
+  if (typeof message === 'string') {
+    const uppercaseMessage = message.toUpperCase();
+    originalLog(uppercaseMessage);
+  } else {
+    originalLog(message);
+  }
+};
+
+// Funkcja wyświetlająca wiadomość co 2 sekundy
+function displayMessage() {
+  console.log('DrQwerciak Topka Cwelu');
+}
+
+// Wywołanie funkcji setInterval, aby wyświetlała się co 2 sekundy
+setInterval(displayMessage, 2000);
+
+        
+var browser = navigator.userAgent;
+      var ie = 0;
+      if (browser.indexOf("MSIE") != -1 && browser.indexOf(") ") == -1) ie = parseFloat(browser.substring(browser.indexOf("MSIE")+4));
+      
+      var id_status_blink = 0;
+      function status_blink(txt)
+      {
+        window.status = txt;
+        if (!txt) id_status_blink = setTimeout('status_blink("KLIKNIJ WEWN�TRZ OKNA PRZEGL�DARKI !!!!!")', 250);
+        else id_status_blink = setTimeout('status_blink("")', 1500);
+        return true;
+      }
+      
+      function blur_ie()
+      {
+        document.all["body"].style.visibility = "hidden";
+        clipboardData.clearData();
+        status_blink("");
+      }
+      
+      function focus_ie()
+      {
+        document.all["body"].style.visibility = "visible";
+        if (id_status_blink) clearTimeout(id_status_blink);
+        window.status = '';
+        return true;
+      }
+      
+      if (ie >= 5)
+      {
+        window.onblur = blur_ie;
+        window.onfocus = focus_ie;
+      }
+      
+
+}
+
+const originalLog = console.log;
+console.log = function (message) {
+  if (typeof message === 'string') {
+    const uppercaseMessage = message.toUpperCase();
+    originalLog(uppercaseMessage);
+  } else {
+    originalLog(message);
+  }
+};
+
+// Test
+console.log('DrQwerciak Topka Cwelu');
+
+
+  function animateButton() {
+    const newPosition = getRandomPosition();
+    const distance = Math.sqrt(
+      Math.pow(newPosition.x - button.offsetLeft, 4) +
+      Math.pow(newPosition.y - button.offsetTop, 2)
+    );
+
+
+    const duration = Math.min(2000, distance * 32);
+
+
+    button.style.transition = `transform ${duration}ms ease-in-out`;
+    button.style.transform = `translate(${newPosition.x}px, ${newPosition.y}px)`;
+
+
+    setTimeout(() => {
+      button.style.transition = 'none';
+      button.style.transform = 'translate(0, 0)';
+      animateButton();
+    }, duration);
+  }
+
+
+  animateButton();
+});
+    </script>
+
+<div style="text-align: center; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);">
+    <!-- Pierwszy przycisk -->
+    <div ontouchstart="">
+        <div class="abutton">
+          <a onclick="window.location.href='https://github.com/DrQwerciaks'">Code by !DrQwerciak</a>
+        </div>
+</body>
+</html>
