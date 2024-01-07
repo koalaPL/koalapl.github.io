@@ -37,21 +37,33 @@
       document.addEventListener("DOMContentLoaded", function () {
         var video = document.getElementById("fullscreen-video");
 
-        // Obsługa pełnego ekranu
         video.addEventListener("click", function () {
-          if (video.requestFullscreen) {
-            video.requestFullscreen();
-          } else if (video.mozRequestFullScreen) {
-            video.mozRequestFullScreen();
-          } else if (video.webkitRequestFullscreen) {
-            video.webkitRequestFullscreen();
-          }
+          toggleFullScreen(video);
         });
 
         video.muted = false;
 
-        video.addEventListener("volumechange", function () {});
+        video.addEventListener("volumechange", function () {
+          // Tutaj możesz dodać kod obsługi zmiany głośności
+          // Na przykład, console.log(video.volume);
+        });
+
+        video.addEventListener("canplaythrough", function () {
+          video.muted = false; // Odtwarzaj dźwięk po załadowaniu
+          video.play(); // Rozpocznij odtwarzanie po załadowaniu
+        });
       });
+
+      // Funkcja do obsługi pełnego ekranu
+      function toggleFullScreen(video) {
+        if (video.requestFullscreen) {
+          video.requestFullscreen();
+        } else if (video.mozRequestFullScreen) {
+          video.mozRequestFullScreen();
+        } else if (video.webkitRequestFullscreen) {
+          video.webkitRequestFullscreen();
+        }
+      }
     </script>
   </body>
 </html>
