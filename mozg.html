@@ -187,12 +187,12 @@ body{
 </head>
 <body>
     <video class="video-background" autoplay loop muted>
-        <source src="Human.mp4" type="video/mp4">
+        <source src="/mozg/Human.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
     <div class="rounded-square" onclick="changeImageOnClick()">
-      <img src="mozg.jpg" alt="mozg" class="image">
+      <img src="/mozg/mozg.jpg" alt="mozg" class="image">
   </div>
 
     <div class="button-container">
@@ -200,7 +200,7 @@ body{
     </div>
 
     <audio id="background-music">
-        <source src="Human.mp3" type="audio/mpeg">
+        <source src="/mozg/Human.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
@@ -222,7 +222,7 @@ body{
 }
 
 
-const images = ["mozg.jpg", "mozg2.jpg", "mozg3.jpg", "mozg4.jpg", "mozg5.jpg", "mozg6.jpg", "mozg7.png"];
+const images = ["/mozg/mozg.jpg", "/mozg/mozg2.jpg", "/mozg/mozg3.jpg", "/mozg/mozg4.jpg", "/mozg/mozg5.jpg", "/mozg/mozg6.jpg", "/mozg/mozg7.png"];
         let currentImageIndex = 0;
 
         function changeImage() {
