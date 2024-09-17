@@ -1,3 +1,48 @@
+<h2>Konfiguracja VirtualBox</h2>
+
+<h3>1. Importujemy Maszynę z <i>C:\vm</i> 2x Windows 10</h3>
+Wchdzim w ustawienia maszyny 
+<img src="ASO/img/idu7/1.png" />
+ustawiamy sieć wewnętrzną oraz <i>Klikamy Zawansowane</i> I zmieniamy na pozwalaj wszystkim.
+<img src="ASO/img/idu7/2.png" />
+<h3> Tą samą konfiguracje robimy na drugiej maszynie lecz zmieniamy (odświerzamy) adres MAC</h3>
+<img src="ASO/img/idu7/3.png" />
+
+
+
+<h2>Konfiguracja Windowsa - Wyłączenie zapory, adresacja i testowanie</h2>
+
+<h3>1. Wyłączenie zapory</h3>
+Aby upewnić się, że zapora nie blokuje połączeń do serwera DNS, można ją tymczasowo wyłączyć. <br>
+Otwórz Wiersz polecenia jako administrator i wykonaj następującą komendę:
+<pre><code>netsh advfirewall set allprofiles state off</code></pre>
+<img src="ASO/img/idu7/4.png" />
+Aby ponownie włączyć zaporę, użyj tej komendy:
+<pre><code>netsh advfirewall set allprofiles state on</code></pre>
+<i>Nie Będziemy ponownie uruchamiać firewalla</i>
+
+<h3>2. Ustawienie statycznych adresów IP</h3>
+Przejdź do ustawień sieciowych, aby przypisać statyczny adres IP dla połączenia sieciowego:
+
+<ol>
+  <li>Otwórz Panel Sterowania i przejdź do <i>Centrum sieci i udostępniania</i>.</li>
+  <li>Kliknij na połączenie sieciowe (np. Ethernet), a następnie wybierz <i>Właściwości</i>.</li>
+  <li>Zaznacz <i>Protokół internetowy w wersji 4 (TCP/IPv4)</i> i kliknij <i>Właściwości</i>.</li>
+  <li>Wprowadź statyczny adres IP, maskę podsieci, <i>bramę domyślną na 2 kliencie (192.168.0.1)</i>.</li>
+</ol>
+<img src="ASO/img/idu7/5.png" />
+
+<h3>3. Testowanie  za pomocą polecenia "ping"</h3>
+Aby przetestować konfigurację  , użyj komendy <i>ping</i> z poziomu Wiersza polecenia:
+<pre><code>ping (Adres IP 2 serwera)</code></pre>
+Jeżeli konfiguracja została wykonana prawidłowo, zobaczysz odpowiedzi od serwera.
+<img src="ASO/img/idu7/6.png" />
+
+Jeżeli test zakończy się niepowodzeniem, upewnij się, że usługi DNS i sieci są prawidłowo skonfigurowane, a zapora nie blokuje połączeń.
+
+
+
+
 <h2>Udostępnienie folderu C:\WSPÓLNY</h2>
 <p>
   Aby udostępnić folder C:\WSPÓLNY pod nazwą NASZ_EGZAMIN oraz dodać opis,
