@@ -1,0 +1,80 @@
+<h2>Udostępnienie folderu C:\WSPÓLNY</h2>
+<p>
+  Aby udostępnić folder C:\WSPÓLNY pod nazwą NASZ_EGZAMIN oraz dodać opis,
+  wykonaj poniższe kroki:
+</p>
+
+<h3>Krok 1: Otwórz wiersz poleceń jako administrator</h3>
+<p>
+  Kliknij prawym przyciskiem na ikonę menu Start i wybierz
+  <strong>Wiersz polecenia (administrator)</strong> lub
+  <strong>Windows PowerShell (administrator)</strong>.
+</p>
+
+<h3>Krok 2: Utwórz udostępnienie folderu</h3>
+<p>Wprowadź poniższe polecenie:</p>
+<pre><code>net share NASZ_EGZAMIN=C:\WSPÓLNY /REMARK:"Materiały egzaminacyjne zdających"</code></pre>
+<p><img src="images/share_folder.png" alt="Udostępnienie folderu" /></p>
+
+<h2>Utworzenie grupy lokalnej i użytkownika oraz ograniczenie dostępu</h2>
+<p>
+  Aby utworzyć grupę lokalną o nazwie <strong>shanty</strong> oraz użytkownika o
+  nazwie <strong>pirat</strong>, i ograniczyć liczbę sesji do folderu
+  C:\mojepliki, wykonaj poniższe kroki:
+</p>
+
+<h3>Krok 1: Utwórz grupę lokalną</h3>
+<p>Wprowadź poniższe polecenie:</p>
+<pre><code>net localgroup szanty /add</code></pre>
+<p><img src="images/create_group.png" alt="Tworzenie grupy lokalnej" /></p>
+
+<h3>Krok 2: Utwórz użytkownika</h3>
+<p>Wprowadź poniższe polecenie:</p>
+<pre><code>net user pirat /add</code></pre>
+<p><img src="images/create_user.png" alt="Tworzenie użytkownika" /></p>
+
+<h3>Krok 3: Dodaj użytkownika do grupy</h3>
+<p>Wprowadź poniższe polecenie:</p>
+<pre><code>net localgroup szanty pirat /add</code></pre>
+<p>
+  <img
+    src="images/add_user_to_group.png"
+    alt="Dodawanie użytkownika do grupy"
+  />
+</p>
+
+<h3>Krok 4: Ogranicz liczbę sesji do folderu</h3>
+<p>
+  Użyj poniższego polecenia, aby utworzyć udostępnienie z maksymalną liczbą
+  sesji:
+</p>
+<pre><code>net share MOJEPLIKI=C:\mojepliki /REMARK:"Dostęp do folderu do 10 sesji" /USERS:10</code></pre>
+<p>
+  <img
+    src="images/share_folder_with_limit.png"
+    alt="Ograniczenie liczby sesji"
+  />
+</p>
+
+<h3>Krok 5: Ustaw uprawnienia do folderu</h3>
+<p>
+  Ręcznie dodaj grupę <strong>shanty</strong> do uprawnień folderu C:\mojepliki:
+</p>
+<ol>
+  <li>
+    Przejdź do folderu <strong>C:\mojepliki</strong> w Eksploratorze Windows.
+  </li>
+  <li>
+    Kliknij prawym przyciskiem myszy na folder i wybierz
+    <strong>Właściwości</strong>.
+  </li>
+  <li>Przejdź do zakładki <strong>Bezpieczeństwo</strong>.</li>
+  <li>Kliknij <strong>Edytuj</strong>, aby zmienić uprawnienia.</li>
+  <li>
+    Dodaj grupę <strong>shanty</strong> i przyznaj odpowiednie uprawnienia
+    (pełne lub tylko do odczytu) zgodnie z wymaganiami.
+  </li>
+</ol>
+<p>
+  <img src="images/set_permissions.png" alt="Ustawianie uprawnień do folderu" />
+</p>
